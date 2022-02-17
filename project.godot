@@ -11,10 +11,9 @@ config_version=4
 [application]
 
 config/name="GameDevSpring22"
+run/main_scene="res://TestMain.tscn"
 config/icon="res://icon.png"
 
-<<<<<<< Updated upstream
-=======
 [input]
 
 right={
@@ -43,7 +42,6 @@ shoot={
  ]
 }
 
->>>>>>> Stashed changes
 [physics]
 
 common/enable_pause_aware_picking=true
