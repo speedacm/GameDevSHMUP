@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TestSprite.png-6c89edbf480402a1da428fa679921125.stex"
+path="res://.import/laserRed01.png-5c4f86f38d185760a9e2fbc316441561.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TestSprite.png"
-dest_files=[ "res://.import/TestSprite.png-6c89edbf480402a1da428fa679921125.stex" ]
+source_file="res://laserRed01.png"
+dest_files=[ "res://.import/laserRed01.png-5c4f86f38d185760a9e2fbc316441561.stex" ]
 
 [params]
 

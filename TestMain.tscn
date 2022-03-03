@@ -9,6 +9,8 @@
 
 [node name="TestPlayer" parent="." instance=ExtResource( 1 )]
 position = Vector2( 179.536, 530.447 )
+scale = Vector2( 1.00376, 1 )
+Bullet = ExtResource( 2 )
 
 [node name="TestEnemy" parent="." instance=ExtResource( 2 )]
 position = Vector2( 102.383, 181.77 )
@@ -17,3 +19,4 @@ position = Vector2( 102.383, 181.77 )
 position = Vector2( 852.966, 140.237 )
 
 [node name="TestRangeEnemy" parent="." instance=ExtResource( 4 )]
+
