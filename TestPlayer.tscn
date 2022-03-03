@@ -7,6 +7,7 @@
 extents = Vector2( 15.5458, 15.3577 )
 
 [node name="TestPlayer" type="KinematicBody2D"]
+collision_mask = 3
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -14,8 +15,13 @@ __meta__ = {
 
 [node name="TestSprite" type="Sprite" parent="."]
 position = Vector2( -0.0835457, -5.54882 )
+rotation = 1.5708
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -5.72433 )
 shape = SubResource( 1 )
+
+[node name="Muzzle" type="Position2D" parent="."]
+position = Vector2( 15.9401, -4 )
+scale = Vector2( 0.694582, 0.722252 )
