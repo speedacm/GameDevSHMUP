@@ -1,11 +1,12 @@
 extends KinematicBody2D
-
+export (PackedScene) var Bullet
 
 export var speed = 150
 var velocity = Vector2.ZERO
 var player = null
 var danger = false
 var good = false
+var hp = 50
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,12 +17,25 @@ func _physics_process(delta):
 	velocity = Vector2.ZERO
 	if player:
 		velocity = position.direction_to(player.position) * speed
+		look_at(player.position)
 	if danger:
 		velocity = -velocity
+		look_at(player.position)
 	elif good:
 		velocity.x = 0
 		velocity.y = 0
+		look_at(player.position)
+		#shoot()
 	velocity = move_and_slide(velocity)
+	if hp <= 0:
+		queue_free()
+
+func shoot():
+	var b = Bullet.instance()
+##	add_child(b)
+##	b.transform = $Muzzle.transform
+	owner.add_child(b)
+	b.transform = $Muzzle.global_transform
 
 
 func _on_DetectArea_body_entered(body):
