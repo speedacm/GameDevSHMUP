@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/TestSprite.png" type="Texture" id=1]
 [ext_resource path="res://TestPlayer.gd" type="Script" id=2]
+[ext_resource path="res://Bullet.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15.5458, 15.3577 )
@@ -12,6 +13,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
+Bullet = ExtResource( 3 )
 
 [node name="TestSprite" type="Sprite" parent="."]
 position = Vector2( -0.0835457, -5.54882 )

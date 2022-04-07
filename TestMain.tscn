@@ -4,14 +4,13 @@
 [ext_resource path="res://TestEnemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://TestFastEnemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://TestRangeEnemy.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Bullet.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GunTest.tscn" type="PackedScene" id=6]
 
 [node name="TestMain" type="Node"]
 
 [node name="TestPlayer" parent="." instance=ExtResource( 1 )]
 position = Vector2( 179.536, 530.447 )
 scale = Vector2( 1.00376, 1 )
-Bullet = ExtResource( 5 )
 
 [node name="TestEnemy" parent="." groups=[
 "enemy",
@@ -26,3 +25,6 @@ position = Vector2( 852.966, 140.237 )
 [node name="TestRangeEnemy" parent="." groups=[
 "enemy",
 ] instance=ExtResource( 4 )]
+
+[node name="GunTest" parent="." instance=ExtResource( 6 )]
+position = Vector2( 255.344, 526.482 )

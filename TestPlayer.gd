@@ -5,8 +5,9 @@ export (PackedScene) var Bullet
 export var speed = 200
 var velocity = Vector2.ZERO
 var shoot_timer = 60
-var count = 60
-var b = Bullet.instance()
+var count = shoot_timer
+#var b = Bullet.instance()
+var b = preload("res://Bullet.tscn").instance()
 
 
 func get_input():
@@ -24,10 +25,10 @@ func get_input():
 	#if Input.is_action_just_pressed("shoot"):
 	#	shoot()
 
-func _physics_process(delta):	
+func _physics_process(delta):
 	look_at(get_global_mouse_position())
 	get_input()
-	if Input.is_action_pressed("shoot") and count >= 60:
+	if Input.is_action_pressed("shoot") and count >= shoot_timer:
 		shoot()
 		count = 0
 	count += 1
