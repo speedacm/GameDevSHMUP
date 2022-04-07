@@ -7,7 +7,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15.5458, 15.3577 )
 
-[node name="TestPlayer" type="KinematicBody2D"]
+[node name="TestPlayer" type="KinematicBody2D" groups=[
+"player",
+]]
 collision_mask = 3
 script = ExtResource( 2 )
 __meta__ = {
