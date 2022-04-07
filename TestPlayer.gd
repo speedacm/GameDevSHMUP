@@ -6,8 +6,6 @@ export var speed = 200
 var velocity = Vector2.ZERO
 var shoot_timer = 60
 var count = shoot_timer
-#var b = Bullet.instance()
-var b = preload("res://Bullet.tscn").instance()
 
 
 func get_input():
@@ -36,5 +34,6 @@ func _physics_process(delta):
 
 
 func shoot():
-	owner.add_child(b)
+	var b = Bullet.instance()
 	b.transform = $Muzzle.global_transform
+	get_tree().get_root().add_child(b)
