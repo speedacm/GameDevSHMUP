@@ -6,5 +6,6 @@
 [node name="TestMain" type="Node"]
 
 [node name="TestPlayer" parent="." instance=ExtResource( 1 )]
+position = Vector2( 115, 99 )
 scale = Vector2( 1.00376, 1 )
 Bullet = ExtResource( 2 )
