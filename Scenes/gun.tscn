@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/gun.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/bullet.tscn" type="PackedScene" id=2]
+
+[node name="gun" type="Node2D"]
+position = Vector2( 128, 108 )
+script = ExtResource( 1 )
+bulletScene = ExtResource( 2 )
