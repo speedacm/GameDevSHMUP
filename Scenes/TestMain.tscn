@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://scripts/TestPlayer.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/TestPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/TestPlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tempassets/testfloor.png" type="Texture" id=5]
 [ext_resource path="res://Tempassets/Colltestwall.png" type="Texture" id=6]
