@@ -32,19 +32,19 @@ func _unhandled_input(event):
 		bullet.direction = (get_global_mouse_position() - global_position).normalized()
 		bullet.rotation = bullet.direction.angle()
 
-func _physics_process(delta):	
+func _physics_process(_delta):	
 	get_input()
 	velocity = move_and_slide(velocity)
 	
-func _process(delta):
+func _process(_delta):
 	flip()
 	pass
 	
 
 # Flips player and gun when looking in a different direction
 func flip():
-	var direction = sign(get_global_mouse_position().x - $TestSprite.global_position.x)
-	if direction < 0:
+	var flip = sign(get_global_mouse_position().x - $TestSprite.global_position.x)
+	if flip < 0:
 		$TestSprite.set_flip_h(true)
 		$GunModel.set_flip_v(true)
 	else:
