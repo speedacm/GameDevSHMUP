@@ -10,6 +10,7 @@
 extents = Vector2( 6, 5 )
 
 [node name="Bullet" type="KinematicBody2D"]
+collision_layer = 256
 script = ExtResource( 2 )
 smokeScene = ExtResource( 3 )
 bulletImpact = ExtResource( 4 )

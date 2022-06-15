@@ -15,6 +15,12 @@ func _ready():
 func _process(delta):
 	var collisionResult = move_and_collide(direction * speed * delta)
 	if collisionResult != null:
+		
+		#Get group at collision
+#		print(collisionResult.collider.is_in_group("mobs"))
+		
+		
+		
 		var smoke = smokeScene.instance() as Particles2D
 		get_parent().add_child(smoke)
 		smoke.global_position = collisionResult.position
@@ -25,3 +31,8 @@ func _process(delta):
 		impact.global_position = collisionResult.position
 		impact.rotation = collisionResult.normal.angle()
 		queue_free()
+		
+#func _on_Bullet_body_entered(body):
+#	if body.is_in_group("enemy"):
+#		body.hp -= 10
+#		queue_free()
