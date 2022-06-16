@@ -23,8 +23,9 @@ func _physics_process(delta):
 
 
 func _on_DetectArea_body_entered(body):
-	player = body
-	print("Player Found -- slow", player.position)
+	if body.is_in_group('player'):
+		player = body
+		print("Player Found -- slow", player.position)
 
 
 func _on_DetectArea_body_exited(body: Node) -> void:

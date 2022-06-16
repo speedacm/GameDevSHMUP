@@ -47,7 +47,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [node name="TestMain" type="Node"]
 
-[node name="TestPlayer" parent="." instance=ExtResource( 2 )]
+[node name="TestPlayer" parent="." groups=["player"] instance=ExtResource( 2 )]
 position = Vector2( 115, 99 )
 scale = Vector2( 1.00376, 1 )
 collision_mask = 3

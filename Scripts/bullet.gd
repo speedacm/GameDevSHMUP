@@ -17,7 +17,9 @@ func _process(delta):
 	if collisionResult != null:
 		
 		#Get group at collision
-#		print(collisionResult.collider.is_in_group("mobs"))
+		if collisionResult.collider.is_in_group("mobs"):
+			var current_hp = collisionResult.collider.get('hp')
+			collisionResult.collider.set('hp', current_hp-10)
 		
 		
 		
