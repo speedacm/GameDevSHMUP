@@ -24,7 +24,7 @@ func _physics_process(delta):
 
 func _on_DetectArea_body_entered(body):
 	player = body
-	print("Player Found -- slow")
+	print("Player Found -- slow", player.position)
 
 
 func _on_DetectArea_body_exited(body: Node) -> void:
