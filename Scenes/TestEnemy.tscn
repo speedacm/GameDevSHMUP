@@ -11,6 +11,7 @@ radius = 195.138
 
 [node name="TestEnemy" type="KinematicBody2D" groups=["mobs"]]
 position = Vector2( 190.256, 122.287 )
+collision_layer = 0
 collision_mask = 2
 script = ExtResource( 2 )
 __meta__ = {
@@ -27,6 +28,7 @@ shape = SubResource( 1 )
 
 [node name="DetectArea" type="Area2D" parent="."]
 collision_layer = 0
+collision_mask = 4
 
 [node name="DetectShape" type="CollisionShape2D" parent="DetectArea"]
 shape = SubResource( 2 )

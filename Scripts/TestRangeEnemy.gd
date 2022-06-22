@@ -3,10 +3,11 @@ export (PackedScene) var Bullet
 
 export var speed = 150
 var velocity = Vector2.ZERO
-var player = null
+onready var player = null
 var danger = false
 var good = false
 var hp = 50
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
