@@ -36,7 +36,7 @@ func _physics_process(delta):
 
 func shoot(player):
 	var bullet = bulletScene.instance() as Node2D
-	get_parent().add_child(bullet)
+	add_child(bullet)
 	bullet.global_position = self.global_position
 	bullet.direction = (player.position - global_position).normalized()
 	bullet.rotation = bullet.direction.angle()

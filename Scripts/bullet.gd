@@ -10,7 +10,18 @@ var direction = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var parent = get_parent()
+	print(parent)
+	if parent.is_in_group("mobs"):
+		set_collision_layer_bit(256, true)
+		set_collision_mask_bit(0, true)
+		set_collision_mask_bit(1, false)
+		set_collision_mask_bit(2, true)
+	else:
+		set_collision_layer_bit(256, true)
+		set_collision_mask_bit(0, true)
+		set_collision_mask_bit(1, true)
+
 
 func _process(delta):
 	var collisionResult = move_and_collide(direction * speed * delta)
