@@ -6,6 +6,7 @@ export var bulletScene : PackedScene
 export var speed = 200
 var velocity = Vector2.ZERO
 var direction
+var hp = 100
 
 func get_input():
 	velocity = Vector2.ZERO
@@ -33,9 +34,11 @@ func _unhandled_input(event):
 		bullet.direction = (get_global_mouse_position() - global_position).normalized()
 		bullet.rotation = bullet.direction.angle()
 
-func _physics_process(_delta):	
+func _physics_process(_delta):
 	get_input()
 	velocity = move_and_slide(velocity)
+	if hp <= 0:
+		queue_free()
 	
 func _process(_delta):
 	flip()

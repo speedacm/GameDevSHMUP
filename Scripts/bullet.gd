@@ -32,6 +32,10 @@ func _process(delta):
 			var current_hp = collisionResult.collider.get('hp')
 			collisionResult.collider.set('hp', current_hp-10)
 		
+		if collisionResult.collider.is_in_group("player"):
+			var current_hp = collisionResult.collider.get('hp')
+			collisionResult.collider.set('hp', current_hp-10)
+		
 		
 		
 		var smoke = smokeScene.instance() as Particles2D

@@ -41,7 +41,6 @@ func shoot(player):
 	bullet.global_position = global_position
 	bullet.direction = (player.position - bullet.global_position).normalized()
 	bullet.rotation = bullet.direction.angle()
-	print(bullet.rotation)
 
 
 func _on_DetectArea_body_entered(body):
