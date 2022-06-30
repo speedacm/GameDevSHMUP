@@ -27,7 +27,8 @@ func get_input():
 func _unhandled_input(event):
 	if (event.is_action_pressed("shoot")):
 		var bullet = bulletScene.instance() as Node2D
-		add_child(bullet)
+		bullet.set('parent', 'player')
+		get_parent().add_child(bullet)
 		bullet.global_position = $GunModel/muzzle.global_position
 		bullet.direction = (get_global_mouse_position() - global_position).normalized()
 		bullet.rotation = bullet.direction.angle()

@@ -10,10 +10,10 @@ extents = Vector2( 11.1208, 11.3563 )
 radius = 558.004
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 174.562
+radius = 118.017
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 336.214
+radius = 214.149
 
 [node name="TestRangeEnemy" type="KinematicBody2D" groups=["mobs"]]
 position = Vector2( 392, 321 )

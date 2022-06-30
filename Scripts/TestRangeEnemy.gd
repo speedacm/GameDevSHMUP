@@ -36,10 +36,12 @@ func _physics_process(delta):
 
 func shoot(player):
 	var bullet = bulletScene.instance() as Node2D
-	add_child(bullet)
-	bullet.global_position = self.global_position
-	bullet.direction = (player.position - global_position).normalized()
+	bullet.set("parent", "mobs")
+	get_parent().add_child(bullet)
+	bullet.global_position = global_position
+	bullet.direction = (player.position - bullet.global_position).normalized()
 	bullet.rotation = bullet.direction.angle()
+	print(bullet.rotation)
 
 
 func _on_DetectArea_body_entered(body):

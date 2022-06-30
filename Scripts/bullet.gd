@@ -6,13 +6,12 @@ export var bulletImpact : PackedScene
 const speed = 400
 var direction = Vector2.ZERO
 
+var parent = ''
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var parent = get_parent()
-	print(parent)
-	if parent.is_in_group("mobs"):
+	if parent == "mobs":
 		set_collision_layer_bit(256, true)
 		set_collision_mask_bit(0, true)
 		set_collision_mask_bit(1, false)
@@ -24,6 +23,7 @@ func _ready():
 
 
 func _process(delta):
+
 	var collisionResult = move_and_collide(direction * speed * delta)
 	if collisionResult != null:
 		
