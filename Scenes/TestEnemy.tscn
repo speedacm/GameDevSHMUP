@@ -10,7 +10,7 @@ extents = Vector2( 15.0722, 15.1564 )
 radius = 195.138
 
 [node name="TestEnemy" type="KinematicBody2D" groups=["mobs"]]
-position = Vector2( 190.256, 122.287 )
+position = Vector2( 182, 125 )
 collision_layer = 0
 collision_mask = 2
 script = ExtResource( 2 )
@@ -32,6 +32,13 @@ collision_mask = 4
 
 [node name="DetectShape" type="CollisionShape2D" parent="DetectArea"]
 shape = SubResource( 2 )
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_left = -51.0
+margin_top = 20.0
+margin_right = 57.0
+margin_bottom = 34.0
+percent_visible = false
 
 [connection signal="body_entered" from="DetectArea" to="." method="_on_DetectArea_body_entered"]
 [connection signal="body_exited" from="DetectArea" to="." method="_on_DetectArea_body_exited"]
