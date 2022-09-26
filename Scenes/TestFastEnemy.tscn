@@ -1,16 +1,16 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/TeestEnemy.png" type="Texture" id=1]
+[ext_resource path="res://assets/Rat PNG.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/TestFastEnemy.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.70379, 7.64417 )
+extents = Vector2( 7.1763, 3.17426 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 517.343
 
 [node name="TestFastEnemy" type="KinematicBody2D"]
-position = Vector2( 55.3492, 98.3286 )
+position = Vector2( 55.2312, 97.1488 )
 collision_layer = 2
 collision_mask = 3
 script = ExtResource( 2 )
