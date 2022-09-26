@@ -6,7 +6,7 @@ export var bulletScene : PackedScene
 
 
 func _ready():
-
+	print("hi")
 	pass
 
 func _unhandled_input(event):
