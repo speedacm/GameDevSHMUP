@@ -5,7 +5,7 @@ export var speed = 100
 var velocity = Vector2.ZERO
 var player = null
 var hp = 50
-var hit_timer = 90
+var hit_timer = 30
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,12 +18,14 @@ func _physics_process(delta):
 	if player:
 		velocity = position.direction_to(player.position) * speed
 		look_at(player.position)
+		if hit_timer < 30:
+			velocity = -velocity
 	velocity = move_and_slide(velocity)
 	for i in get_slide_count():
 		var collisionResult = get_slide_collision(i)
-		if collisionResult.collider.is_in_group("player") and hit_timer >= 90:
+		if collisionResult.collider.is_in_group("player") and hit_timer >= 30:
 			var current_hp = collisionResult.collider.get('hp')
-			collisionResult.collider.set('hp', current_hp-20)
+			collisionResult.collider.set('hp', current_hp-10)
 			hit_timer = 0
 	if hp <= 0:
 		queue_free()
