@@ -15,9 +15,6 @@ func get_input():
 	if Input.is_action_pressed('right'):
 		velocity.x += 1
 		direction = "right"
-		animation_player.play("walk_right")
-	else:
-		animation_player.play("idle_right")
 
 	if Input.is_action_pressed('left'):
 		velocity.x -= 1
@@ -42,11 +39,15 @@ func _unhandled_input(event):
 func _physics_process(_delta):
 	get_input()
 	velocity = move_and_slide(velocity)
+	if velocity.x > 0:
+		animation_player.play("walk_right")
+	else:
+		animation_player.play("idle_right")
 	if hp <= 0:
 		queue_free()
 	
 func _process(_delta):
-	flip()
+	#flip()
 	pass
 	
 
