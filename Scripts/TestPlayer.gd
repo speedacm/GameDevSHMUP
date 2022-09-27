@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
-
+onready var animation_tree = $AnimationTree
+onready var state_machine = animation_tree.get("parameters/playback")
+onready var animation_player = $AnimationPlayer
 export var bulletScene : PackedScene
 
 export var speed = 200
@@ -13,6 +15,9 @@ func get_input():
 	if Input.is_action_pressed('right'):
 		velocity.x += 1
 		direction = "right"
+		animation_player.play("walk_right")
+	else:
+		animation_player.play("idle_right")
 
 	if Input.is_action_pressed('left'):
 		velocity.x -= 1

@@ -1,10 +1,62 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Sprites/16pxSorcSprite.png" type="Texture" id=1]
+[ext_resource path="res://assets/Wizard Right Walking Animation.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/TestPlayer.gd" type="Script" id=2]
-[ext_resource path="res://Tempassets/techgun.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/GunModel.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/bullet.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Animation" id=3]
+resource_name = "idle_right"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TestSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "walk_right"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TestSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 0 ), Vector2( 2, 0 ), Vector2( 3, 0 ), Vector2( 4, 0 ), Vector2( 5, 0 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "idle_right"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "walk_right"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+
+[sub_resource type="AnimationNodeStateMachine" id=10]
+states/idle_right/node = SubResource( 11 )
+states/idle_right/position = Vector2( 126, 69 )
+states/walk_right/node = SubResource( 12 )
+states/walk_right/position = Vector2( 300, 65 )
+transitions = [ "idle_right", "walk_right", SubResource( 13 ), "walk_right", "idle_right", SubResource( 14 ) ]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.5, 5 )
@@ -17,9 +69,19 @@ __meta__ = {
 }
 bulletScene = ExtResource( 5 )
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/idle_right = SubResource( 3 )
+anims/walk_right = SubResource( 2 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 10 )
+anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource( 9 )
+
 [node name="TestSprite" type="Sprite" parent="."]
 position = Vector2( -0.0835457, -5.54882 )
 texture = ExtResource( 1 )
+hframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.5, -3 )
@@ -31,7 +93,6 @@ current = true
 [node name="GunModel" type="Sprite" parent="."]
 position = Vector2( 2, -3 )
 scale = Vector2( 1.00658, 1.04806 )
-texture = ExtResource( 3 )
 offset = Vector2( 4.96732, 0 )
 script = ExtResource( 4 )
 
