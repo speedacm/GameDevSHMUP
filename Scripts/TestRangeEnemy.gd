@@ -6,7 +6,7 @@ var velocity = Vector2.ZERO
 onready var player = null
 var danger = false
 var good = false
-var hp = 50
+onready var health = $Health
 var shootTimer = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -30,7 +30,7 @@ func _physics_process(delta):
 			shoot(player)
 			shootTimer = 0
 	velocity = move_and_slide(velocity)
-	if hp <= 0:
+	if health.health <= 0:
 		queue_free()
 	shootTimer += 1
 

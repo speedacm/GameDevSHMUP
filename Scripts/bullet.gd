@@ -24,20 +24,21 @@ func _ready():
 
 func _process(delta):
 
+## Bullet Checks what group it is in and acts accordingly
+
 	var collisionResult = move_and_collide(direction * speed * delta)
 	if collisionResult != null:
 		
 		#Get group at collision
 		if collisionResult.collider.is_in_group("mobs"):
-			var current_hp = collisionResult.collider.get('hp')
-			collisionResult.collider.set('hp', current_hp-10)
+			collisionResult.collider.health.set_health(collisionResult.collider.health.get_health()-10)
 		
 		if collisionResult.collider.is_in_group("player"):
-			var current_hp = collisionResult.collider.get('hp')
-			collisionResult.collider.set('hp', current_hp-10)
+			collisionResult.collider.health.set_health(collisionResult.collider.health.get_health()-10)
 		
 		
-		
+### Bullet Effects (Smoke and Impact)
+
 		var smoke = smokeScene.instance() as Particles2D
 		get_parent().add_child(smoke)
 		smoke.global_position = collisionResult.position
@@ -49,7 +50,3 @@ func _process(delta):
 		impact.rotation = collisionResult.normal.angle()
 		queue_free()
 		
-#func _on_Bullet_body_entered(body):
-#	if body.is_in_group("enemy"):
-#		body.hp -= 10
-#		queue_free()

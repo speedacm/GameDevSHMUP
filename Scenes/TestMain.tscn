@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/TestEnemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/TestPlayer.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Tempassets/testfloor.png" type="Texture" id=5]
 [ext_resource path="res://Tempassets/Colltestwall.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/enemyBullet.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/TestMain.gd" type="Script" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -49,10 +50,9 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 1/z_index = 0
 
 [node name="TestMain" type="Node"]
+script = ExtResource( 8 )
 
-[node name="TestPlayer" parent="." groups=[
-"player",
-] instance=ExtResource( 2 )]
+[node name="TestPlayer" parent="." groups=["player"] instance=ExtResource( 2 )]
 position = Vector2( 115, 99 )
 scale = Vector2( 1.00376, 1 )
 collision_layer = 4
@@ -75,7 +75,5 @@ collision_mask = 3
 position = Vector2( 20, 7 )
 bulletScene = ExtResource( 7 )
 
-[node name="TestFastEnemy" parent="." groups=[
-"mobs",
-] instance=ExtResource( 4 )]
+[node name="TestFastEnemy" parent="." groups=["mobs"] instance=ExtResource( 4 )]
 position = Vector2( 684, 240 )
