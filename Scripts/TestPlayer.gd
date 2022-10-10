@@ -43,12 +43,13 @@ func _physics_process(_delta):
 	if velocity.x > 0:
 		if not flipped:
 			animation_player.play("walk_right")
-		if flipped:
+		elif flipped:
 			animation_player.play("walk_right_back")
 	else:
 		animation_player.play("idle_right")
 	if hp <= 0:
 		queue_free()
+	print(velocity.x)
 	
 func _process(_delta):
 	flipped = flip()

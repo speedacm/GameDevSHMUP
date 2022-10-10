@@ -5,10 +5,9 @@
 [ext_resource path="res://Scripts/GunModel.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/bullet.tscn" type="PackedScene" id=5]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=14]
 resource_name = "idle_right"
 length = 0.1
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("TestSprite:frame_coords")
 tracks/0/interp = 1
@@ -22,7 +21,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=9]
 resource_name = "walk_left"
 tracks/0/type = "value"
 tracks/0/path = NodePath("TestSprite:frame_coords")
@@ -37,7 +36,7 @@ tracks/0/keys = {
 "values": [  ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=10]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -87,9 +86,9 @@ states/walk_right/node = SubResource( 5 )
 states/walk_right/position = Vector2( 300, 65 )
 transitions = [ "idle_right", "walk_right", SubResource( 6 ), "walk_right", "idle_right", SubResource( 7 ) ]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=9]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=12]
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 5.5, 5 )
 
 [node name="TestPlayer" type="KinematicBody2D"]
@@ -101,15 +100,15 @@ __meta__ = {
 bulletScene = ExtResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/idle_right = SubResource( 1 )
-anims/walk_left = SubResource( 2 )
-anims/walk_right = SubResource( 3 )
+anims/idle_right = SubResource( 14 )
+anims/walk_left = SubResource( 9 )
+anims/walk_right = SubResource( 10 )
 anims/walk_right_back = SubResource( 11 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 8 )
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 9 )
+parameters/playback = SubResource( 12 )
 
 [node name="TestSprite" type="Sprite" parent="."]
 position = Vector2( -0.0835457, -5.54882 )
@@ -118,10 +117,11 @@ hframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.5, -3 )
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 2, 2 )
 
 [node name="GunModel" type="Sprite" parent="."]
 position = Vector2( 2, -3 )
