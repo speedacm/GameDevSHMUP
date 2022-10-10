@@ -4,7 +4,7 @@ extends KinematicBody2D
 export var speed = 100
 var velocity = Vector2.ZERO
 var player = null
-var hp = 50
+onready var health = $Health
 var hit_timer = 30
 
 # Called when the node enters the scene tree for the first time.
@@ -24,10 +24,9 @@ func _physics_process(delta):
 	for i in get_slide_count():
 		var collisionResult = get_slide_collision(i)
 		if collisionResult.collider.is_in_group("player") and hit_timer >= 30:
-			var current_hp = collisionResult.collider.get('hp')
-			collisionResult.collider.set('hp', current_hp-10)
+			collisionResult.collider.health.set_health(collisionResult.collider.health.get_health()-10)
 			hit_timer = 0
-	if hp <= 0:
+	if health.health <= 0:
 		queue_free()
 	hit_timer += 1
 
