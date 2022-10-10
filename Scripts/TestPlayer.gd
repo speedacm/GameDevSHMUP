@@ -9,6 +9,7 @@ export var speed = 200
 var velocity = Vector2.ZERO
 var direction
 var hp = 100
+var flipped = false
 
 func get_input():
 	velocity = Vector2.ZERO
@@ -40,14 +41,17 @@ func _physics_process(_delta):
 	get_input()
 	velocity = move_and_slide(velocity)
 	if velocity.x > 0:
-		animation_player.play("walk_right")
+		if not flipped:
+			animation_player.play("walk_right")
+		if flipped:
+			animation_player.play("walk_right_back")
 	else:
 		animation_player.play("idle_right")
 	if hp <= 0:
 		queue_free()
 	
 func _process(_delta):
-	#flip()
+	flipped = flip()
 	pass
 	
 
@@ -57,9 +61,11 @@ func flip():
 	if flip < 0:
 		$TestSprite.set_flip_h(true)
 		$GunModel.set_flip_v(true)
+		return true
 	else:
 		$TestSprite.set_flip_h(false)
 		$GunModel.set_flip_v(false)
+		return false
 
 	
 	
