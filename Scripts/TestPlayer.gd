@@ -45,6 +45,13 @@ func _physics_process(_delta):
 			animation_player.play("walk_right")
 		elif flipped:
 			animation_player.play("walk_right_back")
+	elif velocity.x < 0:
+		if not flipped:
+			animation_player.play("walk_left")
+		elif flipped:
+			animation_player.play("walk_left_back")
+	elif velocity.y > 0:
+		animation_player.play("walk_down")
 	else:
 		animation_player.play("idle_right")
 	if hp <= 0:

@@ -1,9 +1,24 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/Wizard Right Walking Animation.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/TestPlayer.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/GunModel.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/bullet.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Animation" id=15]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("TestSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 1 ) ]
+}
 
 [sub_resource type="Animation" id=9]
 resource_name = "idle_right"
@@ -21,7 +36,10 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=16]
+resource_name = "walk_down"
+length = 0.8
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("TestSprite:frame_coords")
 tracks/0/interp = 1
@@ -29,10 +47,43 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"update": 0,
-"values": [  ]
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 2 ), Vector2( 1, 2 ), Vector2( 2, 2 ), Vector2( 3, 2 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TestSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 1 ), Vector2( 1, 1 ), Vector2( 2, 1 ), Vector2( 3, 1 ), Vector2( 4, 1 ), Vector2( 5, 1 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "walk_left_back"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TestSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 5, 1 ), Vector2( 4, 1 ), Vector2( 3, 1 ), Vector2( 2, 1 ), Vector2( 1, 1 ), Vector2( 0, 1 ) ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -98,8 +149,11 @@ __meta__ = {
 bulletScene = ExtResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 15 )
 anims/idle_right = SubResource( 9 )
+anims/walk_down = SubResource( 16 )
 anims/walk_left = SubResource( 10 )
+anims/walk_left_back = SubResource( 17 )
 anims/walk_right = SubResource( 11 )
 anims/walk_right_back = SubResource( 12 )
 
@@ -112,6 +166,8 @@ parameters/playback = SubResource( 13 )
 position = Vector2( -0.0835457, -5.54882 )
 texture = ExtResource( 1 )
 hframes = 6
+vframes = 3
+frame = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.5, -3 )
