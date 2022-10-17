@@ -5,9 +5,11 @@ class_name TestPlayer
 export var speed = 200
 var velocity = Vector2.ZERO
 var direction
-
 onready var health = $Health
+
+## Weapon Variables
 onready var weapon = $Weapon
+var weaponbehavior
 
 func _ready() -> void:
 	weapon.connect("weapon_fired",self, "shoot")
@@ -46,19 +48,24 @@ func _physics_process(_delta):
 	if health.health <= 0:
 		queue_free()
 	
-### Called every frame
-#func _process(_delta):
-#	flip()
-#	pass
-#
-#
-#### Flips player and gun when looking in a different direction
-#func flip():
-#	var flip = sign(get_global_mouse_position().x - $TestSprite.global_position.x)
-#	if flip < 0:
-#		$TestSprite.set_flip_h(true)
+## Called every frame
+func _process(_delta):
+	flip()
+	pass
+
+
+### Flips player and gun when looking in a different direction
+func flip():
+	var flip = sign(get_global_mouse_position().x - $TestSprite.global_position.x)
+	if flip < 0:
+		$TestSprite.set_flip_h(true)
 #		weapon.GunModel.set_flip_v(true)
-#	else:
-#		$TestSprite.set_flip_h(false)
+	else:
+		$TestSprite.set_flip_h(false)
 #		weapon.GunModel.set_flip_v(false)
 
+### Sends weapon behavior information from weapon pickup to child node
+
+func _on_Weapon_Pickup_newweapon(behavior):
+	
+	pass

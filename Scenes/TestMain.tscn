@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/TestEnemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/TestPlayer.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Tempassets/Colltestwall.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/enemyBullet.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/TestMain.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Weapon Pickup.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -79,3 +80,10 @@ position = Vector2( 684, 240 )
 position = Vector2( 460, 257 )
 collision_layer = 2
 collision_mask = 3
+
+[node name="Pickups" type="Node" parent="."]
+
+[node name="Weapon Pickup" parent="Pickups" instance=ExtResource( 9 )]
+position = Vector2( 172, 45 )
+
+[connection signal="newweapon" from="Pickups/Weapon Pickup" to="TestPlayer" method="_on_Weapon_Pickup_newweapon"]
