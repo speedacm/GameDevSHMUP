@@ -1,15 +1,16 @@
 extends KinematicBody2D
 class_name TestPlayer
 
-export var bulletScene : PackedScene
-
 ## Player Variables
 export var speed = 200
 var velocity = Vector2.ZERO
 var direction
 
 onready var health = $Health
+onready var weapon = $Weapon
 
+func _ready() -> void:
+	weapon.connect("weapon_fired",self, "shoot")
 
 ### Player Movement Controls
 
@@ -29,15 +30,13 @@ func get_input():
 	
 	
 ### Shooting Function
+func shoot(bullet, location: Vector2, direction: Vector2):
+	emit_signal("player_fired_bullet", bullet,location,direction)
+
 
 func _unhandled_input(event):
 	if (event.is_action_pressed("shoot")):
-		var bullet = bulletScene.instance() as Node2D
-		bullet.set('parent', 'player')
-		get_parent().add_child(bullet)
-		bullet.global_position = $GunModel/muzzle.global_position
-		bullet.direction = (get_global_mouse_position() - global_position).normalized()
-		bullet.rotation = bullet.direction.angle()
+		weapon.shoot()
 
 
 ### Check if Dead
@@ -47,19 +46,19 @@ func _physics_process(_delta):
 	if health.health <= 0:
 		queue_free()
 	
-### i forgor what this is
-func _process(_delta):
-	flip()
-	pass
-	
-
-# Flips player and gun when looking in a different direction
-func flip():
-	var flip = sign(get_global_mouse_position().x - $TestSprite.global_position.x)
-	if flip < 0:
-		$TestSprite.set_flip_h(true)
-		$GunModel.set_flip_v(true)
-	else:
-		$TestSprite.set_flip_h(false)
-		$GunModel.set_flip_v(false)
+### Called every frame
+#func _process(_delta):
+#	flip()
+#	pass
+#
+#
+#### Flips player and gun when looking in a different direction
+#func flip():
+#	var flip = sign(get_global_mouse_position().x - $TestSprite.global_position.x)
+#	if flip < 0:
+#		$TestSprite.set_flip_h(true)
+#		weapon.GunModel.set_flip_v(true)
+#	else:
+#		$TestSprite.set_flip_h(false)
+#		weapon.GunModel.set_flip_v(false)
 
