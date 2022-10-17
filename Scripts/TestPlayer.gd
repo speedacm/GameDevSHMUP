@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-
 onready var animation_player = $AnimationPlayer
 export var bulletScene : PackedScene
 
