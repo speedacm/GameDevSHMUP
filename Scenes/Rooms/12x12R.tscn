@@ -73,7 +73,6 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 3/z_index = 0
 
 [node name="12x12R" type="Node2D"]
-visible = false
 use_parent_material = true
 position = Vector2( -1, 0 )
 

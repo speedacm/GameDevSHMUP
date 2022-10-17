@@ -24,8 +24,8 @@ collision_layer = 2
 collision_mask = 3
 
 [node name="TestRangeEnemy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 18, 5 )
+position = Vector2( 17, 48 )
 bulletScene = ExtResource( 7 )
 
 [node name="TestFastEnemy" parent="." groups=["mobs"] instance=ExtResource( 4 )]
-position = Vector2( 684, 240 )
+position = Vector2( 660, 230 )
