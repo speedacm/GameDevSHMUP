@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/Wizard Right Walking Animation.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/TestPlayer.gd" type="Script" id=2]
@@ -134,25 +134,6 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 3 ), Vector2( 1, 3 ), Vector2( 2, 3 ), Vector2( 3, 3 ) ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=9]
-animation = "idle_right"
-
-[sub_resource type="AnimationNodeAnimation" id=10]
-animation = "walk_right"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=11]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=12]
-
-[sub_resource type="AnimationNodeStateMachine" id=13]
-states/idle_right/node = SubResource( 9 )
-states/idle_right/position = Vector2( 126, 69 )
-states/walk_right/node = SubResource( 10 )
-states/walk_right/position = Vector2( 300, 65 )
-transitions = [ "idle_right", "walk_right", SubResource( 11 ), "walk_right", "idle_right", SubResource( 12 ) ]
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id=14]
-
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 5.5, 5 )
 
@@ -173,11 +154,6 @@ anims/walk_left_back = SubResource( 5 )
 anims/walk_right = SubResource( 6 )
 anims/walk_right_back = SubResource( 7 )
 anims/walk_up = SubResource( 8 )
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 13 )
-anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 14 )
 
 [node name="TestSprite" type="Sprite" parent="."]
 position = Vector2( -0.0835457, -5.54882 )
