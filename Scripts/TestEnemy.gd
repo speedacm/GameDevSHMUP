@@ -5,6 +5,8 @@ export var speed = 50
 var velocity = Vector2.ZERO
 var player = null
 
+export (NodePath) var playerNodePath
+
 onready var health = $Health
 
 var hit_timer = 90
@@ -35,6 +37,9 @@ func _physics_process(delta):
 	if health.health <= 0:
 		queue_free()
 	hit_timer += 1
+	
+	var playerpos = get_node(playerNodePath)
+	print(playerpos.position)
 
 
 func _on_DetectArea_body_entered(body):
