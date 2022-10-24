@@ -73,12 +73,22 @@ func _process(_delta):
 # Flips player and gun when looking in a different direction
 func flip():
 	var flip = sign(get_global_mouse_position().x - $TestSprite.global_position.x)
-	if flip < 0:
-		$TestSprite.set_flip_h(true)
-		$GunModel.set_flip_v(true)
-		return true
-	else:
-		$TestSprite.set_flip_h(false)
-		$GunModel.set_flip_v(false)
-		return false
+	if velocity.x >= 0:
+		if flip < 0:
+			$TestSprite.set_flip_h(true)
+			$GunModel.set_flip_v(true)
+			return true
+		else:
+			$TestSprite.set_flip_h(false)
+			$GunModel.set_flip_v(false)
+			return false
+	if velocity.x < 0:
+		if flip < 0:
+			$TestSprite.set_flip_h(false)
+			$GunModel.set_flip_v(false)
+			return false
+		else:
+			$TestSprite.set_flip_h(true)
+			$GunModel.set_flip_v(true)
+			return true
 
