@@ -4,14 +4,15 @@ var speed: int
 var velocity: Vector2 = Vector2.ZERO
 onready var health: Node2D = $Health 
 export (NodePath) var playerNodePath
-onready var player = get_node(playerNodePath)
+onready var player = get_node("/root/Scenes/TestMain/TestPlayer")
 var hit_timer: int
 var hit_count: int
 var damage: int
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 func get_player_pos():
@@ -32,7 +33,7 @@ func velocity_to_player() -> Vector2:
 
 func move_to_player(detect_rad: int, run_rad: int, player_pos: Vector2) -> void:
 	var dist = distance(player_pos)
-	if dist <= detect_rad and dist >= run_rad:
+	if dist <= detect_rad and dist >= run_rad+20:
 		velocity = velocity_to_player()
 	elif dist < run_rad:
 		velocity = -1*velocity_to_player()

@@ -39,7 +39,7 @@ func _physics_process(delta):
 	hit_timer += 1
 	
 	var playerpos = get_node(playerNodePath)
-	print(playerpos.position)
+	#print(playerpos.position)
 
 
 func _on_DetectArea_body_entered(body):
