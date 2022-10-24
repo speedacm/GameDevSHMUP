@@ -8,11 +8,11 @@ var direction
 onready var health = $Health
 
 ## Weapon Variables
-onready var weapon = $Weapon
+onready var equippedweapon = $Weapon
 var weaponbehavior
 
 func _ready() -> void:
-	weapon.connect("weapon_fired",self, "shoot")
+	pass
 
 ### Player Movement Controls
 
@@ -38,8 +38,8 @@ func shoot(bullet, location: Vector2, direction: Vector2):
 
 func _unhandled_input(event):
 	if (event.is_action_pressed("shoot")):
-		weapon.shoot()
-
+		equippedweapon.shoot()
+	
 
 ### Check if Dead
 func _physics_process(_delta):
@@ -66,6 +66,16 @@ func flip():
 
 ### Sends weapon behavior information from weapon pickup to child node
 
-func _on_Weapon_Pickup_newweapon(behavior):
+
+func _on_Flamepickup_new_weapon(guntype, ammo):
+	equippedweapon.queue_free()
+	var flamethrower = guntype.instance()
+	add_child(flamethrower)
+	equip_weapon(flamethrower)
+
+func equip_weapon(weapon):
+	equippedweapon = weapon
 	
-	pass
+	
+	
+	

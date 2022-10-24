@@ -15,15 +15,12 @@ signal weapon_fired(bullet, location, direction)
 
 func shoot(): 
 		var bullet = bulletScene.instance() as Node2D
-		bullet.set('parent', 'tilemap')
+		bullet.set('parent', 'player')
 		get_parent().add_child(bullet)
 		emit_signal("weapon_fired",bullet)
 		bullet.global_position = $GunModel/muzzle.global_position
 		bullet.direction = (get_global_mouse_position() - global_position).normalized()
 		bullet.rotation = bullet.direction.angle()
-		
 
-
-	
-
-
+func set_ammo(new_ammo: int):
+	ammo = clamp(new_ammo, 0 ,100)

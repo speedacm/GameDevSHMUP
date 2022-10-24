@@ -83,7 +83,7 @@ collision_mask = 3
 
 [node name="Pickups" type="Node" parent="."]
 
-[node name="Weapon Pickup" parent="Pickups" instance=ExtResource( 9 )]
+[node name="Flamepickup" parent="Pickups" instance=ExtResource( 9 )]
 position = Vector2( 172, 45 )
 
-[connection signal="newweapon" from="Pickups/Weapon Pickup" to="TestPlayer" method="_on_Weapon_Pickup_newweapon"]
+[connection signal="new_weapon" from="Pickups/Flamepickup" to="TestPlayer" method="_on_Flamepickup_new_weapon"]
