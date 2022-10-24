@@ -10,7 +10,9 @@ extents = Vector2( 15.0722, 15.1564 )
 [sub_resource type="CircleShape2D" id=2]
 radius = 195.138
 
-[node name="TestEnemy" type="KinematicBody2D" groups=["mobs"]]
+[node name="TestEnemy" type="KinematicBody2D" groups=[
+"mobs",
+]]
 position = Vector2( 182, 125 )
 collision_layer = 0
 collision_mask = 2

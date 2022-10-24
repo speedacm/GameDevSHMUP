@@ -52,7 +52,9 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [node name="TestMain" type="Node"]
 script = ExtResource( 8 )
 
-[node name="TestPlayer" parent="." groups=["player"] instance=ExtResource( 2 )]
+[node name="TestPlayer" parent="." groups=[
+"player",
+] instance=ExtResource( 2 )]
 position = Vector2( 115, 99 )
 scale = Vector2( 1.00376, 1 )
 collision_layer = 4
@@ -72,7 +74,9 @@ tile_data = PoolIntArray( -1703922, 0, 0, -1703921, 0, 0, -1703920, 0, 0, -17039
 position = Vector2( 20, 7 )
 bulletScene = ExtResource( 7 )
 
-[node name="TestFastEnemy" parent="Enemies" groups=["mobs"] instance=ExtResource( 4 )]
+[node name="TestFastEnemy" parent="Enemies" groups=[
+"mobs",
+] instance=ExtResource( 4 )]
 position = Vector2( 684, 240 )
 
 [node name="TestEnemy" parent="Enemies" instance=ExtResource( 1 )]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://assets/TeestEnemy.png" type="Texture" id=1]
+[ext_resource path="res://assets/RangeMan.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/TestRangeEnemy.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Health.tscn" type="PackedScene" id=3]
 
@@ -16,7 +16,9 @@ radius = 118.017
 [sub_resource type="CircleShape2D" id=4]
 radius = 214.149
 
-[node name="TestRangeEnemy" type="KinematicBody2D" groups=["mobs"]]
+[node name="TestRangeEnemy" type="KinematicBody2D" groups=[
+"mobs",
+]]
 position = Vector2( 392, 321 )
 collision_layer = 2
 collision_mask = 3
