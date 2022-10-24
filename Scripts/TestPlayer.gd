@@ -1,31 +1,35 @@
 extends KinematicBody2D
-
+class_name TestPlayer
 onready var animation_player = $AnimationPlayer
 export var bulletScene : PackedScene
 
+## Player Variables
 export var speed = 200
 var velocity = Vector2.ZERO
 var direction
-var hp = 100
+
+onready var health = $Health
 var flipped = false
+
+### Player Movement Controls
 
 func get_input():
 	velocity = Vector2.ZERO
 	if Input.is_action_pressed('right'):
 		velocity.x += 1
 		direction = "right"
-
 	if Input.is_action_pressed('left'):
 		velocity.x -= 1
 		direction = "left"
-
 	if Input.is_action_pressed('down'):
 		velocity.y += 1
 	if Input.is_action_pressed('up'):
 		velocity.y -= 1
-		
 	velocity = velocity.normalized() * speed
 	
+	
+### Shooting Function
+
 func _unhandled_input(event):
 	if (event.is_action_pressed("shoot")):
 		var bullet = bulletScene.instance() as Node2D
@@ -35,6 +39,8 @@ func _unhandled_input(event):
 		bullet.direction = (get_global_mouse_position() - global_position).normalized()
 		bullet.rotation = bullet.direction.angle()
 
+
+### Check if Dead
 func _physics_process(_delta):
 	get_input()
 	velocity = move_and_slide(velocity)
@@ -54,10 +60,11 @@ func _physics_process(_delta):
 		animation_player.play("walk_up")
 	else:
 		animation_player.play("idle_right")
-	if hp <= 0:
+	if health.health <= 0:
 		queue_free()
 	print(velocity.x)
 	
+### i forgor what this is
 func _process(_delta):
 	flipped = flip()
 	pass
@@ -75,10 +82,3 @@ func flip():
 		$GunModel.set_flip_v(false)
 		return false
 
-	
-	
-#	var b = Bullet.instance()
-##	add_child(b)
-##	b.transform = $Muzzle.transform
-#	owner.add_child(b)
-#	b.transform = $Muzzle.global_transform
