@@ -19,6 +19,9 @@ func shoot(player, player_pos, shoot_timer):
 			var bullet_mid = bulletScene.instance() as Node2D
 			var bullet_left = bulletScene.instance() as Node2D
 			var bullet_right = bulletScene.instance() as Node2D
+			bullet_mid.set_speed(200)
+			bullet_left.set_speed(200)
+			bullet_right.set_speed(200)
 			bullet_mid.set("parent", "mobs")
 			bullet_left.set("parent", "mobs")
 			bullet_right.set("parent", "mobs")
