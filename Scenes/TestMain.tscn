@@ -72,14 +72,17 @@ tile_data = PoolIntArray( -1703922, 0, 0, -1703921, 0, 0, -1703920, 0, 0, -17039
 
 [node name="TestRangeEnemy" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 20, 7 )
+playerNodePath = NodePath("../../TestPlayer")
 bulletScene = ExtResource( 7 )
 
 [node name="TestFastEnemy" parent="Enemies" groups=[
 "mobs",
 ] instance=ExtResource( 4 )]
 position = Vector2( 684, 240 )
+playerNodePath = NodePath("../../TestPlayer")
 
 [node name="TestEnemy" parent="Enemies" instance=ExtResource( 1 )]
 position = Vector2( 460, 257 )
 collision_layer = 2
 collision_mask = 3
+playerNodePath = NodePath("../../TestPlayer")

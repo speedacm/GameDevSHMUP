@@ -62,8 +62,8 @@ func _physics_process(_delta):
 		animation_player.play("idle_right")
 	if health.health <= 0:
 		queue_free()
-	print(velocity.x)
-	
+
+
 ### i forgor what this is
 func _process(_delta):
 	flipped = flip()
