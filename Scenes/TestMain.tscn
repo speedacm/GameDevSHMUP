@@ -79,6 +79,7 @@ bulletScene = ExtResource( 7 )
 "mobs",
 ] instance=ExtResource( 4 )]
 position = Vector2( 684, 240 )
+playerNodePath = NodePath("../../TestPlayer")
 
 [node name="TestEnemy" parent="Enemies" instance=ExtResource( 1 )]
 position = Vector2( 460, 257 )

@@ -41,11 +41,11 @@ func move_to_player(detect_rad: int, run_rad: int, player_pos: Vector2) -> void:
 		velocity = Vector2.ZERO
 
 
-func hit_player(collisions) -> void:
-	for i in collisions:
-		var collisionResult = get_slide_collision(i)
-		if collisionResult.collider.is_in_group("player") and hit_count >= hit_timer:
-			collisionResult.collider.health.set_health(collisionResult.collider.health.get_health()-damage)
+func hit_player(hits) -> void:
+	for hit in hits:
+		if hit.collider.is_in_group("player"):
+			hit.collider.health.set_health(hit.collider.health.get_health()-damage)
+			hit_count = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
