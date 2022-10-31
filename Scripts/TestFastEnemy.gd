@@ -1,42 +1,26 @@
-extends KinematicBody2D
-
-
-export var speed = 100
-var velocity = Vector2.ZERO
-var player = null
-var hp = 50
-var hit_timer = 30
+extends "res://Scripts/Enemy.gd"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	player = get_node(playerNodePath)
+	speed = 150
+	hit_timer = 30
+	hit_count = 0
+	damage = 10
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	velocity = Vector2.ZERO
-	if player:
-		velocity = position.direction_to(player.position) * speed
-		look_at(player.position)
-		if hit_timer < 30:
-			velocity = -velocity
-	velocity = move_and_slide(velocity)
+	move_to_player(400, 0, get_player_pos())
+	if hit_count < hit_timer:
+		move_and_slide(-1*velocity)
+	else:
+		move_and_slide(velocity)
+	var hits = []
 	for i in get_slide_count():
-		var collisionResult = get_slide_collision(i)
-		if collisionResult.collider.is_in_group("player") and hit_timer >= 30:
-			var current_hp = collisionResult.collider.get('hp')
-			collisionResult.collider.set('hp', current_hp-10)
-			hit_timer = 0
-	if hp <= 0:
+		hits.append(get_slide_collision(i))
+	if hit_count > hit_timer:
+		hit_player(hits)
+	if health.health <= 0:
 		queue_free()
-	hit_timer += 1
-
-
-func _on_DetectArea_body_entered(body):
-	player = body
-	print("Player Found -- fast")
-
-
-func _on_DetectArea_body_exited(body: Node) -> void:
-	player = null
-	print("Player Lost -- fast")
+	hit_count += 1
