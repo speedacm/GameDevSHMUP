@@ -3,7 +3,7 @@ extends KinematicBody2D
 export var smokeScene : PackedScene
 export var bulletImpact : PackedScene
 
-const speed = 400
+var speed = 400
 var direction = Vector2.ZERO
 
 var parent = ''
@@ -12,14 +12,18 @@ var parent = ''
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if parent == "mobs":
-		set_collision_layer_bit(256, true)
+		set_collision_layer_bit(31, true)
 		set_collision_mask_bit(0, true)
 		set_collision_mask_bit(1, false)
 		set_collision_mask_bit(2, true)
 	else:
-		set_collision_layer_bit(256, true)
+		set_collision_layer_bit(31, true)
 		set_collision_mask_bit(0, true)
 		set_collision_mask_bit(1, true)
+
+
+func set_speed(s):
+	speed = s
 
 
 func _process(delta):
