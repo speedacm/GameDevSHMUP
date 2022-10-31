@@ -12,12 +12,12 @@ var parent = ''
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if parent == "mobs":
-		set_collision_layer_bit(256, true)
+		set_collision_layer_bit(31, true)
 		set_collision_mask_bit(0, true)
 		set_collision_mask_bit(1, false)
 		set_collision_mask_bit(2, true)
 	else:
-		set_collision_layer_bit(256, true)
+		set_collision_layer_bit(31, true)
 		set_collision_mask_bit(0, true)
 		set_collision_mask_bit(1, true)
 
