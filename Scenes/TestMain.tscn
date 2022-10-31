@@ -54,9 +54,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [node name="TestMain" type="Node"]
 script = ExtResource( 8 )
 
-[node name="Player" parent="." groups=[
-"player",
-] instance=ExtResource( 2 )]
+[node name="Player" parent="." groups=["player"] instance=ExtResource( 2 )]
 position = Vector2( 115, 99 )
 scale = Vector2( 1.00376, 1 )
 collision_layer = 4
@@ -77,9 +75,7 @@ position = Vector2( 20, 7 )
 playerNodePath = NodePath("../../Player")
 bulletScene = ExtResource( 7 )
 
-[node name="Rat" parent="Enemies" groups=[
-"mobs",
-] instance=ExtResource( 4 )]
+[node name="Rat" parent="Enemies" groups=["mobs"] instance=ExtResource( 4 )]
 position = Vector2( 684, 240 )
 playerNodePath = NodePath("../../Player")
 
@@ -89,9 +85,7 @@ collision_layer = 2
 collision_mask = 3
 playerNodePath = NodePath("../../Player")
 
-[node name="SlimeEnemy" parent="Enemies" groups=[
-"mobs",
-] instance=ExtResource( 9 )]
+[node name="SlimeEnemy" parent="Enemies" groups=["mobs"] instance=ExtResource( 9 )]
 position = Vector2( 185.461, -50.9798 )
 playerNodePath = NodePath("../../Player")
 bulletScene = ExtResource( 10 )

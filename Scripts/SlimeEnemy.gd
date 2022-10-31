@@ -17,11 +17,25 @@ func shoot(player, player_pos, shoot_timer):
 	if dist > shootRange[0] and dist < shootRange[1]:
 		if shoot_timer >= hit_timer:
 			var bullet_mid = bulletScene.instance() as Node2D
+			var bullet_left = bulletScene.instance() as Node2D
+			var bullet_right = bulletScene.instance() as Node2D
 			bullet_mid.set("parent", "mobs")
+			bullet_left.set("parent", "mobs")
+			bullet_right.set("parent", "mobs")
 			get_parent().add_child(bullet_mid)
+			get_parent().add_child(bullet_left)
+			get_parent().add_child(bullet_right)
 			bullet_mid.global_position = global_position
 			bullet_mid.direction = (player.position - bullet_mid.global_position).normalized()
 			bullet_mid.rotation = bullet_mid.direction.angle()
+			bullet_left.global_position = global_position
+			bullet_left.direction.x = cos(bullet_mid.rotation+0.2)
+			bullet_left.direction.y = sin(bullet_mid.rotation+0.2)
+			bullet_left.rotation = bullet_left.direction.angle()
+			bullet_right.global_position = global_position
+			bullet_right.direction.x = cos(bullet_mid.rotation-0.2)
+			bullet_right.direction.y = sin(bullet_mid.rotation-0.2)
+			bullet_right.rotation = bullet_left.direction.angle()
 			return true
 	return false
 
