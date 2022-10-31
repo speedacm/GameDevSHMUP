@@ -1,7 +1,7 @@
 extends "res://Scripts/Enemy.gd"
 export var bulletScene: PackedScene
 var shootRange = [0, 400]
-
+var goodRange = [200, 400]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,7 +13,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	move_to_player(400, 200, get_player_pos())
+	move_to_player(goodRange[1], goodRange[0], get_player_pos())
 	move_and_slide(velocity)
 	if health.health <= 0:
 		queue_free()
