@@ -2,6 +2,7 @@ extends "res://Scripts/Enemy.gd"
 export var bulletScene: PackedScene
 var shootRange = [0, 400]
 var goodRange = [200, 400]
+var bullet_speed = 300
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,6 +15,7 @@ func shoot():
 	var bullet = bulletScene.instance() as Node2D
 	bullet.set("parent", "mobs")
 	get_parent().add_child(bullet)
+	bullet.set_speed(bullet_speed)
 	bullet.global_position = global_position
 	bullet.direction = (player.position - bullet.global_position).normalized()
 	bullet.rotation = bullet.direction.angle()
