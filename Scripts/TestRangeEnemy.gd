@@ -10,6 +10,15 @@ func _ready() -> void:
 	hit_timer = 60
 	hit_count = 0
 
+func shoot():
+	var bullet = bulletScene.instance() as Node2D
+	bullet.set("parent", "mobs")
+	get_parent().add_child(bullet)
+	bullet.global_position = global_position
+	bullet.direction = (player.position - bullet.global_position).normalized()
+	bullet.rotation = bullet.direction.angle()
+
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -17,22 +26,10 @@ func _physics_process(delta):
 	move_and_slide(velocity)
 	if health.health <= 0:
 		queue_free()
-	var shot = shoot(player, get_player_pos(), hit_count)
-	if shot:
-		hit_count = 0
-	
-	hit_count += 1
-
-
-func shoot(player, player_pos, shoot_timer):
-	var dist = distance(player_pos)
+	var dist = distance(get_player_pos())
 	if dist > shootRange[0] and dist < shootRange[1]:
-		if shoot_timer >= hit_timer:
-			var bullet = bulletScene.instance() as Node2D
-			bullet.set("parent", "mobs")
-			get_parent().add_child(bullet)
-			bullet.global_position = global_position
-			bullet.direction = (player.position - bullet.global_position).normalized()
-			bullet.rotation = bullet.direction.angle()
-			return true
-	return false
+		if hit_count >= hit_timer:
+			shoot()
+			hit_count = 0
+
+	hit_count += 1
