@@ -31,4 +31,3 @@ func _physics_process(delta):
 		hit_count = 0
 		shot_count += 1
 	hit_count += 1
-	print(shot, " ", shot_count,  " ", hit_count,  hit_timer)
