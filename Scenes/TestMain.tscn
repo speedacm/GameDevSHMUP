@@ -4,10 +4,10 @@
 [ext_resource path="res://Scenes/TestPlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/TestRangeEnemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/TestFastEnemy.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/enemyBullet.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Bullets/enemyBullet.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/TestMain.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/SlimeEnemy.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/bullet.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Bullets/bullet.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/RepeatShotEnemy.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Weapon Pickup.tscn" type="PackedScene" id=12]
 

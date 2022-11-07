@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/GunModel.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Weapon.gd" type="Script" id=2]
 [ext_resource path="res://Tempassets/techgun.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/bullet.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Bullets/bullet.tscn" type="PackedScene" id=4]
 
 [node name="Weapon" type="Node2D"]
 script = ExtResource( 2 )
