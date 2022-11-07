@@ -9,8 +9,7 @@
 script = ExtResource( 2 )
 
 [node name="Pickup area" type="Area2D" parent="."]
-collision_layer = 256
-collision_mask = 256
+collision_mask = 16
 
 [node name="CollisionShape2d" type="CollisionShape2D" parent="Pickup area"]
 shape = SubResource( 1 )

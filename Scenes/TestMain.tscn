@@ -15,9 +15,7 @@
 script = ExtResource( 8 )
 parent_path = NodePath(".")
 
-[node name="Player" parent="." groups=[
-"player",
-] instance=ExtResource( 2 )]
+[node name="Player" parent="." groups=["player"] instance=ExtResource( 2 )]
 position = Vector2( 43.6195, 98.2741 )
 scale = Vector2( 1.00376, 1 )
 collision_layer = 4
@@ -26,13 +24,11 @@ collision_mask = 3
 [node name="Enemies" type="Node" parent="."]
 
 [node name="SimpleRanged" parent="Enemies" instance=ExtResource( 3 )]
-position = Vector2( 20, 7 )
+position = Vector2( -3, -306 )
 playerNodePath = NodePath("../../Player")
 bulletScene = ExtResource( 7 )
 
-[node name="Rat" parent="Enemies" groups=[
-"mobs",
-] instance=ExtResource( 4 )]
+[node name="Rat" parent="Enemies" groups=["mobs"] instance=ExtResource( 4 )]
 position = Vector2( 684, 240 )
 playerNodePath = NodePath("../../Player")
 
@@ -42,16 +38,12 @@ collision_layer = 2
 collision_mask = 3
 playerNodePath = NodePath("../../Player")
 
-[node name="SlimeEnemy" parent="Enemies" groups=[
-"mobs",
-] instance=ExtResource( 9 )]
+[node name="SlimeEnemy" parent="Enemies" groups=["mobs"] instance=ExtResource( 9 )]
 position = Vector2( 185.461, -50.9798 )
 playerNodePath = NodePath("../../Player")
 bulletScene = ExtResource( 10 )
 
-[node name="RepeatShotEnemy" parent="Enemies" groups=[
-"mobs",
-] instance=ExtResource( 11 )]
+[node name="RepeatShotEnemy" parent="Enemies" groups=["mobs"] instance=ExtResource( 11 )]
 position = Vector2( 103, 197 )
 collision_layer = 2
 collision_mask = 3
@@ -59,6 +51,6 @@ playerNodePath = NodePath("../../Player")
 bulletScene = ExtResource( 10 )
 
 [node name="Flamepick" parent="." instance=ExtResource( 12 )]
-position = Vector2( -303, 149 )
+position = Vector2( 40, 48 )
 
 [connection signal="new_weapon" from="Flamepick" to="Player" method="_on_Flamepick_new_weapon"]
