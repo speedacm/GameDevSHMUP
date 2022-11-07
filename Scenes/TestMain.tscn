@@ -1,4 +1,6 @@
-[gd_scene load_steps=12 format=2]
+
+[gd_scene load_steps=14 format=2]
+
 
 [ext_resource path="res://Scenes/TestEnemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/TestPlayer.tscn" type="PackedScene" id=2]
@@ -8,7 +10,12 @@
 [ext_resource path="res://Tempassets/Colltestwall.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/enemyBullet.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/TestMain.gd" type="Script" id=8]
+
 [ext_resource path="res://Scenes/Weapon Pickup.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/SlimeEnemy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/bullet.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/RepeatShotEnemy.tscn" type="PackedScene" id=11]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -53,7 +60,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [node name="TestMain" type="Node"]
 script = ExtResource( 8 )
 
-[node name="TestPlayer" parent="." groups=["player"] instance=ExtResource( 2 )]
+[node name="Player" parent="." groups=["player"] instance=ExtResource( 2 )]
 position = Vector2( 115, 99 )
 scale = Vector2( 1.00376, 1 )
 collision_layer = 4
@@ -69,17 +76,20 @@ tile_data = PoolIntArray( -1703922, 0, 0, -1703921, 0, 0, -1703920, 0, 0, -17039
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="TestRangeEnemy" parent="Enemies" instance=ExtResource( 3 )]
+[node name="SimpleRanged" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 20, 7 )
+playerNodePath = NodePath("../../Player")
 bulletScene = ExtResource( 7 )
 
-[node name="TestFastEnemy" parent="Enemies" groups=["mobs"] instance=ExtResource( 4 )]
+[node name="Rat" parent="Enemies" groups=["mobs"] instance=ExtResource( 4 )]
 position = Vector2( 684, 240 )
+playerNodePath = NodePath("../../Player")
 
-[node name="TestEnemy" parent="Enemies" instance=ExtResource( 1 )]
+[node name="BigMeelee" parent="Enemies" instance=ExtResource( 1 )]
 position = Vector2( 460, 257 )
 collision_layer = 2
 collision_mask = 3
+
 
 [node name="Pickups" type="Node" parent="."]
 
@@ -87,3 +97,17 @@ collision_mask = 3
 position = Vector2( 172, 45 )
 
 [connection signal="new_weapon" from="Pickups/Flamepickup" to="TestPlayer" method="_on_Flamepickup_new_weapon"]
+
+playerNodePath = NodePath("../../Player")
+
+[node name="SlimeEnemy" parent="Enemies" groups=["mobs"] instance=ExtResource( 9 )]
+position = Vector2( 185.461, -50.9798 )
+playerNodePath = NodePath("../../Player")
+bulletScene = ExtResource( 10 )
+
+[node name="RepeatShotEnemy" parent="Enemies" groups=["mobs"] instance=ExtResource( 11 )]
+position = Vector2( 103, 197 )
+collision_layer = 2
+collision_mask = 3
+playerNodePath = NodePath("../../Player")
+bulletScene = ExtResource( 10 )
