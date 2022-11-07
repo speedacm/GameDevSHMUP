@@ -10,7 +10,6 @@ var direction
 
 onready var health = $Health
 var flipped = false
-
 ### Player Movement Controls
 
 func get_input():
@@ -62,8 +61,8 @@ func _physics_process(_delta):
 		animation_player.play("idle_right")
 	if health.health <= 0:
 		queue_free()
-	print(velocity.x)
-	
+
+
 ### i forgor what this is
 func _process(_delta):
 	flipped = flip()
@@ -76,7 +75,7 @@ func flip():
 	if velocity.x >= 0:
 		if flip < 0:
 			$TestSprite.set_flip_h(true)
-			$GunModel.set_flip_v(true)
+			$GunModel.set_flip_v(false)
 			return true
 		else:
 			$TestSprite.set_flip_h(false)
@@ -89,6 +88,6 @@ func flip():
 			return false
 		else:
 			$TestSprite.set_flip_h(true)
-			$GunModel.set_flip_v(true)
+			$GunModel.set_flip_v(false)
 			return true
 

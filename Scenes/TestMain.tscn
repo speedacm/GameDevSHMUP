@@ -69,7 +69,7 @@ tile_data = PoolIntArray( -1703922, 0, 0, -1703921, 0, 0, -1703920, 0, 0, -17039
 [node name="Enemies" type="Node" parent="."]
 
 [node name="TestRangeEnemy" parent="Enemies" instance=ExtResource( 3 )]
-position = Vector2( 20, 7 )
+position = Vector2( -19, 7 )
 bulletScene = ExtResource( 7 )
 
 [node name="TestFastEnemy" parent="Enemies" groups=["mobs"] instance=ExtResource( 4 )]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Tempassets/bullet.png" type="Texture" id=1]
+[ext_resource path="res://assets/Fireball_static.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/bullet.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/bulletsmoke.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/BulletImpact.tscn" type="PackedScene" id=4]
