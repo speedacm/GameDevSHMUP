@@ -12,7 +12,9 @@ script = ExtResource( 8 )
 path = "\"res://Scenes/Rooms/12x12R.tscn\""
 parent_path = NodePath(".")
 
-[node name="TestPlayer" parent="." groups=["player"] instance=ExtResource( 2 )]
+[node name="TestPlayer" parent="." groups=[
+"player",
+] instance=ExtResource( 2 )]
 position = Vector2( 0, 0 )
 scale = Vector2( 1.00376, 1 )
 collision_layer = 4
@@ -27,5 +29,7 @@ collision_mask = 3
 position = Vector2( 17, 48 )
 bulletScene = ExtResource( 7 )
 
-[node name="TestFastEnemy" parent="." groups=["mobs"] instance=ExtResource( 4 )]
+[node name="TestFastEnemy" parent="." groups=[
+"mobs",
+] instance=ExtResource( 4 )]
 position = Vector2( 660, 230 )
