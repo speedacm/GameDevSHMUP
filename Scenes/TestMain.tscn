@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/TestEnemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/TestPlayer.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/SlimeEnemy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/bullet.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/RepeatShotEnemy.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Weapon Pickup.tscn" type="PackedScene" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -97,3 +98,8 @@ collision_layer = 2
 collision_mask = 3
 playerNodePath = NodePath("../../Player")
 bulletScene = ExtResource( 10 )
+
+[node name="Flamepick" parent="." instance=ExtResource( 12 )]
+position = Vector2( -303, 149 )
+
+[connection signal="new_weapon" from="Flamepick" to="Player" method="_on_Flamepick_new_weapon"]

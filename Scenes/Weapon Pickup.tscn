@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/MagicSpear.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Weapon Pickup.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[node name="Weapon Pickup" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Pickup area" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="Pickup area"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Pickup area/CollisionShape2d"]
+z_index = 1
+texture = ExtResource( 1 )
+
+[connection signal="body_entered" from="Pickup area" to="." method="_on_Pickup_area_body_entered"]

@@ -1,7 +1,7 @@
 extends KinematicBody2D
 class_name TestPlayer
 onready var animation_player = $AnimationPlayer
-export var bulletScene : PackedScene
+
 
 ## Player Variables
 export var speed = 200
@@ -10,6 +10,11 @@ var direction
 
 onready var health = $Health
 var flipped = false
+
+## Weapon Variables
+
+onready var equippedweapon = $Weapon
+var weaponbehavior
 
 ### Player Movement Controls
 
@@ -30,14 +35,12 @@ func get_input():
 	
 ### Shooting Function
 
+func shoot(bullet, location: Vector2, direction: Vector2):
+	emit_signal("player_fired_bullet", bullet,location,direction)
+
 func _unhandled_input(event):
 	if (event.is_action_pressed("shoot")):
-		var bullet = bulletScene.instance() as Node2D
-		bullet.set('parent', 'player')
-		get_parent().add_child(bullet)
-		bullet.global_position = $GunModel/muzzle.global_position
-		bullet.direction = (get_global_mouse_position() - global_position).normalized()
-		bullet.rotation = bullet.direction.angle()
+		equippedweapon.shoot()
 
 
 ### Check if Dead
@@ -76,19 +79,28 @@ func flip():
 	if velocity.x >= 0:
 		if flip < 0:
 			$TestSprite.set_flip_h(true)
-			$GunModel.set_flip_v(true)
+#			$GunModel.set_flip_v(true)
 			return true
 		else:
 			$TestSprite.set_flip_h(false)
-			$GunModel.set_flip_v(false)
+#			$GunModel.set_flip_v(false)
 			return false
 	if velocity.x < 0:
 		if flip < 0:
 			$TestSprite.set_flip_h(false)
-			$GunModel.set_flip_v(false)
+#			$GunModel.set_flip_v(false)
 			return false
 		else:
 			$TestSprite.set_flip_h(true)
-			$GunModel.set_flip_v(true)
+#			$GunModel.set_flip_v(true)
 			return true
 
+func equip_weapon(weapon):
+	equippedweapon = weapon
+
+
+func _on_Flamepick_new_weapon(guntype, ammo):
+	equippedweapon.queue_free()
+	var flamethrower = guntype.instance()
+	add_child(flamethrower)
+	equip_weapon(flamethrower)
