@@ -5,7 +5,7 @@ Speed ACM Game Dev SIG Project
 
 Top-down 2D Shoot Em' Up made in Godot 3
 
-Get the Mono Version of [Godot 3](https://dotnet.microsoft.com/download)
+Get the Mono Version of [Godot 3](https://godotengine.org/download/)
 
 Make sure to download the [.NET SDK](https://dotnet.microsoft.com/download) for C# support
 
