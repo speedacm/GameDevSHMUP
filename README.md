@@ -1,13 +1,14 @@
-# GameDevSpring22
-Spring 2022 Game Dev Project
+# GameDevSHMUP
+Speed ACM Game Dev SIG Project
 
 [![Export Game](https://github.com/speedacm/GameDevSpring22/actions/workflows/build.yml/badge.svg)](https://github.com/speedacm/GameDevSpring22/actions/workflows/build.yml)
 
-Top-down 2D Shoot Em' Up made in Godot
+Top-down 2D Shoot Em' Up made in Godot 3
 
-Get the Mono Version of Godot Here: https://godotengine.org/download/
-Make sure to download the .NET SDK for C# support
+Get the Mono Version of [Godot 3](https://dotnet.microsoft.com/download)
 
-Get GitHub Desktop Here: https://desktop.github.com/
+Make sure to download the [.NET SDK](https://dotnet.microsoft.com/download) for C# support
 
-Once GitHub desktop has been downloaded you can pull this repository and use the repo as the Godot Project
+Get [GitHub Desktop](https://desktop.github.com/)
+
+Once GitHub Desktop has been downloaded you can pull this repository and use the repo as the Godot Project
