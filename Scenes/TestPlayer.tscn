@@ -140,6 +140,7 @@ extents = Vector2( 5.5, 5 )
 
 [node name="TestPlayer" type="KinematicBody2D"]
 position = Vector2( 11, 10 )
+collision_layer = 5
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
