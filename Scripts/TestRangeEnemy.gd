@@ -4,6 +4,10 @@ var shootRange = [0, 400]
 var goodRange = [200, 400]
 var bullet_speed = 300
 
+## UI Variables
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = get_node(playerNodePath)
