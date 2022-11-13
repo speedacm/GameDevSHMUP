@@ -3,11 +3,11 @@ extends KinematicBody2D
 export var smokeScene : PackedScene
 export var bulletImpact : PackedScene
 
-## Bullet Variables
-var speed = 400
-var dmg = 10
-var direction = Vector2.ZERO
 
+## Bullet Variables
+var dmg = 20
+var speed = 400
+var direction = Vector2.ZERO
 
 var parent = ''
 
