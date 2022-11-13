@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Bullets/bullet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Fireball_static.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Fireball.gd" type="Script" id=3]
+
+[node name="Fireball" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2( -1, 0 )
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2( -9.53674e-07, 2 )
+scale = Vector2( 1.15625, 1.21875 )
+texture = ExtResource( 2 )
+
+[node name="Light2D" parent="." index="2"]
+visible = true
+position = Vector2( -1, -1 )
+scale = Vector2( 0.932292, 0.786458 )

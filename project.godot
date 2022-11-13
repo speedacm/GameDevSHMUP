@@ -30,8 +30,13 @@ window/size/width=256
 window/size/height=224
 window/size/test_width=1024
 window/size/test_height=896
+mouse_cursor/custom_image="res://Tempassets/Cursor.png"
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
+
+[global]
+
+cursor=false
 
 [input]
 

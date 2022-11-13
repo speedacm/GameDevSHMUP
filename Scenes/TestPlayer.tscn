@@ -140,6 +140,7 @@ extents = Vector2( 5.5, 5 )
 
 [node name="TestPlayer" type="KinematicBody2D"]
 position = Vector2( 11, 10 )
+collision_layer = 5
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -183,3 +184,5 @@ script = ExtResource( 4 )
 [node name="muzzle" type="Position2D" parent="Weapon/GunModel2"]
 position = Vector2( 15.8954, 0.954139 )
 scale = Vector2( 0.991, 1 )
+
+[connection signal="weapon_fired" from="Weapon" to="." method="_on_Weapon_weapon_fired"]
