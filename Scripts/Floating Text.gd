@@ -21,6 +21,7 @@ func set_text(newtext):
 	
 
 func _on_TextTimer_timeout():
+	# Could add a disappear effect here like smoke or otherwise
 	queue_free()
 
 func place(positionarg):
