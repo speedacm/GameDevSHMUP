@@ -40,6 +40,7 @@ func shoot():
 		bullet.rotation = bullet.direction.angle()
 		
 		timer.start(rateofburst)
+		gunmodel.visible = true
 		cooldowntimer.start(rateoffire)
 		canfire = false
 		
@@ -71,4 +72,5 @@ func _on_attackcooldown_timeout():
 
 func _on_Attack_Cooldown_timeout():
 	canfire = true
+	gunmodel.visible = false
 	
