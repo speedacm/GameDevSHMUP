@@ -16,6 +16,9 @@ var flipped = false
 onready var equippedweapon = $Weapon
 var weaponbehavior
 
+## UI Variables
+signal pickuprequest 
+
 ### Player Movement Controls
 
 func get_input():
@@ -31,6 +34,13 @@ func get_input():
 	if Input.is_action_pressed('up'):
 		velocity.y -= 1
 	velocity = velocity.normalized() * speed
+	if Input.is_action_pressed("Pickup"):
+		emit_signal("pickuprequest")
+# Added sprint so i can test level quicker
+#	if Input.is_action_pressed("sprint"):
+#		speed = 250
+#	if Input.is_action_just_released("sprint"):
+#		speed = 200
 	
 	
 ### Shooting Function

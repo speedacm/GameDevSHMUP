@@ -2,7 +2,9 @@ extends KinematicBody2D
 
 export var smokeScene : PackedScene
 export var bulletImpact : PackedScene
-
+export var dmgNumberScene : PackedScene
+## UI Variables
+var floating_text = preload("res://Scenes/UI/Floating Text.tscn")
 
 ## Bullet Variables
 var dmg = 20
@@ -39,6 +41,11 @@ func _process(delta):
 		#Get group at collision
 		if collisionResult.collider.is_in_group("mobs"):
 			collisionResult.collider.health.set_health(collisionResult.collider.health.get_health()-dmg)
+			# Displaying DMG value
+			var dmgnumbers = dmgNumberScene.instance()
+			get_parent().add_child(dmgnumbers)
+			dmgnumbers.set_text(dmg as String)
+			dmgnumbers.global_position = dmgnumbers.place(collisionResult.position)
 		
 		if collisionResult.collider.is_in_group("player"):
 			collisionResult.collider.health.set_health(collisionResult.collider.health.get_health()-dmg)

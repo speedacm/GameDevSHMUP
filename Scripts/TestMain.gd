@@ -65,7 +65,7 @@ func LoadInstance(path, roomID, newPos, newRot):
 		print (i)
 		if x != roomID:
 			i.queue_free()
-			print("Room ID ", x, "is not in")
+#			print("Room ID ", x, "is not in")
 		x =x+1
 
  # Replace with function body.
