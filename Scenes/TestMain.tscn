@@ -51,6 +51,7 @@ playerNodePath = NodePath("../../Player")
 bulletScene = ExtResource( 10 )
 
 [node name="Flamepick" parent="." instance=ExtResource( 12 )]
-position = Vector2( 40, 48 )
+position = Vector2( 30, -340 )
 
+[connection signal="pickuprequest" from="Player" to="Flamepick" method="_on_Player_pickuprequest"]
 [connection signal="new_weapon" from="Flamepick" to="Player" method="_on_Flamepick_new_weapon"]

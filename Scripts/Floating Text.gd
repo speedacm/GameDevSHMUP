@@ -22,3 +22,14 @@ func set_text(newtext):
 
 func _on_TextTimer_timeout():
 	queue_free()
+
+func place(positionarg):
+	var result = rand_range(1,1.09) * positionarg
+	return result
+
+#func random_point_inside_unit_circle():
+#	var random_vector = Vector2(rand_range(-1, 1), rand_range(-1, 1))
+#	random_vector = random_vector
+#	random_vector *= rand_range(0, 1)
+#	return random_vector
+	

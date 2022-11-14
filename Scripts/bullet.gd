@@ -48,7 +48,7 @@ func _process(delta):
 			var dmgnumbers = dmgNumberScene.instance()
 			get_parent().add_child(dmgnumbers)
 			dmgnumbers.set_text(dmg as String)
-			dmgnumbers.global_position = collisionResult.position
+			dmgnumbers.global_position = dmgnumbers.place(collisionResult.position)
 			
 		
 		if collisionResult.collider.is_in_group("player"):
