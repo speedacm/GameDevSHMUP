@@ -18,7 +18,7 @@ parent_path = NodePath(".")
 [node name="Player" parent="." groups=["player"] instance=ExtResource( 2 )]
 position = Vector2( 43.6195, 98.2741 )
 scale = Vector2( 1.00376, 1 )
-collision_layer = 4
+collision_layer = 6
 collision_mask = 3
 
 [node name="Enemies" type="Node" parent="."]
