@@ -29,17 +29,17 @@ playerNodePath = NodePath("../../Player")
 bulletScene = ExtResource( 7 )
 
 [node name="Rat" parent="Enemies" groups=["mobs"] instance=ExtResource( 4 )]
-position = Vector2( 684, 240 )
+position = Vector2( 115, -490 )
 playerNodePath = NodePath("../../Player")
 
 [node name="BigMeelee" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 460, 257 )
+position = Vector2( -109, -473 )
 collision_layer = 2
 collision_mask = 3
 playerNodePath = NodePath("../../Player")
 
 [node name="SlimeEnemy" parent="Enemies" groups=["mobs"] instance=ExtResource( 9 )]
-position = Vector2( 185.461, -50.9798 )
+position = Vector2( -7, -542 )
 playerNodePath = NodePath("../../Player")
 bulletScene = ExtResource( 10 )
 
