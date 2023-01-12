@@ -12,12 +12,12 @@ onready var health = $Health
 var flipped = false
 
 ## Weapon Variables
-
 onready var equippedweapon = $Weapon
 var weaponbehavior
 
 ## UI Variables
-signal pickuprequest 
+signal pickuprequest
+signal hphudupdate(new_health) 
 
 ### Player Movement Controls
 
@@ -77,7 +77,7 @@ func _physics_process(_delta):
 		queue_free()
 
 
-### i forgor what this is
+### 
 func _process(_delta):
 	flipped = flip()
 	pass
@@ -114,3 +114,8 @@ func _on_Flamepick_new_weapon(guntype, ammo):
 	var flamethrower = guntype.instance()
 	add_child(flamethrower)
 	equip_weapon(flamethrower)
+
+
+func _on_Health_healthchangeplayer(new_health):
+	emit_signal("hphudupdate",new_health)
+	pass # Replace with function body.
