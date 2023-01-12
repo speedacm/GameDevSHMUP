@@ -139,7 +139,7 @@ tracks/0/keys = {
 extents = Vector2( 5.5, 5 )
 
 [node name="TestPlayer" type="KinematicBody2D"]
-position = Vector2( 11, 10 )
+position = Vector2( 11, 14 )
 collision_mask = 2049
 script = ExtResource( 2 )
 __meta__ = {
@@ -167,10 +167,6 @@ frame = 6
 position = Vector2( -0.5, -3 )
 shape = SubResource( 15 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-zoom = Vector2( 2, 2 )
-
 [node name="Health" parent="." instance=ExtResource( 6 )]
 health = 1000
 
@@ -187,4 +183,5 @@ script = ExtResource( 4 )
 position = Vector2( 15.8954, 0.954139 )
 scale = Vector2( 0.991, 1 )
 
+[connection signal="healthchangeplayer" from="Health" to="." method="_on_Health_healthchangeplayer"]
 [connection signal="weapon_fired" from="Weapon" to="." method="_on_Weapon_weapon_fired"]
