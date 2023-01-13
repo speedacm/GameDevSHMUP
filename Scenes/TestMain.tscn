@@ -86,7 +86,7 @@ position = Vector2( 30, -340 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="HUD"]
+[node name="FPS Counter" type="Label" parent="HUD"]
 margin_left = 7.0
 margin_top = 10.0
 margin_right = 48.0
@@ -108,13 +108,21 @@ value = 100.0
 allow_greater = true
 script = ExtResource( 5 )
 
-[node name="Label2" type="Label" parent="HUD"]
+[node name="HP Label" type="Label" parent="HUD"]
 margin_left = 3.0
 margin_top = 208.0
 margin_right = 43.0
 margin_bottom = 223.0
 custom_fonts/font = SubResource( 4 )
 text = "HP:"
+
+[node name="Label3" type="Label" parent="HUD"]
+margin_left = 87.0
+margin_top = 88.0
+margin_right = 163.0
+margin_bottom = 119.0
+text = "Hello World
+"
 
 [connection signal="hphudupdate" from="Player" to="HUD/ProgressBar" method="_on_Player_hphudupdate"]
 [connection signal="pickuprequest" from="Player" to="Flamepick" method="_on_Player_pickuprequest"]
