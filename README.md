@@ -1,5 +1,7 @@
 [Access The Game Dev Project](https://github.com/orgs/speedacm/projects/1/views/1)
 
+## New Here? [Click Me!]()
+
 # GameDevSHMUP
 Speed ACM Game Dev SIG Project
 
