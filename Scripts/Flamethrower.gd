@@ -2,14 +2,15 @@ extends Node2D
 
 export var bulletScene : PackedScene
 
-
-
 onready var gunmodel = $GunModel
 onready var muzzle = $GunModel/muzzle
 onready var timer = $Bursttimer
 onready var cooldowntimer = $"Attack Cooldown"
+
 var weapontype = "base"
 
+func _ready():
+	 get_parent().connect("out_of_ammo",self, "on_out_of_ammo")
 
 ## Weapon Variables
 var rateofburst = 0.15
@@ -23,12 +24,13 @@ var canfire = true
 
 
 signal weapon_fired(bullet, location, direction)
+signal out_of_ammo()
 
 func set_ammo(new_ammo: int):
 	ammo = clamp(new_ammo, 0 ,100)
 
 func shoot(): 
-	if(canfire == true):
+	if(canfire == true && ammo != 0):
 		
 		## Basic Shoot Function
 		var bullet = bulletScene.instance() as Node2D
@@ -43,6 +45,11 @@ func shoot():
 		gunmodel.visible = true
 		cooldowntimer.start(rateoffire)
 		canfire = false
+		ammo -= 1
+		if(ammo == 0):
+			emit_signal("out_of_ammo")
+			
+	
 		
 		
 #func altshoot():  # Where to add different bullet behavior later  - Would be cool to have the other fireballs in the burst move different directions

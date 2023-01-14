@@ -21,10 +21,6 @@ func _on_Pickup_area_body_entered(body):
 func _on_Pickup_area_body_exited(body):
 	pickupprompt.visible = false
 	canpickup = false
-	
-
-
-
 
 func _on_Player_pickuprequest():
 	if(canpickup == true):

@@ -1,7 +1,7 @@
 extends KinematicBody2D
 class_name TestPlayer
 onready var animation_player = $AnimationPlayer
-
+onready var defaultweapon = get_node("Weapon")
 
 ## Player Variables
 export var speed = 200
@@ -114,6 +114,14 @@ func _on_Flamepick_new_weapon(guntype, ammo):
 	var flamethrower = guntype.instance()
 	add_child(flamethrower)
 	equip_weapon(flamethrower)
+	equippedweapon.ammo = ammo
+
+func _on_out_of_ammo():
+	equippedweapon.queue_free()
+	add_child(defaultweapon)
+	equip_weapon(defaultweapon)
+	
+	
 
 
 func _on_Health_healthchangeplayer(new_health):
