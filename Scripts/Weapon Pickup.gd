@@ -1,5 +1,5 @@
 extends Node2D
-
+export var player : NodePath
 onready var pickupprompt = get_node("PickupPrompt")
 ## UI Variables
 
@@ -13,14 +13,16 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_Pickup_area_body_entered(body):
-	pickupprompt.visible = true
+	if "Player" in body.name:
+		pickupprompt.visible = true
 #	var prompt = pickupprompt.instance()
 #	get_parent().add_child(prompt)
-	canpickup = true
+		canpickup = true
 
 func _on_Pickup_area_body_exited(body):
-	pickupprompt.visible = false
-	canpickup = false
+	if "Player" in body.name:
+		pickupprompt.visible = false
+		canpickup = false
 	
 
 
