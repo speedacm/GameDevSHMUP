@@ -5,12 +5,12 @@ var parent
 
 # Var to make gen easier
 var x = 0
-var R27n = "res://Scenes/Rooms/27x27R.tscn"
+var R27n = "res://Scenes/Rooms/13x13R.tscn"
 
 
 # Declare member variables here. Examples:
 # var a = 2
-var room_unit = 430
+var room_unit = 205
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if parent_path:
@@ -55,7 +55,7 @@ func LoadInstance(path, roomID, newPos, newRot):
 	if newRot == 180:
 		newPos = Vector2(newPos.x+ 16, newPos.y+16)
 	if newRot == 270:
-		newPos = Vector2(newPos.x, newPos.y+16)	
+		newPos = Vector2(newPos.x, newPos.y+16)
 	
 	
 	var scene = load(path);
