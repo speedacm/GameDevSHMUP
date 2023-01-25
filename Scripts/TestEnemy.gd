@@ -3,6 +3,7 @@ extends "res://Scripts/Enemy.gd"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	setlayers()
 	player = get_node(playerNodePath)
 	speed = 50
 	hit_timer = 90
@@ -27,3 +28,13 @@ func _physics_process(delta):
 	if health.health <= 0:
 		queue_free()
 	hit_count += 1
+	
+func setlayers():
+	# See wiki for collision layer key
+	
+	## Exists on layer
+	set_collision_layer_bit(1, true)
+	
+	## Collide with layer
+	set_collision_mask_bit(0, true)
+	set_collision_mask_bit(2, true)

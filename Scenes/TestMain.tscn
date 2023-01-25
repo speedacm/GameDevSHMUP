@@ -43,8 +43,7 @@ parent_path = NodePath(".")
 [node name="Player" parent="." groups=["player"] instance=ExtResource( 2 )]
 position = Vector2( 43.6195, 98.2741 )
 scale = Vector2( 1.00376, 1 )
-collision_layer = 6
-collision_mask = 3
+collision_mask = 0
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 current = true
@@ -56,6 +55,8 @@ smoothing_speed = 3.0
 
 [node name="SimpleRanged" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( -3, -306 )
+collision_layer = 0
+collision_mask = 0
 playerNodePath = NodePath("../../Player")
 bulletScene = ExtResource( 7 )
 

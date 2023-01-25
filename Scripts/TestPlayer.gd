@@ -8,6 +8,7 @@ export var speed = 200
 var velocity = Vector2.ZERO
 var direction
 
+
 onready var health = $Health
 var flipped = false
 
@@ -19,7 +20,10 @@ var weaponbehavior
 signal pickuprequest
 signal hphudupdate(new_health) 
 
-### Player Movement Controls
+func _ready():
+	#Sets Collision Layers
+	setlayers()
+
 
 func get_input():
 	velocity = Vector2.ZERO
@@ -119,3 +123,15 @@ func _on_Flamepick_new_weapon(guntype, ammo):
 func _on_Health_healthchangeplayer(new_health):
 	emit_signal("hphudupdate",new_health)
 	pass # Replace with function body.
+	
+#Sets Collision Layers
+func setlayers():
+	# See wiki for collision layer key
+	
+	## Exists on layer
+	set_collision_layer_bit(2, true)
+	
+	## Collide with layer
+	set_collision_mask_bit(0, true)
+	set_collision_mask_bit(1, true)
+	
