@@ -35,14 +35,13 @@ func shoot():
 
 
 func setlayers():
-	# See wiki for collision layer key
 	
 	## Exists on layer
-	set_collision_layer_bit(1, true)
+	set_collision_layer_bit(layer.ENEMY, true)
 	
 	## Collide with layer
-	set_collision_mask_bit(0, true)
-	set_collision_mask_bit(2, true)
+	set_collision_mask_bit(layer.WALLS, true)
+	set_collision_mask_bit(layer.PLAYER, true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:

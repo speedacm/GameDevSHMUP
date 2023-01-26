@@ -126,12 +126,11 @@ func _on_Health_healthchangeplayer(new_health):
 	
 #Sets Collision Layers
 func setlayers():
-	# See wiki for collision layer key
 	
 	## Exists on layer
-	set_collision_layer_bit(2, true)
+	set_collision_layer_bit(layer.PLAYER, true)
 	
 	## Collide with layer
-	set_collision_mask_bit(0, true)
-	set_collision_mask_bit(1, true)
+	set_collision_mask_bit(layer.WALLS, true)
+	set_collision_mask_bit(layer.ENEMY, true)
 	
