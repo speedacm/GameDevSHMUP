@@ -18,6 +18,9 @@
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 13 )
 
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 14 )
+
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.552941, 0.133333, 0.133333, 0.94902 )
 border_width_left = 1
@@ -30,9 +33,6 @@ anti_aliasing = false
 bg_color = Color( 0.129412, 0.129412, 0.129412, 0.607843 )
 anti_aliasing = false
 
-[sub_resource type="DynamicFont" id=4]
-font_data = ExtResource( 14 )
-
 [sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 13 )
 
@@ -40,9 +40,7 @@ font_data = ExtResource( 13 )
 script = ExtResource( 8 )
 parent_path = NodePath(".")
 
-[node name="Player" parent="." groups=[
-"player",
-] instance=ExtResource( 2 )]
+[node name="Player" parent="." groups=["player"] instance=ExtResource( 2 )]
 position = Vector2( 43.6195, 98.2741 )
 scale = Vector2( 1.00376, 1 )
 collision_layer = 6
@@ -55,9 +53,7 @@ position = Vector2( -3, -306 )
 playerNodePath = NodePath("../../Player")
 bulletScene = ExtResource( 7 )
 
-[node name="Rat" parent="Enemies" groups=[
-"mobs",
-] instance=ExtResource( 4 )]
+[node name="Rat" parent="Enemies" groups=["mobs"] instance=ExtResource( 4 )]
 position = Vector2( 115, -490 )
 playerNodePath = NodePath("../../Player")
 
@@ -67,16 +63,12 @@ collision_layer = 2
 collision_mask = 3
 playerNodePath = NodePath("../../Player")
 
-[node name="SlimeEnemy" parent="Enemies" groups=[
-"mobs",
-] instance=ExtResource( 9 )]
+[node name="SlimeEnemy" parent="Enemies" groups=["mobs"] instance=ExtResource( 9 )]
 position = Vector2( -7, -542 )
 playerNodePath = NodePath("../../Player")
 bulletScene = ExtResource( 10 )
 
-[node name="RepeatShotEnemy" parent="Enemies" groups=[
-"mobs",
-] instance=ExtResource( 11 )]
+[node name="RepeatShotEnemy" parent="Enemies" groups=["mobs"] instance=ExtResource( 11 )]
 position = Vector2( -505, 88 )
 collision_layer = 2
 collision_mask = 3
@@ -102,9 +94,9 @@ margin_top = 209.0
 margin_right = 129.0
 margin_bottom = 223.0
 rect_scale = Vector2( 0.747966, 0.848867 )
+custom_fonts/font = SubResource( 4 )
 custom_styles/fg = SubResource( 2 )
 custom_styles/bg = SubResource( 3 )
-custom_fonts/font = SubResource( 4 )
 max_value = 1000.0
 value = 100.0
 allow_greater = true
