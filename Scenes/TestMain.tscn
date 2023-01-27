@@ -15,13 +15,13 @@
 [ext_resource path="res://assets/fonts/alagard.ttf" type="DynamicFontData" id=13]
 [ext_resource path="res://assets/fonts/m5x7.ttf" type="DynamicFontData" id=14]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 13 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 14 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.552941, 0.133333, 0.133333, 0.94902 )
 border_width_left = 1
 border_width_top = 1
@@ -29,11 +29,11 @@ border_width_right = 1
 border_width_bottom = 1
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.129412, 0.129412, 0.129412, 0.607843 )
 anti_aliasing = false
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 13 )
 
 [node name="TestMain" type="Node"]
@@ -45,12 +45,6 @@ position = Vector2( 43.6195, 98.2741 )
 scale = Vector2( 1.00376, 1 )
 collision_layer = 6
 collision_mask = 3
-
-[node name="Camera2D2" type="Camera2D" parent="Player"]
-current = true
-zoom = Vector2( 2, 2 )
-smoothing_enabled = true
-smoothing_speed = 3.0
 
 [node name="Enemies" type="Node" parent="."]
 
@@ -91,7 +85,7 @@ margin_left = 7.0
 margin_top = 10.0
 margin_right = 48.0
 margin_bottom = 23.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 script = ExtResource( 6 )
 
 [node name="ProgressBar" type="ProgressBar" parent="HUD"]
@@ -100,9 +94,9 @@ margin_top = 209.0
 margin_right = 129.0
 margin_bottom = 223.0
 rect_scale = Vector2( 0.747966, 0.848867 )
-custom_fonts/font = SubResource( 6 )
-custom_styles/fg = SubResource( 3 )
-custom_styles/bg = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
 max_value = 1000.0
 value = 100.0
 allow_greater = true
@@ -113,7 +107,7 @@ margin_left = 3.0
 margin_top = 208.0
 margin_right = 43.0
 margin_bottom = 223.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "HP:"
 
 [connection signal="hphudupdate" from="Player" to="HUD/ProgressBar" method="_on_Player_hphudupdate"]

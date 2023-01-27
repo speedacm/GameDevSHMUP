@@ -119,3 +119,20 @@ func _on_Flamepick_new_weapon(guntype, ammo):
 func _on_Health_healthchangeplayer(new_health):
 	emit_signal("hphudupdate",new_health)
 	pass # Replace with function body.
+
+
+func _on_RoomDetector_area_entered(area: Area2D) -> void:
+	
+	print("Enter Room")
+	
+	var collision_shape = area.get_node("CollisionShape2D")
+	var size = collision_shape.shape.extents * 2 * 2
+	var x_offset = 430 
+	var y_offset = 215
+	
+	var cam = $Camera2D
+	cam.limit_top = collision_shape.global_position.y - y_offset - size.y/2
+	cam.limit_left = collision_shape.global_position.x + x_offset - size.x/2
+	
+	cam.limit_bottom = cam.limit_top + size.y
+	cam.limit_right = cam.limit_left + size.x
