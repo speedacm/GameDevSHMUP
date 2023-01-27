@@ -79,6 +79,7 @@ position = Vector2( -1, 0 )
 [node name="S" type="Node" parent="."]
 
 [node name="TileMap2" type="TileMap" parent="S"]
+scale = Vector2( 2, 2 )
 z_index = -1
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
@@ -93,6 +94,7 @@ parent_node = NodePath("../..")
 [node name="1" type="Node" parent="."]
 
 [node name="TileMap2" type="TileMap" parent="1"]
+scale = Vector2( 2, 2 )
 z_index = -1
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
@@ -107,6 +109,7 @@ parent_node = NodePath("../..")
 [node name="2" type="Node" parent="."]
 
 [node name="TileMap2" type="TileMap" parent="2"]
+scale = Vector2( 2, 2 )
 z_index = -1
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
@@ -121,6 +124,7 @@ parent_node = NodePath("../..")
 [node name="3" type="Node" parent="."]
 
 [node name="TileMap2" type="TileMap" parent="3"]
+scale = Vector2( 2, 2 )
 z_index = -1
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
@@ -135,6 +139,7 @@ parent_node = NodePath("../..")
 [node name="4" type="Node" parent="."]
 
 [node name="TileMap2" type="TileMap" parent="4"]
+scale = Vector2( 2, 2 )
 z_index = -1
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
@@ -149,6 +154,7 @@ parent_node = NodePath("../..")
 [node name="C" type="Node" parent="."]
 
 [node name="TileMap2" type="TileMap" parent="C"]
+scale = Vector2( 2, 2 )
 z_index = -1
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
