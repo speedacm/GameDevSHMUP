@@ -74,7 +74,8 @@ func LoadInstance(path, roomID, newPos, newRot):
 	for i in instance.get_children():
 		#print (i)
 		if x != roomID:
-			i.queue_free()
+			if x != 6:
+				i.queue_free()
 #			print("Room ID ", x, "is not in")
 		x =x+1
 
