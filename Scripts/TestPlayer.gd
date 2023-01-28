@@ -40,17 +40,12 @@ func get_input():
 	velocity = velocity.normalized() * speed
 	if Input.is_action_pressed("Pickup"):
 		emit_signal("pickuprequest")
-# Added sprint so i can test level quicker
-#	if Input.is_action_pressed("sprint"):
-#		speed = 250
-#	if Input.is_action_just_released("sprint"):
-#		speed = 200
 	
 	
 ### Shooting Function
 
-func shoot(bullet, location: Vector2, direction: Vector2):
-	emit_signal("player_fired_bullet", bullet,location,direction)
+#func shoot(bullet, location: Vector2, direction: Vector2):
+#	emit_signal("player_fired_bullet", bullet,location,direction)
 
 func _unhandled_input(event):
 	if (event.is_action_pressed("shoot")):
@@ -111,18 +106,28 @@ func flip():
 
 func equip_weapon(weapon):
 	equippedweapon = weapon
-
+	equippedweapon.visible = true
+	add_child(equippedweapon)
+	
+func unequip_weapon(weapon):
+	## If this is the deafult weapon, disable it
+	if weapon == defaultweapon:
+		weapon.visible = false
+		remove_child(weapon)
+	else:
+		weapon.queue_free()
 
 func _on_Flamepick_new_weapon(guntype, ammo):
-	equippedweapon.queue_free()
+	
+	unequip_weapon(equippedweapon)
 	var flamethrower = guntype.instance()
-	add_child(flamethrower)
+#	add_child(flamethrower)
 	equip_weapon(flamethrower)
 	equippedweapon.ammo = ammo
 
 func _on_out_of_ammo():
-	equippedweapon.queue_free()
-	add_child(defaultweapon)
+	print("just got told i was out of ammo - player script")
+	unequip_weapon(equippedweapon)
 	equip_weapon(defaultweapon)
 	
 	

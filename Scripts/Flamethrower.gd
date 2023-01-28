@@ -47,6 +47,8 @@ func shoot():
 		canfire = false
 		ammo -= 1
 		if(ammo == 0):
+			print("Im out of ammo!!!!")
+			self.connect("out_of_ammo", self.get_parent(),"_on_out_of_ammo")
 			emit_signal("out_of_ammo")
 			
 	

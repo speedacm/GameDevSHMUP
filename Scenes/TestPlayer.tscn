@@ -175,7 +175,6 @@ shape = SubResource( 9 )
 health = 1000
 
 [node name="Weapon" parent="." instance=ExtResource( 3 )]
-visible = false
 
 [node name="GunModel2" type="Sprite" parent="Weapon"]
 position = Vector2( 2, -3 )
