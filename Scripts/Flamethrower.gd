@@ -13,13 +13,13 @@ func _ready():
 	 get_parent().connect("out_of_ammo",self, "_on_out_of_ammo")
 
 ## Weapon Variables
-var rateofburst = 0.15
-var burstamount = 2 # burst amount is n-1 what burst it is 3 round burst is 2
+var rateofburst = 0.15 # time between bullets in burst
+var burstamount = 2 # burst amount is n-1 what burst it is (3 round burst is 2)
 var shotsfired = 0
 var ammo = 0
 
 ## Attack Cool down
-var rateoffire = 1
+var rateoffire = 0.5
 var canfire = true
 
 
@@ -46,25 +46,7 @@ func shoot():
 		cooldowntimer.start(rateoffire)
 		canfire = false
 
-		
-	elif(ammo == 0):
-			print("Im out of ammo!!!!")
-			self.connect("out_of_ammo", self.get_parent(),"_on_out_of_ammo")
-			emit_signal("out_of_ammo")
-			
-	
-		
-		
-#func altshoot():  # Where to add different bullet behavior later  - Would be cool to have the other fireballs in the burst move different directions
-#	var bullet = bulletScene.instance() as Node2D
-#	bullet.set('parent', 'player')
-#	get_parent().get_parent().add_child(bullet)
-#	bullet.global_position = $GunModel/muzzle.global_position
-#	bullet.direction = (get_global_mouse_position() - global_position).normalized()
-#	bullet.rotation = bullet.direction.angle()
-
-
-
+## basically part of shooting function
 func _on_attackcooldown_timeout():
 	canfire = true
 	shoot()
@@ -75,6 +57,10 @@ func _on_attackcooldown_timeout():
 		
 	else:
 		ammo -= shotsfired + 1
+		if(ammo == 0):
+			print("Im out of ammo!!!!")
+			self.connect("out_of_ammo", self.get_parent(),"_on_out_of_ammo")
+			emit_signal("out_of_ammo")
 		shotsfired = 0
 		canfire = false
 		return
