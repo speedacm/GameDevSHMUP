@@ -196,6 +196,8 @@ shape = SubResource( 10 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 2, 2 )
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [connection signal="healthchangeplayer" from="Health" to="." method="_on_Health_healthchangeplayer"]
 [connection signal="weapon_fired" from="Weapon" to="." method="_on_Weapon_weapon_fired"]

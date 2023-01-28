@@ -6,7 +6,7 @@ onready var pickupprompt = get_node("PickupPrompt")
 
 var canpickup = false
 signal new_weapon(guntype, ammo)
-var ammo = 5
+var ammo = 12
 
 func _ready():
 	

@@ -7,10 +7,10 @@ onready var muzzle = $GunModel/muzzle
 onready var timer = $Bursttimer
 onready var cooldowntimer = $"Attack Cooldown"
 
-var weapontype = "base"
+var type = "Flamethrower"
 
 func _ready():
-	 get_parent().connect("out_of_ammo",self, "on_out_of_ammo")
+	 get_parent().connect("out_of_ammo",self, "_on_out_of_ammo")
 
 ## Weapon Variables
 var rateofburst = 0.15
@@ -45,8 +45,9 @@ func shoot():
 		gunmodel.visible = true
 		cooldowntimer.start(rateoffire)
 		canfire = false
-		ammo -= 1
-		if(ammo == 0):
+
+		
+	elif(ammo == 0):
 			print("Im out of ammo!!!!")
 			self.connect("out_of_ammo", self.get_parent(),"_on_out_of_ammo")
 			emit_signal("out_of_ammo")
@@ -73,6 +74,7 @@ func _on_attackcooldown_timeout():
 		timer.start()
 		
 	else:
+		ammo -= shotsfired + 1
 		shotsfired = 0
 		canfire = false
 		return

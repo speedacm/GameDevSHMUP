@@ -19,10 +19,12 @@ var weaponbehavior
 ## UI Variables
 signal pickuprequest
 signal hphudupdate(new_health) 
+signal ammohudupdate(ammo, equippedweapon)
 
 func _ready():
 	#Sets Collision Layers
 	setlayers()
+	
 
 
 func get_input():
@@ -44,13 +46,9 @@ func get_input():
 	
 ### Shooting Function
 
-#func shoot(bullet, location: Vector2, direction: Vector2):
-#	emit_signal("player_fired_bullet", bullet,location,direction)
-
 func _unhandled_input(event):
 	if (event.is_action_pressed("shoot")):
 		equippedweapon.shoot()
-
 
 ### Check if Dead
 func _physics_process(_delta):
@@ -78,6 +76,9 @@ func _physics_process(_delta):
 
 ### 
 func _process(_delta):
+	## ammo hud update every frame
+	emit_signal("ammohudupdate",equippedweapon.ammo, equippedweapon)
+	
 	flipped = flip()
 	pass
 	
@@ -121,14 +122,15 @@ func _on_Flamepick_new_weapon(guntype, ammo):
 	
 	unequip_weapon(equippedweapon)
 	var flamethrower = guntype.instance()
-#	add_child(flamethrower)
 	equip_weapon(flamethrower)
 	equippedweapon.ammo = ammo
+	emit_signal("ammohudupdate",equippedweapon.ammo, equippedweapon)
 
 func _on_out_of_ammo():
 	print("just got told i was out of ammo - player script")
 	unequip_weapon(equippedweapon)
 	equip_weapon(defaultweapon)
+	emit_signal("ammohudupdate",equippedweapon.ammo, equippedweapon)
 	
 	
 
