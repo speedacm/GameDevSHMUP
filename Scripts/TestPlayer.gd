@@ -8,6 +8,7 @@ export var speed = 200
 var velocity = Vector2.ZERO
 var direction
 
+
 onready var health = $Health
 var flipped = false
 
@@ -19,7 +20,10 @@ var weaponbehavior
 signal pickuprequest
 signal hphudupdate(new_health) 
 
-### Player Movement Controls
+func _ready():
+	#Sets Collision Layers
+	setlayers()
+
 
 func get_input():
 	velocity = Vector2.ZERO
@@ -127,3 +131,32 @@ func _on_out_of_ammo():
 func _on_Health_healthchangeplayer(new_health):
 	emit_signal("hphudupdate",new_health)
 	pass # Replace with function body.
+	
+#Sets Collision Layers
+func setlayers():
+	
+	## Exists on layer
+	set_collision_layer_bit(layer.PLAYER, true)
+	
+	## Collide with layer
+	set_collision_mask_bit(layer.WALLS, true)
+	set_collision_mask_bit(layer.ENEMY, true)
+	
+
+
+func _on_RoomDetector_area_entered(area: Area2D) -> void:
+	
+	print("Enter Room")
+	
+	var collision_shape = area.get_node("CollisionShape2D")
+	var size = collision_shape.shape.extents * 2 * 2
+	var x_offset = 430 
+	var y_offset = 215
+	
+	var cam = $Camera2D
+	cam.limit_top = collision_shape.global_position.y - y_offset - size.y/2
+	cam.limit_left = collision_shape.global_position.x + x_offset - size.x/2
+	
+	cam.limit_bottom = cam.limit_top + size.y
+	cam.limit_right = cam.limit_left + size.x
+

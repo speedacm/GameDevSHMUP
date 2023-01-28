@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "TestPlayer",
 "language": "GDScript",
 "path": "res://Scripts/TestPlayer.gd"
+}, {
+"base": "Node",
+"class": "layer",
+"language": "GDScript",
+"path": "res://Scenes/Global.gd"
 } ]
 _global_script_class_icons={
-"TestPlayer": ""
+"TestPlayer": "",
+"layer": ""
 }
 
 [application]
@@ -23,6 +29,10 @@ _global_script_class_icons={
 config/name="GameDevSpring22"
 run/main_scene="res://Scenes/TestMain.tscn"
 config/icon="res://assets/icon.png"
+
+[autoload]
+
+GlobalVariables="*res://Scenes/Global Variables.tscn"
 
 [display]
 

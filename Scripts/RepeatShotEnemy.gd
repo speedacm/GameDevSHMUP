@@ -5,6 +5,7 @@ var shot = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	setlayers()
 	pass # Replace with function body.
 
 
@@ -31,3 +32,13 @@ func _physics_process(delta):
 		hit_count = 0
 		shot_count += 1
 	hit_count += 1
+
+
+func setlayers():
+	
+	## Exists on layer
+	set_collision_layer_bit(layer.ENEMY, true)
+	
+	## Collide with layer
+	set_collision_mask_bit(layer.WALLS, true)
+	set_collision_mask_bit(layer.PLAYER, true)
