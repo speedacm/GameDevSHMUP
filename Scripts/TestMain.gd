@@ -11,8 +11,12 @@ var R27n = "res://Scenes/Rooms/27x27R.tscn"
 # Declare member variables here. Examples:
 # var a = 2
 var room_unit = 430
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	## Loads in Rooms
 	if parent_path:
 		parent = get_node(parent_path)
 		LoadInstance(R27n, 0, Vector2(0,0), 0)

@@ -10,6 +10,8 @@ var bullet_speed = 300
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	setlayers() # Sets Collision Layers
+	## Enemy Variables
 	player = get_node(playerNodePath)
 	speed = 150
 	hit_timer = 60
@@ -30,7 +32,7 @@ func shoot():
 func _physics_process(delta):
 	move_to_player(goodRange[1], goodRange[0], get_player_pos())
 	move_and_slide(velocity)
-	if health.health <= 0:
+	if health.health <= 0: # if killed, die
 		queue_free()
 	var dist = distance(get_player_pos())
 	if dist > shootRange[0] and dist < shootRange[1]:
@@ -39,3 +41,14 @@ func _physics_process(delta):
 			hit_count = 0
 
 	hit_count += 1
+	
+	#Sets Collision Layers
+func setlayers():
+	
+	## Exists on layer
+	set_collision_layer_bit(layer.ENEMY, true)
+	
+	## Collide with layer
+	set_collision_mask_bit(layer.WALLS, true)
+	set_collision_mask_bit(layer.PLAYER, true)
+

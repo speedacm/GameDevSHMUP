@@ -3,6 +3,7 @@ extends "res://Scripts/TestRangeEnemy.gd"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	setlayers()
 	speed = 50
 	goodRange = [100, 200]
 
@@ -32,6 +33,15 @@ func shoot():
 	bullet_right.direction.y = sin(bullet_mid.rotation-0.2)
 	bullet_right.rotation = bullet_left.direction.angle()
 
+
+func setlayers():
+	
+	## Exists on layer
+	set_collision_layer_bit(layer.ENEMY, true)
+	
+	## Collide with layer
+	set_collision_mask_bit(layer.WALLS, true)
+	set_collision_mask_bit(layer.PLAYER, true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:

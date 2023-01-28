@@ -22,7 +22,7 @@ func _ready():
 		set_collision_mask_bit(0, true)
 		set_collision_mask_bit(1, false)
 		set_collision_mask_bit(2, true)
-	else:
+	elif parent == "player":
 		set_collision_layer_bit(31, true)
 		set_collision_mask_bit(0, true)
 		set_collision_mask_bit(1, true)

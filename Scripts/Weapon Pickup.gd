@@ -15,8 +15,6 @@ func _ready():
 func _on_Pickup_area_body_entered(body):
 	if "Player" in body.name:
 		pickupprompt.visible = true
-#	var prompt = pickupprompt.instance()
-#	get_parent().add_child(prompt)
 		canpickup = true
 
 func _on_Pickup_area_body_exited(body):
