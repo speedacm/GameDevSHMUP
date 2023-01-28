@@ -62,9 +62,17 @@ func LoadInstance(path, roomID, newPos, newRot):
 	var instance = scene.instance();
 	instance.set_position(newPos)
 	instance.set_rotation_degrees(newRot)
+	"""
+	var collider = Area2D.new()
+	var colliderShape = RectangleShape2D.new()
+	colliderShape.extents = Vector2(215, 215)
+	collider.add_child(colliderShape)
+	collider.set_collision_layer_bit(11, true)
+	instance.add_child(collider)
+	"""
 	parent.add_child(instance);
 	for i in instance.get_children():
-		print (i)
+		#print (i)
 		if x != roomID:
 			i.queue_free()
 #			print("Room ID ", x, "is not in")
