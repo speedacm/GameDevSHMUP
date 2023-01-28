@@ -13,6 +13,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_Pickup_area_body_entered(body):
+	print("Player entered pickup range")
 	if "Player" in body.name:
 		pickupprompt.visible = true
 		canpickup = true
