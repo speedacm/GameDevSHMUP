@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Wizard Right Walking Animation.png-598039f397821b6ea7bc19c60e3b6c1e.stex"
+path="res://.import/Wall Tile Bottom Left Outside Corner.png-9f3d7b01b22e989cb8eb30e4551b6827.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Wizard Right Walking Animation.png"
-dest_files=[ "res://.import/Wizard Right Walking Animation.png-598039f397821b6ea7bc19c60e3b6c1e.stex" ]
+source_file="res://Wall Tile Bottom Left Outside Corner.png"
+dest_files=[ "res://.import/Wall Tile Bottom Left Outside Corner.png-9f3d7b01b22e989cb8eb30e4551b6827.stex" ]
 
 [params]
 
