@@ -43,6 +43,3 @@ func setlayers():
 	set_collision_mask_bit(layer.WALLS, true)
 	set_collision_mask_bit(layer.PLAYER, true)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-#	pass

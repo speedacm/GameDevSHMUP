@@ -3,4 +3,6 @@
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource( 1 )

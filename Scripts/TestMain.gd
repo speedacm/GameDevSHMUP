@@ -64,16 +64,16 @@ func LoadInstance(path, roomID, newPos, newRot):
 	
 	var scene = load(path);
 	var instance = scene.instance();
+	var rangeEnemy = load("res://Scenes/TestRangeEnemy.tscn")
+	var rangeEnemyInstance = rangeEnemy.instance()
+	var enemy = load("res://Scenes/SlimeEnemy.tscn")
+	var enemyInstance = enemy.instance()
+	enemyInstance.set_position(newPos)
+	rangeEnemyInstance.set_position(newPos)
 	instance.set_position(newPos)
 	instance.set_rotation_degrees(newRot)
-	"""
-	var collider = Area2D.new()
-	var colliderShape = RectangleShape2D.new()
-	colliderShape.extents = Vector2(215, 215)
-	collider.add_child(colliderShape)
-	collider.set_collision_layer_bit(11, true)
-	instance.add_child(collider)
-	"""
+	parent.add_child(enemyInstance)
+	parent.add_child(rangeEnemyInstance)
 	parent.add_child(instance);
 	for i in instance.get_children():
 		#print (i)
@@ -82,7 +82,6 @@ func LoadInstance(path, roomID, newPos, newRot):
 				i.queue_free()
 #			print("Room ID ", x, "is not in")
 		x =x+1
-
  # Replace with function body.
 
 

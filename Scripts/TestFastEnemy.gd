@@ -1,9 +1,10 @@
 extends "res://Scripts/Enemy.gd"
 
+var detectorID: Node
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	setlayers()
-	player = get_node(playerNodePath)
 	speed = 150
 	hit_timer = 30
 	hit_count = 0
@@ -12,7 +13,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	move_to_player(400, 0, get_player_pos())
+	move_to_player(400, 0, get_player_pos(detectorID))
 	if hit_count < hit_timer:
 		move_and_slide(-1*velocity)
 	else:
@@ -34,3 +35,7 @@ func setlayers():
 	## Collide with layer
 	set_collision_mask_bit(layer.WALLS, true)
 	set_collision_mask_bit(layer.PLAYER, true)
+
+
+func _on_RoomDetector_area_entered(area):
+	detectorID = area
