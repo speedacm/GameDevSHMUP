@@ -6,13 +6,14 @@ onready var pickupprompt = get_node("PickupPrompt")
 
 var canpickup = false
 signal new_weapon(guntype, ammo)
-var ammo = 5
+var ammo = 12
 
 func _ready():
 	
 	pass # Replace with function body.
 
 func _on_Pickup_area_body_entered(body):
+	print("Player entered pickup range")
 	if "Player" in body.name:
 		pickupprompt.visible = true
 		canpickup = true
