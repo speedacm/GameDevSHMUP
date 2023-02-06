@@ -40,17 +40,6 @@ func _physics_process(delta):
 			hit_count = 0
 
 	hit_count += 1
-	
-	#Sets Collision Layers
-func setlayers():
-	
-	## Exists on layer
-	set_collision_layer_bit(layer.ENEMY, true)
-	
-	## Collide with layer
-	set_collision_mask_bit(layer.WALLS, true)
-	set_collision_mask_bit(layer.PLAYER, true)
-
 
 
 func _on_RoomDetector_area_entered(area):

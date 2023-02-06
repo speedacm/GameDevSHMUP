@@ -57,11 +57,12 @@ func hit_player(hits) -> void:
 
 
 func setlayers():
-	# See wiki for collision layer key
 	
 	## Exists on layer
-	set_collision_layer_bit(1, true)
+	set_collision_layer_bit(layer.ENEMY, true)
+	set_collision_layer_bit(layer.WALLS, false)
+	set_collision_layer_bit(layer.PLAYER, false)
 	
 	## Collide with layer
-	set_collision_mask_bit(0, true)
-	set_collision_mask_bit(2, true)
+	set_collision_mask_bit(layer.WALLS, true)
+	set_collision_mask_bit(layer.PLAYER, true)

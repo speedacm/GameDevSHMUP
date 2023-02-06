@@ -23,7 +23,7 @@ bg_color = Color( 0.6, 0.6, 0.6, 0 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 13.7905, 16.2088 )
 
-[node name="RepeatShotEnemy" type="KinematicBody2D"]
+[node name="RepeatShotEnemy" type="KinematicBody2D" groups=["mobs"]]
 script = ExtResource( 3 )
 bulletScene = ExtResource( 5 )
 

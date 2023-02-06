@@ -26,6 +26,7 @@ func _ready():
 		set_collision_layer_bit(31, true)
 		set_collision_mask_bit(0, true)
 		set_collision_mask_bit(1, true)
+		set_collision_mask_bit(2, false)
 
 
 func set_speed(s):

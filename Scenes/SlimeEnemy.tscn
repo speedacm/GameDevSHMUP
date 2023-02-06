@@ -23,7 +23,7 @@ bg_color = Color( 0.6, 0.6, 0.6, 0 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 13.3953, 12.6044 )
 
-[node name="SlimeEnemy" type="KinematicBody2D"]
+[node name="SlimeEnemy" type="KinematicBody2D" groups=["mobs"]]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource( 3 )
