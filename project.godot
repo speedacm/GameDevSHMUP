@@ -12,12 +12,12 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "TestPlayer",
 "language": "GDScript",
-"path": "res://Scripts/TestPlayer.gd"
+"path": "res://Scripts/player.gd"
 }, {
 "base": "Node",
 "class": "layer",
 "language": "GDScript",
-"path": "res://Scenes/Global.gd"
+"path": "res://Scripts/global.gd"
 } ]
 _global_script_class_icons={
 "TestPlayer": "",
@@ -27,12 +27,12 @@ _global_script_class_icons={
 [application]
 
 config/name="GameDevSpring22"
-run/main_scene="res://Scenes/TestMain.tscn"
+run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://assets/icon.png"
 
 [autoload]
 
-GlobalVariables="*res://Scenes/Global Variables.tscn"
+GlobalVariables="*res://Scenes/Global_Variables.tscn"
 
 [display]
 

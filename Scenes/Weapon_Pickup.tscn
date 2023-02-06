@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Tempassets/shotgun.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/Weapon Pickup.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/UI/PickupPrompt.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/weaponPickup.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/UI/Pickup_Prompt.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 28.0179

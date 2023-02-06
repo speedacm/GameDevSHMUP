@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scripts/GunModel.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/Weapon.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/gunModel.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/weapon.gd" type="Script" id=2]
 [ext_resource path="res://Tempassets/littleflame.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/Bullets/bullet.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Bullets/Bullet.tscn" type="PackedScene" id=4]
 
 [node name="Weapon" type="Node2D"]
 script = ExtResource( 2 )

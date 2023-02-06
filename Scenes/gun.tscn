@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/gun.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Bullets/bullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Bullets/Bullet.tscn" type="PackedScene" id=2]
 
 [node name="gun" type="Node2D"]
 position = Vector2( 128, 108 )
