@@ -17,7 +17,9 @@ func _ready() -> void:
 
 
 func get_player_pos():
-	return player.position
+
+		return player.position
+
 
 
 func distance(player_pos: Vector2) -> float:
