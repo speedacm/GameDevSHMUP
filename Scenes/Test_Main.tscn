@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scenes/Test_Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Test_Player.tscn" type="PackedScene" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://Assets/Fonts/M5x7.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://Scripts/Ammo_Counter.gd" type="Script" id=15]
 [ext_resource path="res://Scenes/Weapon_Label.gd" type="Script" id=16]
+[ext_resource path="res://Scenes/UI/Death_Screen.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scripts/Death_Screen.gd" type="Script" id=18]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 13 )
@@ -103,7 +105,6 @@ rect_scale = Vector2( 0.747966, 0.848867 )
 custom_fonts/font = SubResource( 4 )
 custom_styles/fg = SubResource( 2 )
 custom_styles/bg = SubResource( 3 )
-max_value = 1000.0
 value = 100.0
 allow_greater = true
 script = ExtResource( 5 )
@@ -134,6 +135,12 @@ custom_fonts/font = SubResource( 7 )
 text = "0"
 script = ExtResource( 15 )
 
+[node name="Death Screen" parent="HUD" instance=ExtResource( 17 )]
+visible = false
+margin_top = 1.0
+margin_bottom = 1.0
+script = ExtResource( 18 )
+
 [node name="Pickups" type="Node" parent="."]
 
 [node name="Flamepick" parent="Pickups" instance=ExtResource( 12 )]
@@ -147,5 +154,6 @@ position = Vector2( -4, -1315 )
 [connection signal="hphudupdate" from="Player" to="HUD/healthBar" method="_on_Player_hphudupdate"]
 [connection signal="pickuprequest" from="Player" to="Pickups/Flamepick" method="_on_Player_pickuprequest"]
 [connection signal="pickuprequest" from="Player" to="Pickups/Flamepick2" method="_on_Player_pickuprequest"]
+[connection signal="playerDied" from="Player" to="HUD/Death Screen" method="_on_Player_playerDied"]
 [connection signal="new_weapon" from="Pickups/Flamepick" to="Player" method="_on_Flamepick_new_weapon"]
 [connection signal="new_weapon" from="Pickups/Flamepick2" to="Player" method="_on_Flamepick_new_weapon"]
