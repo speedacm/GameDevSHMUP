@@ -7,9 +7,10 @@ export var dmgNumberScene : PackedScene
 var floating_text = preload("res://Scenes/UI/Floating_Text.tscn")
 
 ## Bullet Variables
-var dmg = 20
 var speed = 400
+var dmg = 10
 var direction = Vector2.ZERO
+
 
 var parent = ''
 
@@ -21,7 +22,7 @@ func _ready():
 		set_collision_mask_bit(0, true)
 		set_collision_mask_bit(1, false)
 		set_collision_mask_bit(2, true)
-	else:
+	elif parent == "player":
 		set_collision_layer_bit(31, true)
 		set_collision_mask_bit(0, true)
 		set_collision_mask_bit(1, true)
@@ -40,15 +41,20 @@ func _process(delta):
 		
 		#Get group at collision
 		if collisionResult.collider.is_in_group("mobs"):
+			
+			# Doing Damage
 			collisionResult.collider.health.set_health(collisionResult.collider.health.get_health()-dmg)
-			# Displaying DMG value
+			# Display dmg value as text
 			var dmgnumbers = dmgNumberScene.instance()
 			get_parent().add_child(dmgnumbers)
 			dmgnumbers.set_text(dmg as String)
 			dmgnumbers.global_position = dmgnumbers.place(collisionResult.position)
+			
 		
 		if collisionResult.collider.is_in_group("player"):
+			# Taking Damage
 			collisionResult.collider.health.set_health(collisionResult.collider.health.get_health()-dmg)
+			# Displaying DMG taken
 		
 		
 ### Bullet Effects (Smoke and Impact)
