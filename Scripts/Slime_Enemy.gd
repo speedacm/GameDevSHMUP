@@ -1,4 +1,4 @@
-extends "res://Scripts/TestRangeEnemy.gd"
+extends "res://Scripts/Test_Range_Enemy.gd"
 
 
 # Called when the node enters the scene tree for the first time.

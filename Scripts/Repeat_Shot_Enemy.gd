@@ -1,4 +1,4 @@
-extends "res://Scripts/TestRangeEnemy.gd"
+extends "res://Scripts/Test_Range_Enemy.gd"
 
 var shot_count = 0
 var shot = false
