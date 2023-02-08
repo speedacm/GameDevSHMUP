@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Wizard_Right_Walking_Animation.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/TestPlayer.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Test_Player.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Weapon.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/Gun_Model.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Health.tscn" type="PackedScene" id=6]

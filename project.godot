@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "TestPlayer",
 "language": "GDScript",
-"path": "res://Scripts/TestPlayer.gd"
+"path": "res://Scripts/Test_Player.gd"
 }, {
 "base": "Node",
 "class": "layer",
