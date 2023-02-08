@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MagicSpear.png-ceb17ffadfacbed2c361fe0b6f463389.stex"
+path="res://.import/Magic_Spear.png-ceb17ffadfacbed2c361fe0b6f463389.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/MagicSpear.png"
-dest_files=[ "res://.import/MagicSpear.png-ceb17ffadfacbed2c361fe0b6f463389.stex" ]
+source_file="res://Sprites/Magic_Spear.png"
+dest_files=[ "res://.import/Magic_Spear.png-ceb17ffadfacbed2c361fe0b6f463389.stex" ]
 
 [params]
 
