@@ -28,7 +28,7 @@ _global_script_class_icons={
 
 config/name="GameDevSpring22"
 run/main_scene="res://Scenes/Test_Main.tscn"
-config/icon="res://Assets/icon.png"
+config/icon="res://Assets/Icon.png"
 
 [autoload]
 
