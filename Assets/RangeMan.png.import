@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TestSprite.png-6c89edbf480402a1da428fa679921125.stex"
+path="res://.import/RangeMan.png-d29255f519cd8e5629d218d690de73c3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TestSprite.png"
-dest_files=[ "res://.import/TestSprite.png-6c89edbf480402a1da428fa679921125.stex" ]
+source_file="res://Assets/RangeMan.png"
+dest_files=[ "res://.import/RangeMan.png-d29255f519cd8e5629d218d690de73c3.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
