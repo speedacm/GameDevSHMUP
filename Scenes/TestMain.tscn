@@ -11,7 +11,7 @@
 [ext_resource path="res://Scenes/SlimeEnemy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Bullets/bullet.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/RepeatShotEnemy.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Weapon Pickup.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Weapon_Pickup.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/fonts/alagard.ttf" type="DynamicFontData" id=13]
 [ext_resource path="res://assets/fonts/m5x7.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://Scripts/ammoCounter.gd" type="Script" id=15]

@@ -32,7 +32,7 @@ config/icon="res://assets/icon.png"
 
 [autoload]
 
-GlobalVariables="*res://Scenes/Global Variables.tscn"
+GlobalVariables="*res://Scenes/Global_Variables.tscn"
 
 [display]
 
