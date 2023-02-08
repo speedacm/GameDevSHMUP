@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/testfloor.png-116b8ebb7edf4f6888b3a7567a6456af.stex"
+path="res://.import/Cursor.png-91879998a8dd6a7ccf3978ccd41c8bcc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tempassets/testfloor.png"
-dest_files=[ "res://.import/testfloor.png-116b8ebb7edf4f6888b3a7567a6456af.stex" ]
+source_file="res://Temp_Assets/Cursor.png"
+dest_files=[ "res://.import/Cursor.png-91879998a8dd6a7ccf3978ccd41c8bcc.stex" ]
 
 [params]
 
@@ -32,4 +32,4 @@ process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false
-svg/scale=1.0
+svg/scale=2.0

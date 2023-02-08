@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cursor.png-91879998a8dd6a7ccf3978ccd41c8bcc.stex"
+path="res://.import/shotgun.png-f7111c88a049280aea68b84ed698a0d7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tempassets/Cursor.png"
-dest_files=[ "res://.import/Cursor.png-91879998a8dd6a7ccf3978ccd41c8bcc.stex" ]
+source_file="res://Temp_Assets/shotgun.png"
+dest_files=[ "res://.import/shotgun.png-f7111c88a049280aea68b84ed698a0d7.stex" ]
 
 [params]
 
@@ -32,4 +32,4 @@ process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false
-svg/scale=2.0
+svg/scale=1.0

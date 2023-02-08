@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/techgun.png-cf4d8e8c968e2fcda18d741431f8ef4a.stex"
+path="res://.import/lights4.png-234b19efe656d8328413bae09cbec17e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tempassets/techgun.png"
-dest_files=[ "res://.import/techgun.png-cf4d8e8c968e2fcda18d741431f8ef4a.stex" ]
+source_file="res://Temp_Assets/lights4.png"
+dest_files=[ "res://.import/lights4.png-234b19efe656d8328413bae09cbec17e.stex" ]
 
 [params]
 

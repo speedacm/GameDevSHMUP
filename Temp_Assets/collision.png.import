@@ -9,7 +9,7 @@ metadata={
 
 [deps]
 
-source_file="res://Tempassets/collision.png"
+source_file="res://Temp_Assets/collision.png"
 dest_files=[ "res://.import/collision.png-fb5c05d37b5a63f9c5b7c8ef7301660a.stex" ]
 
 [params]
