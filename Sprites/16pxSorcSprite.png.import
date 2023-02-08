@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/16pxSorcSprite.png-04cae4b9f7786e3a4185451a4740ee0d.stex"
+path="res://.import/16px_Sorc_Sprite.png-04cae4b9f7786e3a4185451a4740ee0d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/16pxSorcSprite.png"
-dest_files=[ "res://.import/16pxSorcSprite.png-04cae4b9f7786e3a4185451a4740ee0d.stex" ]
+source_file="res://Sprites/16px_Sorc_Sprite.png"
+dest_files=[ "res://.import/16px_Sorc_Sprite.png-04cae4b9f7786e3a4185451a4740ee0d.stex" ]
 
 [params]
 
