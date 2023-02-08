@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/bullet.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Bullets/bulletsmoke.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Bullets/BulletImpact.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Temp_Assets/lights1.png" type="Texture" id=5]
+[ext_resource path="res://Temp_Assets/Lights_1.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/UI/Floating_Text.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
