@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Temp_Assets/testfloor.png" type="Texture" id=1]
+[ext_resource path="res://Temp_Assets/Test_Floor.png" type="Texture" id=1]
 [ext_resource path="res://Temp_Assets/Coll_Test_Wall.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Rooms/roomLoad.gd" type="Script" id=3]
 
@@ -43,7 +43,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 1/shape_one_way_margin = 0.0
 1/shapes = [  ]
 1/z_index = 0
-2/name = "testfloor.png 2"
+2/name = "Test_Floor.png 2"
 2/texture = ExtResource( 1 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
