@@ -4,7 +4,7 @@
 [ext_resource path="res://Temp_Assets/Collision.png" type="Texture" id=2]
 [ext_resource path="res://Temp_Assets/Lights_2.png" type="Texture" id=3]
 [ext_resource path="res://Temp_Assets/Lights_1.png" type="Texture" id=4]
-[ext_resource path="res://Temp_Assets/lights3.png" type="Texture" id=5]
+[ext_resource path="res://Temp_Assets/Lights_3.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
