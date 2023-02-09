@@ -54,6 +54,13 @@ func _ready():
 func LoadInstance(path, roomID, newPos, newRot):
 	x=0 
 	#fixer if statements 
+	var rangeEnemy = load("res://Scenes/TestRangeEnemy.tscn")
+	var rangeEnemyInstance = rangeEnemy.instance()
+	var enemy = load("res://Scenes/SlimeEnemy.tscn")
+	var enemyInstance = enemy.instance()
+	enemyInstance.set_position(newPos)
+	var repos = Vector2(newPos.x + 50, newPos.y+25)
+	rangeEnemyInstance.set_position(repos)
 	if newRot == 90:
 		newPos = Vector2(newPos.x + 16, newPos.y)
 	if newRot == 180:
@@ -64,12 +71,6 @@ func LoadInstance(path, roomID, newPos, newRot):
 	
 	var scene = load(path);
 	var instance = scene.instance();
-	var rangeEnemy = load("res://Scenes/TestRangeEnemy.tscn")
-	var rangeEnemyInstance = rangeEnemy.instance()
-	var enemy = load("res://Scenes/SlimeEnemy.tscn")
-	var enemyInstance = enemy.instance()
-	enemyInstance.set_position(newPos)
-	rangeEnemyInstance.set_position(newPos)
 	instance.set_position(newPos)
 	instance.set_rotation_degrees(newRot)
 	parent.add_child(enemyInstance)
