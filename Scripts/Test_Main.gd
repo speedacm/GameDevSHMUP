@@ -53,6 +53,14 @@ func _ready():
 
 func LoadInstance(path, roomID, newPos, newRot):
 	x=0 
+
+	var rangeEnemy = load("res://Scenes/Repeat_Shot_Enemy.tscn")
+	var rangeEnemyInstance = rangeEnemy.instance()
+	var enemy = load("res://Scenes/Slime_Enemy.tscn")
+	var enemyInstance = enemy.instance()
+	enemyInstance.set_position(newPos)
+	var repos = Vector2(newPos.x + 50, newPos.y+25)
+	rangeEnemyInstance.set_position(repos)
 	#fixer if statements 
 	if newRot == 90:
 		newPos = Vector2(newPos.x + 16*2, newPos.y)
@@ -75,6 +83,8 @@ func LoadInstance(path, roomID, newPos, newRot):
 	instance.add_child(collider)
 	"""
 	parent.add_child(instance);
+	#parent.add_child(enemyInstance)
+	parent.add_child(rangeEnemyInstance)
 	for i in instance.get_children():
 		#print (i)
 		if x != roomID:
