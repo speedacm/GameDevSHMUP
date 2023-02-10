@@ -7,7 +7,7 @@ onready var defaultweapon = get_node("Weapon")
 export var speed = 200
 var velocity = Vector2.ZERO
 var direction
-
+var detectorID: Node
 
 onready var health = $Health
 var flipped = false
@@ -20,6 +20,7 @@ var weaponbehavior
 signal pickuprequest
 signal hphudupdate(new_health) 
 signal ammohudupdate(ammo, equippedweapon)
+signal playerDied()
 
 func _ready():
 	#Sets Collision Layers
@@ -50,7 +51,7 @@ func _unhandled_input(event):
 	if (event.is_action_pressed("shoot")):
 		equippedweapon.shoot()
 
-### Check if Dead
+
 func _physics_process(_delta):
 	get_input()
 	velocity = move_and_slide(velocity)
@@ -70,8 +71,11 @@ func _physics_process(_delta):
 		animation_player.play("walk_up")
 	else:
 		animation_player.play("idle_right")
+		
 	if health.health <= 0:
-		queue_free()
+		emit_signal("playerDied")
+		self.visible = false
+
 
 
 ### 
@@ -154,6 +158,7 @@ func setlayers():
 func _on_RoomDetector_area_entered(area: Area2D) -> void:
 	
 	print("Enter Room")
+	detectorID = area
 	
 	var collision_shape = area.get_node("CollisionShape2D")
 	var size = collision_shape.shape.extents * 2 * 2
