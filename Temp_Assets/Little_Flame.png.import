@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Little_Flame.png-e36fa3d5c02d17705862d995b1b96ba3.stex"
+path="res://.import/Little_Flame.png-3d8bc7b04b051863744b698bfc6d86f9.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Temp_Assets/Little_Flame.png"
-dest_files=[ "res://.import/Little_Flame.png-e36fa3d5c02d17705862d995b1b96ba3.stex" ]
+dest_files=[ "res://.import/Little_Flame.png-3d8bc7b04b051863744b698bfc6d86f9.stex" ]
 
 [params]
 
