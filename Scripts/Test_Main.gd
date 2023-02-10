@@ -54,7 +54,7 @@ func _ready():
 func LoadInstance(path, roomID, newPos, newRot):
 	x=0 
 
-	var rangeEnemy = load("res://Scenes/Repeat_Shot_Enemy.tscn")
+	var rangeEnemy = load("res://Scenes/Slime_Enemy.tscn")
 	var rangeEnemyInstance = rangeEnemy.instance()
 	var enemy = load("res://Scenes/Slime_Enemy.tscn")
 	var enemyInstance = enemy.instance()

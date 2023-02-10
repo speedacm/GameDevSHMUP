@@ -29,15 +29,17 @@ func shoot():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	move_to_player(goodRange[1], goodRange[0], get_player_pos(detectorID))
-	move_and_slide(velocity)
+	if detectorID == player.detectorID:
+		move_to_player(goodRange[1], goodRange[0], get_player_pos(detectorID))
+		move_and_slide(velocity)
 	if health.health <= 0: # if killed, die
 		queue_free()
 	var dist = distance(get_player_pos(detectorID))
-	if dist > shootRange[0] and dist < shootRange[1]:
-		if hit_count >= hit_timer:
-			shoot()
-			hit_count = 0
+	if detectorID == player.detectorID:
+		if dist > shootRange[0] and dist < shootRange[1]:
+			if hit_count >= hit_timer:
+				shoot()
+				hit_count = 0
 
 	hit_count += 1
 

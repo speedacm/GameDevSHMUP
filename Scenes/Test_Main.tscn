@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Test_Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Progress_Bar.gd" type="Script" id=5]
@@ -99,8 +99,6 @@ script = ExtResource( 15 )
 
 [node name="Death Screen" parent="HUD" instance=ExtResource( 17 )]
 visible = false
-margin_top = 1.0
-margin_bottom = 1.0
 script = ExtResource( 18 )
 
 [node name="Pickups" type="Node" parent="."]
