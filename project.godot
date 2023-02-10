@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "TestPlayer",
 "language": "GDScript",
-"path": "res://Scripts/TestPlayer.gd"
+"path": "res://Scripts/Test_Player.gd"
 }, {
 "base": "Node",
 "class": "layer",
@@ -27,12 +27,12 @@ _global_script_class_icons={
 [application]
 
 config/name="GameDevSpring22"
-run/main_scene="res://Scenes/TestMain.tscn"
-config/icon="res://assets/icon.png"
+run/main_scene="res://Scenes/Test_Main.tscn"
+config/icon="res://Assets/Icon.png"
 
 [autoload]
 
-GlobalVariables="*res://Scenes/Global Variables.tscn"
+GlobalVariables="*res://Scenes/Global_Variables.tscn"
 
 [display]
 
@@ -40,9 +40,9 @@ window/size/width=256
 window/size/height=224
 window/size/test_width=1024
 window/size/test_height=896
-mouse_cursor/custom_image="res://Tempassets/Cursor.png"
+mouse_cursor/custom_image="res://Temp_Assets/Cursor.png"
 window/stretch/mode="2d"
-window/stretch/aspect="expand"
+window/stretch/aspect="keep"
 
 [global]
 

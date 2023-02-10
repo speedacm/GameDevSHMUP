@@ -1,14 +1,14 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Tempassets/testfloor.png" type="Texture" id=1]
-[ext_resource path="res://Tempassets/Colltestwall.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/Rooms/roomLoad.gd" type="Script" id=3]
+[ext_resource path="res://Temp_Assets/Test_Floor.png" type="Texture" id=1]
+[ext_resource path="res://Temp_Assets/Coll_Test_Wall.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Rooms/Room_Load.gd" type="Script" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
 [sub_resource type="TileSet" id=2]
-0/name = "Colltestwall.png 0"
+0/name = "Coll_Test_Wall.png 0"
 0/texture = ExtResource( 2 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
@@ -29,7 +29,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
-1/name = "Colltestwall.png 1"
+1/name = "Coll_Test_Wall.png 1"
 1/texture = ExtResource( 2 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
@@ -43,7 +43,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 1/shape_one_way_margin = 0.0
 1/shapes = [  ]
 1/z_index = 0
-2/name = "testfloor.png 2"
+2/name = "Test_Floor.png 2"
 2/texture = ExtResource( 1 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
@@ -57,7 +57,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 2/shape_one_way_margin = 0.0
 2/shapes = [  ]
 2/z_index = 0
-3/name = "Colltestwall.png 3"
+3/name = "Coll_Test_Wall.png 3"
 3/texture = ExtResource( 2 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
@@ -75,12 +75,14 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 [sub_resource type="RectangleShape2D" id=3]
 
 [node name="27x27R" type="Node2D"]
+visible = false
 use_parent_material = true
 position = Vector2( -1, 0 )
 
 [node name="S" type="Node" parent="."]
 
 [node name="TileMap2" type="TileMap" parent="S"]
+visible = false
 z_index = -1
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
@@ -93,6 +95,7 @@ parent_node = NodePath("../..")
 [node name="R1" type="Node" parent="."]
 
 [node name="TileMap" type="TileMap" parent="R1"]
+visible = false
 z_index = -1
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
@@ -119,6 +122,7 @@ parent_node = NodePath("../..")
 [node name="R3" type="Node" parent="."]
 
 [node name="TileMap2" type="TileMap" parent="R3"]
+visible = false
 z_index = -1
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
@@ -132,6 +136,7 @@ parent_node = NodePath("../..")
 [node name="R4" type="Node" parent="."]
 
 [node name="TileMap2" type="TileMap" parent="R4"]
+visible = false
 z_index = -1
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
@@ -145,6 +150,7 @@ parent_node = NodePath("../..")
 [node name="C" type="Node" parent="."]
 
 [node name="TileMap2" type="TileMap" parent="C"]
+visible = false
 z_index = -1
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
