@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Test_Floor.png-116b8ebb7edf4f6888b3a7567a6456af.stex"
+path="res://.import/Test_Floor.png-1841fe5604209ee41bd5e5a46ca248fa.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Temp_Assets/Test_Floor.png"
-dest_files=[ "res://.import/Test_Floor.png-116b8ebb7edf4f6888b3a7567a6456af.stex" ]
+dest_files=[ "res://.import/Test_Floor.png-1841fe5604209ee41bd5e5a46ca248fa.stex" ]
 
 [params]
 

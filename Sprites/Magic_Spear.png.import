@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Magic_Spear.png-ceb17ffadfacbed2c361fe0b6f463389.stex"
+path="res://.import/Magic_Spear.png-8f94600f784f5e500ae74882f4e2beb6.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Sprites/Magic_Spear.png"
-dest_files=[ "res://.import/Magic_Spear.png-ceb17ffadfacbed2c361fe0b6f463389.stex" ]
+dest_files=[ "res://.import/Magic_Spear.png-8f94600f784f5e500ae74882f4e2beb6.stex" ]
 
 [params]
 

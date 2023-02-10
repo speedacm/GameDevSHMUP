@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Lights_1.png-d3ff6eb3a722ff58ed151bea7ca2d777.stex"
+path="res://.import/Lights_1.png-1804cbf9a36003c59f637e5c6255865a.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Temp_Assets/Lights_1.png"
-dest_files=[ "res://.import/Lights_1.png-d3ff6eb3a722ff58ed151bea7ca2d777.stex" ]
+dest_files=[ "res://.import/Lights_1.png-1804cbf9a36003c59f637e5c6255865a.stex" ]
 
 [params]
 
