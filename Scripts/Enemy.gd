@@ -12,6 +12,7 @@ var damage: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	setlayers()
 	pass
 
 
@@ -50,3 +51,13 @@ func hit_player(hits) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 #	pass
+
+func setlayers():
+	# See wiki for collision layer key
+	
+	## Exists on layer
+	set_collision_layer_bit(1, true)
+	
+	## Collide with layer
+	set_collision_mask_bit(0, true)
+	set_collision_mask_bit(2, true)
