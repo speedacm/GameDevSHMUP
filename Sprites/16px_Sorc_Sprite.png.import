@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/16px_Sorc_Sprite.png-04cae4b9f7786e3a4185451a4740ee0d.stex"
+path="res://.import/16px_Sorc_Sprite.png-61734c26f88531cf0ac036e037758fd1.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Sprites/16px_Sorc_Sprite.png"
-dest_files=[ "res://.import/16px_Sorc_Sprite.png-04cae4b9f7786e3a4185451a4740ee0d.stex" ]
+dest_files=[ "res://.import/16px_Sorc_Sprite.png-61734c26f88531cf0ac036e037758fd1.stex" ]
 
 [params]
 

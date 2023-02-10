@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Shotgun.png-f7111c88a049280aea68b84ed698a0d7.stex"
+path="res://.import/Shotgun.png-aef4ff4dd0a1faa52a27dffcaa8398b8.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Temp_Assets/Shotgun.png"
-dest_files=[ "res://.import/Shotgun.png-f7111c88a049280aea68b84ed698a0d7.stex" ]
+dest_files=[ "res://.import/Shotgun.png-aef4ff4dd0a1faa52a27dffcaa8398b8.stex" ]
 
 [params]
 
