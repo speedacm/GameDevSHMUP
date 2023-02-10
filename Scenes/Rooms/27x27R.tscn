@@ -75,12 +75,14 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 [sub_resource type="RectangleShape2D" id=3]
 
 [node name="27x27R" type="Node2D"]
+visible = false
 use_parent_material = true
 position = Vector2( -1, 0 )
 
 [node name="S" type="Node" parent="."]
 
 [node name="TileMap2" type="TileMap" parent="S"]
+visible = false
 z_index = -1
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
@@ -93,6 +95,7 @@ parent_node = NodePath("../..")
 [node name="R1" type="Node" parent="."]
 
 [node name="TileMap" type="TileMap" parent="R1"]
+visible = false
 z_index = -1
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
@@ -119,6 +122,7 @@ parent_node = NodePath("../..")
 [node name="R3" type="Node" parent="."]
 
 [node name="TileMap2" type="TileMap" parent="R3"]
+visible = false
 z_index = -1
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
@@ -132,6 +136,7 @@ parent_node = NodePath("../..")
 [node name="R4" type="Node" parent="."]
 
 [node name="TileMap2" type="TileMap" parent="R4"]
+visible = false
 z_index = -1
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
@@ -145,6 +150,7 @@ parent_node = NodePath("../..")
 [node name="C" type="Node" parent="."]
 
 [node name="TileMap2" type="TileMap" parent="C"]
+visible = false
 z_index = -1
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
