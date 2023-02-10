@@ -13,10 +13,12 @@ func _ready() -> void:
 	setlayers()
 
 
+
 func get_player_pos(detectorID):
 	if detectorID == player.detectorID:
 		return player.position
 	return detectorID.position
+
 
 func real_player_pos():
 	if !player:
