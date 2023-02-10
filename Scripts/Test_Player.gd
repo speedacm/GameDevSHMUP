@@ -20,6 +20,7 @@ var weaponbehavior
 signal pickuprequest
 signal hphudupdate(new_health) 
 signal ammohudupdate(ammo, equippedweapon)
+signal playerDied()
 
 func _ready():
 	#Sets Collision Layers
@@ -50,7 +51,7 @@ func _unhandled_input(event):
 	if (event.is_action_pressed("shoot")):
 		equippedweapon.shoot()
 
-### Check if Dead
+
 func _physics_process(_delta):
 	get_input()
 	velocity = move_and_slide(velocity)
@@ -70,8 +71,11 @@ func _physics_process(_delta):
 		animation_player.play("walk_up")
 	else:
 		animation_player.play("idle_right")
+		
 	if health.health <= 0:
-		queue_free()
+		emit_signal("playerDied")
+		self.visible = false
+
 
 
 ### 
