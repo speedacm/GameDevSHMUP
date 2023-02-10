@@ -162,6 +162,7 @@ anims/walk_up = SubResource( 8 )
 
 [node name="TestSprite" type="Sprite" parent="."]
 position = Vector2( -0.0835457, -5.54882 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 1 )
 hframes = 6
 vframes = 4

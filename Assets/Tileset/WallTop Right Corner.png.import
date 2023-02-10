@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Wall Tile Bottom 1.png-fdba23b7992259a4501b884da5d2e93e.stex"
+path="res://.import/WallTop Right Corner.png-9ccbe057dacaf2f50d47ca7daafa3550.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Wall Tile Bottom 1.png"
-dest_files=[ "res://.import/Wall Tile Bottom 1.png-fdba23b7992259a4501b884da5d2e93e.stex" ]
+source_file="res://Assets/Tileset/WallTop Right Corner.png"
+dest_files=[ "res://.import/WallTop Right Corner.png-9ccbe057dacaf2f50d47ca7daafa3550.stex" ]
 
 [params]
 
