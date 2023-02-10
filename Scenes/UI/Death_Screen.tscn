@@ -26,25 +26,25 @@ font_data = ExtResource( 2 )
 [node name="Death Screen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 3.0
-margin_bottom = 3.0
+margin_top = 1.0
+margin_bottom = 1.0
 
 [node name="Panel" type="Panel" parent="."]
 show_behind_parent = true
 material = SubResource( 1 )
-margin_left = -132.0
+margin_left = 1.0
 margin_top = 41.0
-margin_right = 420.0
-margin_bottom = 112.0
+margin_right = 255.0
+margin_bottom = 99.0
 custom_styles/panel = SubResource( 2 )
 
 [node name="Button" type="Button" parent="."]
 anchor_right = 0.025
 anchor_bottom = 0.037
-margin_left = 161.0
-margin_top = 135.0
-margin_right = 219.6
-margin_bottom = 147.712
+margin_left = 99.0
+margin_top = 114.0
+margin_right = 157.6
+margin_bottom = 126.712
 theme = ExtResource( 3 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 6 )
@@ -53,10 +53,10 @@ flat = true
 script = ExtResource( 1 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 76.0
-margin_top = 53.0
-margin_right = 312.0
-margin_bottom = 100.0
+margin_left = 12.0
+margin_top = 47.0
+margin_right = 248.0
+margin_bottom = 94.0
 custom_fonts/font = SubResource( 3 )
 text = "BAHAHAHAHAHhhh
 GET GOOD LOL!!!"
