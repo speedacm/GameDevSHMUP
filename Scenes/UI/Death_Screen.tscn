@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Scripts/resetgame.gd" type="Script" id=1]
-[ext_resource path="res://assets/fonts/alagard.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/Reset_Game.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/Alagard.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Themes/Death_Screen.tres" type="Theme" id=3]
 
 [sub_resource type="CanvasItemMaterial" id=1]
