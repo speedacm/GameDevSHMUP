@@ -86,6 +86,10 @@ sprint={
  ]
 }
 
+[mono]
+
+project/assembly_name="GameDevSpring22"
+
 [physics]
 
 common/enable_pause_aware_picking=true
