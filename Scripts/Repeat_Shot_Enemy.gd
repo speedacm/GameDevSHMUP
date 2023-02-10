@@ -11,11 +11,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	move_to_player(goodRange[1], goodRange[0], get_player_pos())
+	move_to_player(goodRange[1], goodRange[0], get_player_pos(detectorID))
 	move_and_slide(velocity)
 	if health.health <= 0:
 		queue_free()
-	var dist = distance(get_player_pos())
+	var dist = distance(get_player_pos(detectorID))
 	if dist > shootRange[0] and dist < shootRange[1] and shot == false:
 		if hit_count >= hit_timer:
 			shot = true
@@ -32,13 +32,3 @@ func _physics_process(delta):
 		hit_count = 0
 		shot_count += 1
 	hit_count += 1
-
-
-func setlayers():
-	
-	## Exists on layer
-	set_collision_layer_bit(layer.ENEMY, true)
-	
-	## Collide with layer
-	set_collision_mask_bit(layer.WALLS, true)
-	set_collision_mask_bit(layer.PLAYER, true)

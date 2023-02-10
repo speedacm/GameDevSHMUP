@@ -3,22 +3,25 @@ extends KinematicBody2D
 var speed: int
 var velocity: Vector2 = Vector2.ZERO
 onready var health: Node2D = $Health 
-export (NodePath) var playerNodePath
-onready var player = get_node("/root/Scenes/TestMain/TestPlayer")
+onready var player = get_node("../Player")
 var hit_timer: int
 var hit_count: int
 var damage: int
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	setlayers()
-	pass
 
 
-func get_player_pos():
+func get_player_pos(detectorID):
+	if detectorID == player.detectorID:
+		return player.position
+	return detectorID.position
+
+func real_player_pos():
+	if !player:
+		return self.position
 	return player.position
-
 
 func distance(player_pos: Vector2) -> float:
 	var x_dist = position.x - player_pos.x
@@ -28,7 +31,7 @@ func distance(player_pos: Vector2) -> float:
 
 
 func velocity_to_player() -> Vector2:
-	var v = position.direction_to(get_player_pos()) * speed
+	var v = position.direction_to(real_player_pos()) * speed
 	return v
 
 
@@ -52,12 +55,14 @@ func hit_player(hits) -> void:
 #func _process(delta: float) -> void:
 #	pass
 
+
 func setlayers():
-	# See wiki for collision layer key
 	
 	## Exists on layer
-	set_collision_layer_bit(1, true)
+	set_collision_layer_bit(layer.ENEMY, true)
+	set_collision_layer_bit(layer.WALLS, false)
+	set_collision_layer_bit(layer.PLAYER, false)
 	
 	## Collide with layer
-	set_collision_mask_bit(0, true)
-	set_collision_mask_bit(2, true)
+	set_collision_mask_bit(layer.WALLS, true)
+	set_collision_mask_bit(layer.PLAYER, true)

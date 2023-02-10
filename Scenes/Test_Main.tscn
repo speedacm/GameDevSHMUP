@@ -1,16 +1,9 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://Scenes/Test_Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Test_Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Test_Range_Enemy.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Test_Fast_Enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/Progress_Bar.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Label.gd" type="Script" id=6]
-[ext_resource path="res://Scenes/Bullets/Enemy_Bullet.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/Test_Main.gd" type="Script" id=8]
-[ext_resource path="res://Scenes/Slime_Enemy.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Bullets/Bullet.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Repeat_Shot_Enemy.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Weapon_Pickup.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Fonts/Alagard.ttf" type="DynamicFontData" id=13]
 [ext_resource path="res://Assets/Fonts/M5x7.ttf" type="DynamicFontData" id=14]
@@ -52,37 +45,6 @@ parent_path = NodePath(".")
 position = Vector2( 43.6195, 98.2741 )
 scale = Vector2( 1.00376, 1 )
 collision_mask = 0
-
-[node name="Enemies" type="Node" parent="."]
-
-[node name="SimpleRanged" parent="Enemies" instance=ExtResource( 3 )]
-position = Vector2( -3, -306 )
-collision_layer = 0
-collision_mask = 0
-playerNodePath = NodePath("../../Player")
-bulletScene = ExtResource( 7 )
-
-[node name="Rat" parent="Enemies" groups=["mobs"] instance=ExtResource( 4 )]
-position = Vector2( 115, -490 )
-playerNodePath = NodePath("../../Player")
-
-[node name="BigMeelee" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( -109, -473 )
-collision_layer = 2
-collision_mask = 3
-playerNodePath = NodePath("../../Player")
-
-[node name="SlimeEnemy" parent="Enemies" groups=["mobs"] instance=ExtResource( 9 )]
-position = Vector2( -7, -542 )
-playerNodePath = NodePath("../../Player")
-bulletScene = ExtResource( 10 )
-
-[node name="RepeatShotEnemy" parent="Enemies" groups=["mobs"] instance=ExtResource( 11 )]
-position = Vector2( -505, 88 )
-collision_layer = 2
-collision_mask = 3
-playerNodePath = NodePath("../../Player")
-bulletScene = ExtResource( 10 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
