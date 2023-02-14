@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/WallBottom Right corner.png-0168a4bedff675aae234eaf1dd0948e5.stex"
+path="res://.import/WallBottom Right corner.png-cf6c67fa1f61f0dc0afdccfcb515f2f4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tileset/WallBottom Right corner.png"
-dest_files=[ "res://.import/WallBottom Right corner.png-0168a4bedff675aae234eaf1dd0948e5.stex" ]
+source_file="res://assets/Tileset/WallBottom Right corner.png"
+dest_files=[ "res://.import/WallBottom Right corner.png-cf6c67fa1f61f0dc0afdccfcb515f2f4.stex" ]
 
 [params]
 

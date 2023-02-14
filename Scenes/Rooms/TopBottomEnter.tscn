@@ -7,7 +7,6 @@
 
 [node name="TopBottomEnter" type="Node2D"]
 use_parent_material = true
-position = Vector2( -1, 0 )
 
 [node name="TileMap3" type="TileMap" parent="."]
 position = Vector2( 1, 0 )

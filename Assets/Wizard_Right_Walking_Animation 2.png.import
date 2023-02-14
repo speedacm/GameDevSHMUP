@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Wizard_Right_Walking_Animation 2.png-9df3641734b735de1f5852d0780b0c9a.stex"
+path="res://.import/Wizard_Right_Walking_Animation 2.png-59af6fbcee2b7d523148e18cde0393ca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Wizard_Right_Walking_Animation 2.png"
-dest_files=[ "res://.import/Wizard_Right_Walking_Animation 2.png-9df3641734b735de1f5852d0780b0c9a.stex" ]
+source_file="res://assets/Wizard_Right_Walking_Animation 2.png"
+dest_files=[ "res://.import/Wizard_Right_Walking_Animation 2.png-59af6fbcee2b7d523148e18cde0393ca.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Range_Man.png-d06c7c68f47edfffd18ab5020997c342.stex"
+path="res://.import/Range_Man.png-1f08448daa7b1c7e543965f867eb800b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Range_Man.png"
-dest_files=[ "res://.import/Range_Man.png-d06c7c68f47edfffd18ab5020997c342.stex" ]
+source_file="res://assets/Range_Man.png"
+dest_files=[ "res://.import/Range_Man.png-1f08448daa7b1c7e543965f867eb800b.stex" ]
 
 [params]
 

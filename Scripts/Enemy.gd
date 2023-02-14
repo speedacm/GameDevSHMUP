@@ -22,18 +22,18 @@ func get_player_pos(detectorID):
 
 func real_player_pos():
 	if !player:
-		return self.position
+		return self.global_position
 	return player.position
 
 func distance(player_pos: Vector2) -> float:
-	var x_dist = position.x - player_pos.x
-	var y_dist = position.y - player_pos.y
+	var x_dist = self.global_position.x - player_pos.x
+	var y_dist = self.global_position.y - player_pos.y
 	var dist = sqrt((x_dist*x_dist) + (y_dist*y_dist))
 	return dist
 
 
 func velocity_to_player() -> Vector2:
-	var v = position.direction_to(real_player_pos()) * speed
+	var v = self.global_position.direction_to(real_player_pos()) * speed
 	return v
 
 
