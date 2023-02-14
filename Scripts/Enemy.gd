@@ -3,7 +3,7 @@ extends KinematicBody2D
 var speed: int
 var velocity: Vector2 = Vector2.ZERO
 onready var health: Node2D = $Health 
-onready var player = get_node("../Player")
+onready var player = get_node("../../Player")
 var hit_timer: int
 var hit_count: int
 var damage: int
