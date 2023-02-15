@@ -18,7 +18,7 @@
 [ext_resource path="res://Assets/Tileset/Wall_Bottom_Left_Corner.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Tileset/Wall_Bottom_Right_Corner.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Tileset/Wall_Top_Left_Corner.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Tileset/WallTop Right Corner.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Tileset/Wall_Top_Right_Corner.png" type="Texture" id=19]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -464,7 +464,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 19/z_index = 0
-20/name = "WallTop Right Corner.png 20"
+20/name = "Wall_Top_Right_Corner.png 20"
 20/texture = ExtResource( 19 )
 20/tex_offset = Vector2( 0, 0 )
 20/modulate = Color( 1, 1, 1, 1 )
