@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/Tileset/WallTop Left Corner.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Tileset/Side_Wall_Bottom_Left.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Tileset/Wall Tile 1 TOP.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Tileset/Side wall bottom right.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Tileset/Side_Wall_Bottom_Right.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Tileset/Side Wall Top Left 2.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Tileset/Side Wall Top Left.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Tileset/Side Wall Top Right.png" type="Texture" id=11]
@@ -107,7 +107,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/z_index = 0
-2/name = "Side wall bottom right.png 2"
+2/name = "Side_Wall_Bottom_Right.png 2"
 2/texture = ExtResource( 8 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
