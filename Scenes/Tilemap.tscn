@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Tileset/Floor.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Tileset/Side_Wall_Bottom_Right.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Tileset/Side_Wall_Top_Left_2.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Tileset/Side Wall Top Right.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Tileset/Side_Wall_Top_Right.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Tileset/Side_Wall_Top_Left.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Tileset/Wall Tile 1 TOP.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Tileset/Wall Tile 2 Top.png" type="Texture" id=8]
@@ -177,7 +177,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 5/shape_one_way_margin = 0.0
 5/shapes = [  ]
 5/z_index = 0
-6/name = "Side Wall Top Right.png 6"
+6/name = "Side_Wall_Top_Right.png 6"
 6/texture = ExtResource( 5 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
@@ -212,7 +212,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 7/z_index = 0
-8/name = "Side Wall Top Right.png 8"
+8/name = "Side_Wall_Top_Right.png 8"
 8/texture = ExtResource( 5 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
