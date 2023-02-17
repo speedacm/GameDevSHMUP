@@ -19,80 +19,26 @@ func _ready():
 	## Loads in Rooms
 	if parent_path:
 		parent = get_node(parent_path)
-		LoadInstance(R27n, 0, Vector2(0,0), 0)
-		LoadInstance(R27n, 2, Vector2(0,-1* room_unit), 0)
-		LoadInstance(R27n, 1, Vector2(0,-2*room_unit), 0 )
-		LoadInstance(R27n, 3, Vector2(0,-3*room_unit), 0)
-#		LoadInstance(R27n, 3, Vector2(1*room_unit,-3*room_unit), 90)
-#		LoadInstance(R27n, 5, Vector2(1*room_unit,-4*room_unit), 0)
-#		LoadInstance(R27n, 2, Vector2(-1*room_unit,-2*room_unit), 90)
-#		LoadInstance(R27n, 4, Vector2(-2*room_unit,-2*room_unit), 270)
-#		LoadInstance(R27n, 5, Vector2(-2*room_unit,-3*room_unit), 0)
-#		LoadInstance(R27n, 2, Vector2(-2*room_unit,-1*room_unit), 0)
-#		LoadInstance(R27n, 2, Vector2(-2*room_unit,0*room_unit), 0)
-#		LoadInstance(R27n, 3, Vector2(-2*room_unit,1*room_unit), 180)
-#		LoadInstance(R27n, 1, Vector2(-1*room_unit,1*room_unit), 0)
-#		LoadInstance(R27n, 5, Vector2(-1*room_unit,0*room_unit), 0)
-#		LoadInstance(R27n, 3, Vector2(-1*room_unit,2*room_unit), 180)
-#		LoadInstance(R27n, 2, Vector2(0*room_unit,1*room_unit), 90)
-#		LoadInstance(R27n, 3, Vector2(0*room_unit,2*room_unit), 0)
-#		LoadInstance(R27n, 2, Vector2(-2*room_unit,-1*room_unit), 0)
-#		LoadInstance(R27n, 1, Vector2(1*room_unit,1*room_unit), 0)
-#		LoadInstance(R27n, 3, Vector2(1*room_unit,0*room_unit), 270)
-#		LoadInstance(R27n, 4, Vector2(2*room_unit,0*room_unit), 90)
-#		LoadInstance(R27n, 3, Vector2(2*room_unit,1*room_unit), 90)
-#		LoadInstance(R27n, 2, Vector2(2*room_unit,-1*room_unit), 0)
-#		LoadInstance(R27n, 3, Vector2(2*room_unit,-2*room_unit), 0)
-#		LoadInstance(R27n, 2, Vector2(1*room_unit,-2*room_unit), 90)
-#		LoadInstance(R27n, 3, Vector2(0*room_unit,3*room_unit),180)
-#		LoadInstance(R27n, 1, Vector2(1*room_unit,3*room_unit), 0)
-#		LoadInstance(R27n, 5, Vector2(2*room_unit,3*room_unit), 90)
-#		LoadInstance(R27n, 2, Vector2(1*room_unit,4*room_unit), 0)
-#		LoadInstance(R27n, 5, Vector2(1*room_unit,5*room_unit), 180)
-#		LoadInstance(R27n, 2, Vector2(1*room_unit,2*room_unit), 0)
+		LoadInstance("Spawn", Vector2(0,0))
+		LoadInstance("Left_Bottom_Enter", Vector2(0, -1*room_unit))
+		LoadInstance("Left_Right_Enter", Vector2(-1*room_unit,-1*room_unit))
+		LoadInstance("All_Enter", Vector2(-2*room_unit, -1*room_unit))
+		LoadInstance("Left_Right_Enter", Vector2(-3*room_unit,-1*room_unit))
+		LoadInstance("Left_Right_Enter", Vector2(-4*room_unit,-1*room_unit))
+		LoadInstance("Left_Right_Enter", Vector2(-5*room_unit,-1*room_unit))
+		LoadInstance("Bottom_Enter", Vector2(-2*room_unit, -2*room_unit))
+		LoadInstance("Top_Enter", Vector2(-2*room_unit, 0))
+		LoadInstance("Right_Enter", Vector2(-6*room_unit, -1*room_unit))
+		#LoadInstance(R27n, 2, Vector2(0,-1* room_unit), 0)
+		#LoadInstance(R27n, 1, Vector2(0,-2*room_unit), 0 )
+		#LoadInstance(R27n, 3, Vector2(0,-3*room_unit), 0)
 
-func LoadInstance(path, roomID, newPos, newRot):
-	x=0 
-
-	var rangeEnemy = load("res://Scenes/Slime_Enemy.tscn")
-	var rangeEnemyInstance = rangeEnemy.instance()
-	var enemy = load("res://Scenes/Slime_Enemy.tscn")
-	var enemyInstance = enemy.instance()
-	enemyInstance.set_position(newPos)
-	var repos = Vector2(newPos.x + 50, newPos.y+25)
-	rangeEnemyInstance.set_position(repos)
-	#fixer if statements 
-	if newRot == 90:
-		newPos = Vector2(newPos.x + 16*2, newPos.y)
-	if newRot == 180:
-		newPos = Vector2(newPos.x+ 16*2, newPos.y+16*2)
-	if newRot == 270:
-		newPos = Vector2(newPos.x, newPos.y+16*2)
-	
-	
-	var scene = load(path);
-	var instance = scene.instance();
+func LoadInstance(path, newPos):
+	path = "res://Scenes/Rooms/" + path + ".tscn"
+	var room = load(path)
+	var instance = room.instance()
 	instance.set_position(newPos)
-	instance.set_rotation_degrees(newRot)
-	"""
-	var collider = Area2D.new()
-	var colliderShape = RectangleShape2D.new()
-	colliderShape.extents = Vector2(215, 215)
-	collider.add_child(colliderShape)
-	collider.set_collision_layer_bit(11, true)
-	instance.add_child(collider)
-	"""
-	parent.add_child(instance);
-	#parent.add_child(enemyInstance)
-	parent.add_child(rangeEnemyInstance)
-	for i in instance.get_children():
-		#print (i)
-		if x != roomID:
-			if x != 6:
-				i.queue_free()
-#			print("Room ID ", x, "is not in")
-		x =x+1
-
+	parent.add_child(instance)
  # Replace with function body.
 
 

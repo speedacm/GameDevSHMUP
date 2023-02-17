@@ -34,7 +34,11 @@ func _physics_process(delta):
 		move_and_slide(velocity)
 	if health.health <= 0: # if killed, die
 		queue_free()
+	#var dx = self.global_position.x-get_player_pos(detectorID).x
+	#var dy = self.global_position.y-get_player_pos(detectorID).y
+	#var dist = sqrt((dx*dx)+(dy*dy))
 	var dist = distance(get_player_pos(detectorID))
+	print("Distance:",dist)
 	if detectorID == player.detectorID:
 		if dist > shootRange[0] and dist < shootRange[1]:
 			if hit_count >= hit_timer:
