@@ -22,6 +22,7 @@ func _physics_process(delta):
 	if hit_count > hit_timer:
 		hit_player(hits)
 	if health.health <= 0:
+		
 		queue_free()
 	hit_count += 1
 
