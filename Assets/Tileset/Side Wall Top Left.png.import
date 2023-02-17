@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Side Wall Top Left.png-2251e8accee7cc3a862073c91d588742.stex"
+path="res://.import/Side Wall Top Left.png-25ecee9d2601f4b8266c0c3c22c9f4bf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tileset/Side Wall Top Left.png"
-dest_files=[ "res://.import/Side Wall Top Left.png-2251e8accee7cc3a862073c91d588742.stex" ]
+source_file="res://Assets/Tileset/Side Wall Top Left.png"
+dest_files=[ "res://.import/Side Wall Top Left.png-25ecee9d2601f4b8266c0c3c22c9f4bf.stex" ]
 
 [params]
 
