@@ -5,15 +5,19 @@ onready var defaultweapon = get_node("Weapon")
 
 ## Player Variables
 export var speed = 200
+export var iTime = .2
 var velocity = Vector2.ZERO
 var direction
 var detectorID: Node
 var is_dodging = false
-export var dodgeTime = 0
+export var DODGE_TIME = 20
+var dodgeTime = 0
 export var dodgeSpeed = 2
 export var friction = 1
 onready var health = $Health
 var flipped = false
+
+
 
 ## Weapon Variables
 onready var equippedweapon = $Weapon
@@ -42,7 +46,8 @@ func _unhandled_input(event):
 func _physics_process(_delta):
 	
 	### Movement --------- 
-	
+	if dodgeTime - iTime <= 0: 
+		$Health.isVuln = true
 	if dodgeTime == 0:
 		var direction := Vector2(
 			Input.get_action_strength("right") - Input.get_action_strength("left"),
@@ -57,8 +62,9 @@ func _physics_process(_delta):
 	###friction stuff for ice floors??????
 		var target_velocity = direction * speed
 		velocity += (target_velocity - velocity) * friction
-		if Input.is_action_just_pressed("sprint"):
-				dodgeTime = 1.0
+		if Input.is_action_just_pressed("sprint") && (velocity.x != 0.0 or velocity.y != 0.0):
+				$Health.isVuln = false
+				dodgeTime = DODGE_TIME
 				velocity = velocity* dodgeSpeed
 	###move
 	else:
