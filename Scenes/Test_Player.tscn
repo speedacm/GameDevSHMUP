@@ -149,8 +149,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
-iTime = 0.75
-DODGE_TIME = 2
+iTime = 0.7
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )

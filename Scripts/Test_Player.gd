@@ -4,20 +4,20 @@ onready var animation_player = $AnimationPlayer
 onready var defaultweapon = get_node("Weapon")
 
 ## Player Variables
-export var speed = 200
-export var iTime = .2
+export var speed = 200.0
+export var iTime : float
 var velocity = Vector2.ZERO
 var direction
 var detectorID: Node
 var is_dodging = false
-export var DODGE_TIME = 20
+export var DODGE_TIME : float
 var dodgeTime = 0
-export var dodgeSpeed = 2
+export var dodgeSpeed  : float
 export var friction = 1
 onready var health = $Health
 var flipped = false
-
-
+var startVelocity = Vector2.ZERO
+signal dodge ()
 
 ## Weapon Variables
 onready var equippedweapon = $Weapon
@@ -46,31 +46,44 @@ func _unhandled_input(event):
 func _physics_process(_delta):
 	
 	### Movement --------- 
+
+	
+	
 	if dodgeTime - iTime <= 0: 
-		$Health.isVuln = true
+		set_collision_layer_bit(2, true)
+		
 	if dodgeTime == 0:
 		var direction := Vector2(
 			Input.get_action_strength("right") - Input.get_action_strength("left"),
 			Input.get_action_strength("down") - Input.get_action_strength("up")
 		)
-	####normalize
+	####normalizea
 		
 		if direction.length() > 1.0:
 			direction = direction.normalized()
 	### Joystick works?
+	
 	# Using the follow steering behavior.
+	
 	###friction stuff for ice floors??????
 		var target_velocity = direction * speed
 		velocity += (target_velocity - velocity) * friction
 		if Input.is_action_just_pressed("sprint") && (velocity.x != 0.0 or velocity.y != 0.0):
-				$Health.isVuln = false
+				set_collision_layer_bit(2, false)
 				dodgeTime = DODGE_TIME
 				velocity = velocity* dodgeSpeed
+				startVelocity = velocity
 	###move
 	else:
-		dodgeTime = max(0, dodgeTime-.1)
+		if velocity != startVelocity:
+			dodgeTime = 0
+			set_collision_layer_bit(2, true)
+		else:
+			dodgeTime = max(0, dodgeTime-.1)
+			
+		
 	velocity = move_and_slide(velocity)
-	
+
 	
 	if velocity.x > 0:
 		if not flipped:
