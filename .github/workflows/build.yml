@@ -15,8 +15,8 @@ jobs:
     - name: Build
       uses: firebelley/godot-export@v4.2.0 # Version needs to be updated by June 1st 2023, since hopefully the maintainers will have updated actions/core to at least v1.10 or heigher
       with:
-        godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/3.5.1/mono/Godot_v3.5.1-stable_mono_linux_headless_64.zip
-        godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/3.5.1/mono/Godot_v3.5.1-stable_mono_export_templates.tpz
+        godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/3.5.2/mono/Godot_v3.5.2-stable_mono_linux_headless_64.zip
+        godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/3.5.2/mono/Godot_v3.5.2-stable_mono_export_templates.tpz
         relative_project_path: ./
         use_preset_export_path: true
     - name: Upload Linux build
