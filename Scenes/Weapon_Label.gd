@@ -17,9 +17,4 @@ func _ready():
 #	pass
 
 
-func _on_Player_ammohudupdate(ammo, equippedweapon):
-	if(equippedweapon.type == "Flamethrower"):
-		text = "Flames: "
-	elif(equippedweapon.type == "Peashooter"):
-		text = "Peas "
-	pass # Replace with function body.
+

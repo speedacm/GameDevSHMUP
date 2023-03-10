@@ -162,7 +162,7 @@ func _on_RoomDetector_area_entered(area: Area2D) -> void:
 	
 	var collision_shape = area.get_node("CollisionShape2D")
 	var size = collision_shape.shape.extents * 2 * 2
-	var x_offset = 248
+	var x_offset = 248 + 32
 	var y_offset = 200
 	
 	var cam = $Camera2D
