@@ -46,11 +46,8 @@ func _unhandled_input(event):
 func _physics_process(_delta):
 	
 	### Movement --------- 
-
-	
-	
 	if dodgeTime - iTime <= 0: 
-		set_collision_layer_bit(2, true)
+		set_collision_mask_bit(layer.BULLET, true)
 		
 	if dodgeTime == 0:
 		var direction := Vector2(
@@ -58,26 +55,25 @@ func _physics_process(_delta):
 			Input.get_action_strength("down") - Input.get_action_strength("up")
 		)
 	####normalizea
-		
 		if direction.length() > 1.0:
 			direction = direction.normalized()
-	### Joystick works?
-	
-	# Using the follow steering behavior.
-	
+			
 	###friction stuff for ice floors??????
 		var target_velocity = direction * speed
 		velocity += (target_velocity - velocity) * friction
+		
 		if Input.is_action_just_pressed("sprint") && (velocity.x != 0.0 or velocity.y != 0.0):
-				set_collision_layer_bit(2, false)
-				dodgeTime = DODGE_TIME
-				velocity = velocity* dodgeSpeed
-				startVelocity = velocity
+			#dodge()
+			set_collision_mask_bit(layer.BULLET, false)
+			dodgeTime = DODGE_TIME
+			velocity = velocity* dodgeSpeed
+			startVelocity = velocity
+	
 	###move
 	else:
 		if velocity != startVelocity:
 			dodgeTime = 0
-			set_collision_layer_bit(2, true)
+			set_collision_mask_bit(layer.BULLET, true)
 		else:
 			dodgeTime = max(0, dodgeTime-.1)
 			

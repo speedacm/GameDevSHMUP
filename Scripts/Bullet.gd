@@ -17,16 +17,7 @@ var parent = ''
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if parent == "mobs":
-		set_collision_layer_bit(31, true)
-		set_collision_mask_bit(0, true)
-		set_collision_mask_bit(1, false)
-		set_collision_mask_bit(2, true)
-	elif parent == "player":
-		set_collision_layer_bit(31, true)
-		set_collision_mask_bit(0, true)
-		set_collision_mask_bit(1, true)
-
+	set_layers()
 
 func set_speed(s):
 	speed = s
@@ -69,4 +60,15 @@ func _process(delta):
 		impact.global_position = collisionResult.position
 		impact.rotation = collisionResult.normal.angle()
 		queue_free()
+		
+func set_layers():
+	if parent == "mobs":
+		set_collision_layer_bit(layer.BULLET, true)
+		set_collision_mask_bit(layer.WALLS, true)
+		set_collision_mask_bit(layer.ENEMY, false)
+		set_collision_mask_bit(layer.PLAYER, true)
+	elif parent == "player":
+		set_collision_layer_bit(layer.BULLET, true)
+		set_collision_mask_bit(layer.WALLS, true)
+		set_collision_mask_bit(layer.ENEMY, true)
 		
