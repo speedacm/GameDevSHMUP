@@ -104,7 +104,7 @@ script = ExtResource( 18 )
 [node name="Pickups" type="Node" parent="."]
 
 [node name="Flamepick" parent="Pickups" instance=ExtResource( 12 )]
-position = Vector2( 30, -340 )
+position = Vector2( 42, 14 )
 
 [node name="Flamepick2" parent="Pickups" instance=ExtResource( 12 )]
 position = Vector2( -4, -1315 )

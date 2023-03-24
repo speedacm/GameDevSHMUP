@@ -14,7 +14,7 @@ func _ready():
 
 ## Weapon Variables
 var rateofburst = 0.15 # time between bullets in burst
-var burstamount = 2 # burst amount is n-1 what burst it is (3 round burst is 2)
+var burstamount = 1 # burst amount is n-1 what burst it is (3 round burst is 2)
 var shotsfired = 0
 var ammo = 0
 

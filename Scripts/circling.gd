@@ -10,8 +10,8 @@ var floating_text = preload("res://Scenes/UI/Floating_Text.tscn")
 var speed = 400
 var dmg = 10
 var direction = Vector2.ZERO
-export var bouncy = false
-export var bouncesLeft = 0
+
+
 var parent = ''
 
 
@@ -37,7 +37,7 @@ func _process(delta):
 ## Bullet Checks what group it is in and acts accordingly
 	
 	boomerang(delta)
-	var collisionResult = move_and_collide(direction*speed * delta)
+	var collisionResult = move_and_collide(direction * speed * delta)
 	if collisionResult != null:
 		
 		#Get group at collision
@@ -56,7 +56,6 @@ func _process(delta):
 			# Taking Damage
 			collisionResult.collider.health.set_health(collisionResult.collider.health.get_health()-dmg)
 			# Displaying DMG taken
-		 
 		
 		
 ### Bullet Effects (Smoke and Impact)
@@ -70,18 +69,7 @@ func _process(delta):
 		get_parent().add_child(impact)
 		impact.global_position = collisionResult.position
 		impact.rotation = collisionResult.normal.angle()
-		
-		if (bouncy):
-
-			
-			bouncesLeft-= 1
-			direction =direction.bounce(collisionResult.get_normal())
-			if bouncesLeft == 0:
-				bouncy = false
-			
-			
-		else: 
-			queue_free()
+		queue_free()
 		
 		
 ### BOOMERANG?
@@ -98,3 +86,13 @@ func boomerang(delta):
 		boomeranged = true
 	
 
+
+export var distance = 3
+export var num =3
+
+
+
+var bullet = preload("res://Scenes//Bullets//Bullet.tscn")
+
+	
+	

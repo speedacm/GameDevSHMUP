@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Bullets/CBullet.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Bullets/Bullet_Smoke.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Bullets/Bullet_Impact.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/UI/Floating_Text.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Bullets/Bullet.tscn" type="PackedScene" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6, 5 )
+
+[node name="Bullet" type="KinematicBody2D"]
+collision_layer = 256
+collision_mask = 3
+script = ExtResource( 2 )
+smokeScene = ExtResource( 3 )
+bulletImpact = ExtResource( 4 )
+dmgNumberScene = ExtResource( 6 )
+bulletScene = ExtResource( 7 )
+numBullets = 4
+dFromCenter = 25.0
+rSpeed = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+shape = SubResource( 1 )

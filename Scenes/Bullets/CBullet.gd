@@ -3,11 +3,17 @@ extends KinematicBody2D
 export var smokeScene : PackedScene
 export var bulletImpact : PackedScene
 export var dmgNumberScene : PackedScene
+export var bulletScene : PackedScene
+export var numBullets :int
+export var dFromCenter : float 
+export var rSpeed  : int
+
+var bullets = []
 ## UI Variables
 var floating_text = preload("res://Scenes/UI/Floating_Text.tscn")
 
 ## Bullet Variables
-var speed = 400
+var speed = 20
 var dmg = 10
 var direction = Vector2.ZERO
 export var bouncy = false
@@ -17,6 +23,7 @@ var parent = ''
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	if parent == "mobs":
 		set_collision_layer_bit(31, true)
 		set_collision_mask_bit(0, true)
@@ -26,6 +33,12 @@ func _ready():
 		set_collision_layer_bit(31, true)
 		set_collision_mask_bit(0, true)
 		set_collision_mask_bit(1, true)
+		
+		for i in range (0, numBullets):
+			var bulettExample = bulletScene.instance()
+			bulettExample.set_global_position(Vector2(pow(-1,i)*dFromCenter, -1*pow(-1,i)*dFromCenter+i))
+			bullets.append(bulettExample)
+			self.add_child(bullets[i])
 
 
 func set_speed(s):
@@ -33,7 +46,7 @@ func set_speed(s):
 
 
 func _process(delta):
-
+	rotation += rSpeed * delta
 ## Bullet Checks what group it is in and acts accordingly
 	
 	boomerang(delta)
@@ -97,4 +110,5 @@ func boomerang(delta):
 		speed*=-1
 		boomeranged = true
 	
+
 
