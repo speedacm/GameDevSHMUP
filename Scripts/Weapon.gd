@@ -6,7 +6,7 @@ export var bulletScene : PackedScene
 
 onready var gunmodel = $GunModel
 onready var muzzle = $GunModel/muzzle
-var weapontype = "base"
+var type = "Peashooter"
 var ammo = 0
 
 
