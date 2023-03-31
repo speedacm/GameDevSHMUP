@@ -1,0 +1,115 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Rooms/Room_Load.gd" type="Script" id=3]
+[ext_resource path="res://TileMaps/Tilemap.tres" type="TileSet" id=4]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+[node name="13x13R" type="Node2D"]
+use_parent_material = true
+position = Vector2( -1, 0 )
+
+[node name="S" type="Node" parent="."]
+
+[node name="TileMap2" type="TileMap" parent="S"]
+scale = Vector2( 2, 2 )
+z_index = -1
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 32
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+show_collision = true
+collision_mask = 3
+format = 1
+tile_data = PoolIntArray( -131075, 1, 0, -131074, 10, 0, -131073, 10, 0, -196608, 0, 0, -196607, 10, 0, -196606, 10, 0, -196605, 2, 0, -65539, 3, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 8, 0, -131056, 0, 0, -3, 3, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 8, 0, 65533, 3, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 8, 0, 131069, 3, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 8, 0, 196605, 3, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 8, 0, 262141, 19, 0, 262142, 9, 0, 262143, 9, 0, 196608, 9, 0, 196609, 7, 0, 196610, 7, 0, 196611, 20, 0 )
+script = ExtResource( 3 )
+parent_node = NodePath("../..")
+
+[node name="1" type="Node" parent="."]
+
+[node name="TileMap3" type="TileMap" parent="1"]
+scale = Vector2( 2, 2 )
+z_index = -1
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 32
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+show_collision = true
+collision_mask = 3
+format = 1
+tile_data = PoolIntArray( -131075, 1, 0, -131074, 10, 0, -131073, 10, 0, -196608, 0, 0, -196607, 10, 0, -196606, 10, 0, -196605, 2, 0, -65539, 3, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 8, 0, -131056, 0, 0, -3, 3, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 8, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 131069, 3, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 8, 0, 196605, 3, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 8, 0, 262141, 19, 0, 262142, 9, 0, 262143, 9, 0, 196608, 0, 0, 196609, 7, 0, 196610, 7, 0, 196611, 20, 0 )
+script = ExtResource( 3 )
+parent_node = NodePath("../..")
+
+[node name="2" type="Node" parent="."]
+
+[node name="TileMap3" type="TileMap" parent="2"]
+scale = Vector2( 2, 2 )
+z_index = -1
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 32
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+show_collision = true
+collision_mask = 3
+format = 1
+tile_data = PoolIntArray( -131075, 1, 0, -131074, 10, 0, -131073, 10, 0, -196608, 0, 0, -196607, 10, 0, -196606, 10, 0, -196605, 2, 0, -65539, 3, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 8, 0, -131056, 0, 0, -3, 3, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 8, 0, 65533, 3, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 8, 0, 131069, 3, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 8, 0, 196605, 3, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 8, 0, 262141, 19, 0, 262142, 9, 0, 262143, 9, 0, 196608, 0, 0, 196609, 7, 0, 196610, 7, 0, 196611, 20, 0 )
+script = ExtResource( 3 )
+parent_node = NodePath("../..")
+
+[node name="3" type="Node" parent="."]
+
+[node name="TileMap3" type="TileMap" parent="3"]
+scale = Vector2( 2, 2 )
+z_index = -1
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 32
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+show_collision = true
+collision_mask = 3
+format = 1
+tile_data = PoolIntArray( -131075, 1, 0, -131074, 10, 0, -131073, 10, 0, -196608, 10, 0, -196607, 10, 0, -196606, 10, 0, -196605, 2, 0, -65539, 3, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 8, 0, -131056, 0, 0, -3, 3, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 8, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 8, 0, 131069, 3, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 8, 0, 196605, 3, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 8, 0, 262141, 19, 0, 262142, 9, 0, 262143, 9, 0, 196608, 0, 0, 196609, 7, 0, 196610, 7, 0, 196611, 20, 0 )
+script = ExtResource( 3 )
+parent_node = NodePath("../..")
+
+[node name="4" type="Node" parent="."]
+
+[node name="TileMap3" type="TileMap" parent="4"]
+scale = Vector2( 2, 2 )
+z_index = -1
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 32
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+show_collision = true
+collision_mask = 3
+format = 1
+tile_data = PoolIntArray( -131075, 1, 0, -131074, 10, 0, -131073, 10, 0, -196608, 10, 0, -196607, 10, 0, -196606, 10, 0, -196605, 2, 0, -65539, 3, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 8, 0, -131056, 0, 0, -3, 3, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 8, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 131069, 3, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 8, 0, 196605, 3, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 8, 0, 262141, 19, 0, 262142, 9, 0, 262143, 9, 0, 196608, 0, 0, 196609, 7, 0, 196610, 7, 0, 196611, 20, 0 )
+script = ExtResource( 3 )
+parent_node = NodePath("../..")
+
+[node name="C" type="Node" parent="."]
+
+[node name="TileMap3" type="TileMap" parent="C"]
+scale = Vector2( 2, 2 )
+z_index = -1
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 32
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+show_collision = true
+collision_mask = 3
+format = 1
+tile_data = PoolIntArray( -131075, 1, 0, -131074, 10, 0, -131073, 10, 0, -196608, 10, 0, -196607, 10, 0, -196606, 10, 0, -196605, 2, 0, -65539, 3, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 8, 0, -131056, 0, 0, -3, 3, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 8, 0, 65533, 3, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 8, 0, 131069, 3, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 8, 0, 196605, 3, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 8, 0, 262141, 19, 0, 262142, 9, 0, 262143, 9, 0, 196608, 0, 0, 196609, 7, 0, 196610, 7, 0, 196611, 20, 0 )
+script = ExtResource( 3 )
+parent_node = NodePath("../..")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 1024
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 16, 16 )
+scale = Vector2( 18.5, 18.5 )
+shape = SubResource( 3 )

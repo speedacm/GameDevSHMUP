@@ -4,7 +4,7 @@ export var smokeScene : PackedScene
 export var bulletImpact : PackedScene
 export var dmgNumberScene : PackedScene
 ## UI Variables
-var floating_text = preload("res://Scenes/UI/Floating Text.tscn")
+var floating_text = preload("res://Scenes/UI/Floating_Text.tscn")
 
 ## Bullet Variables
 var dmg = 20
