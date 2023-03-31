@@ -1,4 +1,5 @@
 extends "res://Scripts/Enemy.gd"
+onready var animation_player = $AnimationPlayer
 export var bulletScene: PackedScene
 var shootRange = [0, 400]
 var goodRange = [200, 400]
@@ -46,6 +47,26 @@ func _physics_process(delta):
 				hit_count = 0
 
 	hit_count += 1
+	
+	#if velocity.x > 0:
+#		if not flipped:
+#			animation_player.play("walk_right")
+#		elif flipped:
+#			animation_player.play("walk_right_back")
+	if velocity.x < 0:
+		animation_player.play("walking_leftl")
+	elif velocity.x > 0:
+		animation_player.play("walking_right")
+#		if not flipped:
+#			animation_player.play("walk_left")
+#		elif flipped:
+#			animation_player.play("walk_left_back")
+#	elif velocity.y > 0:
+#		animation_player.play("walk_down")
+#	elif velocity.y < 0:
+#		animation_player.play("walk_up")
+#	else:
+#		animation_player.play("idle_right")
 
 
 func _on_RoomDetector_area_entered(area):
