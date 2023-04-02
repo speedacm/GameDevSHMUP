@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
+[ext_resource path="res://Assets/pointlight.webp" type="Texture" id=1]
 [ext_resource path="res://TileMaps/Tilemap.tres" type="TileSet" id=4]
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -28,3 +29,36 @@ collision_mask = 0
 position = Vector2( 32, 32 )
 scale = Vector2( 21, 19 )
 shape = SubResource( 3 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( -94, -162 )
+texture = ExtResource( 1 )
+texture_scale = 2.0
+color = Color( 0.952941, 0.627451, 0.172549, 1 )
+energy = 1.5
+shadow_enabled = true
+
+[node name="Light2D2" type="Light2D" parent="."]
+position = Vector2( 160, -158 )
+texture = ExtResource( 1 )
+texture_scale = 2.0
+color = Color( 0.952941, 0.627451, 0.172549, 1 )
+energy = 1.5
+shadow_enabled = true
+
+[node name="Light2D3" type="Light2D" parent="."]
+position = Vector2( 140, 220 )
+texture = ExtResource( 1 )
+texture_scale = 2.0
+color = Color( 0.952941, 0.627451, 0.172549, 1 )
+energy = 1.5
+shadow_enabled = true
+
+[node name="Light2D4" type="Light2D" parent="."]
+position = Vector2( -70, 212 )
+texture = ExtResource( 1 )
+texture_scale = 2.0
+color = Color( 0.952941, 0.627451, 0.172549, 1 )
+energy = 1.5
+shadow_enabled = true
+shadow_color = Color( 0.117647, 0.0627451, 0.0627451, 0 )
