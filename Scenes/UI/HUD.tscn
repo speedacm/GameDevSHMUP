@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Fonts/Alagard.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scripts/Label.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Fonts/M5x7.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Temp_Assets/fog.png" type="Texture" id=5]
+[ext_resource path="res://Temp_Assets/FogTexture.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/UI/Death_Screen.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
@@ -94,22 +94,7 @@ margin_bottom = -3.0
 layer = 0
 
 [node name="Sprite" type="Sprite" parent="fogOfWar"]
-position = Vector2( -175, 97 )
-z_index = -1
-texture = ExtResource( 5 )
-normal_map = SubResource( 8 )
-offset = Vector2( 178, 14 )
-
-[node name="Sprite2" type="Sprite" parent="fogOfWar"]
-position = Vector2( 96, 99 )
-z_index = -1
-texture = ExtResource( 5 )
-offset = Vector2( 178, 14 )
-
-[node name="Sprite3" type="Sprite" parent="fogOfWar"]
-position = Vector2( 151, 47 )
-rotation = 1.5708
-scale = Vector2( 1, 1.0204 )
+position = Vector2( -34, 99 )
 z_index = -1
 texture = ExtResource( 5 )
 normal_map = SubResource( 8 )
