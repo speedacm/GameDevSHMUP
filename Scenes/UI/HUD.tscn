@@ -94,7 +94,8 @@ margin_bottom = -3.0
 layer = 0
 
 [node name="Sprite" type="Sprite" parent="fogOfWar"]
-position = Vector2( -34, 99 )
+position = Vector2( -40.5903, 98 )
+scale = Vector2( 1.01736, 1 )
 z_index = -1
 texture = ExtResource( 5 )
 normal_map = SubResource( 8 )
