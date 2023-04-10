@@ -10,7 +10,7 @@
 use_parent_material = true
 
 [node name="TileMap3" type="TileMap" parent="."]
-position = Vector2( 1, 0 )
+position = Vector2( 1, 3 )
 scale = Vector2( 2, 2 )
 z_index = -1
 tile_set = ExtResource( 4 )
