@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/fog.png-d486cd7f0403b4be8bede60b12529f18.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Temp_Assets/fog.png"
+dest_files=[ "res://.import/fog.png-d486cd7f0403b4be8bede60b12529f18.stex" ]
+
 [params]
 
 compress/mode=0
