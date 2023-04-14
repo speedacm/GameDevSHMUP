@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/2d_lights_and_shadows_neutral_point_light.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Torch.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TileMaps/Tilemap.tres" type="TileSet" id=4]
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -19,7 +19,7 @@ cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 show_collision = true
 collision_mask = 3
 format = 1
-tile_data = PoolIntArray( -131075, 1, 0, -131074, 10, 0, -131073, 10, 0, -196608, 0, 0, -196607, 10, 0, -196606, 10, 0, -196605, 2, 0, -65539, 21, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 8, 0, -3, 21, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 8, 0, 65533, 21, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 8, 0, 131069, 21, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 8, 0, 196605, 21, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 8, 0, 262141, 19, 0, 262142, 9, 0, 262143, 9, 0, 196608, 9, 0, 196609, 7, 0, 196610, 7, 0, 196611, 20, 0 )
+tile_data = PoolIntArray( -131075, 1, 0, -131074, 10, 0, -131073, 10, 0, -196608, 22, 0, -196607, 10, 0, -196606, 10, 0, -196605, 2, 0, -65539, 21, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 8, 0, -3, 21, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 8, 0, 65533, 21, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 8, 0, 131069, 21, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 8, 0, 196605, 21, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 8, 0, 262141, 19, 0, 262142, 9, 0, 262143, 9, 0, 196608, 9, 0, 196609, 7, 0, 196610, 7, 0, 196611, 20, 0 )
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 1024
@@ -30,35 +30,8 @@ position = Vector2( 32, 32 )
 scale = Vector2( 21, 19 )
 shape = SubResource( 3 )
 
-[node name="Light2D" type="Light2D" parent="."]
-position = Vector2( -94, -162 )
-texture = ExtResource( 1 )
-texture_scale = 2.0
-color = Color( 0.952941, 0.627451, 0.172549, 1 )
-energy = 1.5
-shadow_enabled = true
+[node name="Torch" parent="." instance=ExtResource( 1 )]
+position = Vector2( -98, -150 )
 
-[node name="Light2D2" type="Light2D" parent="."]
-position = Vector2( 160, -158 )
-texture = ExtResource( 1 )
-texture_scale = 2.0
-color = Color( 0.952941, 0.627451, 0.172549, 1 )
-energy = 1.5
-shadow_enabled = true
-
-[node name="Light2D3" type="Light2D" parent="."]
-position = Vector2( 171, 180 )
-texture = ExtResource( 1 )
-texture_scale = 2.0
-color = Color( 0.952941, 0.627451, 0.172549, 1 )
-energy = 1.5
-shadow_enabled = true
-
-[node name="Light2D4" type="Light2D" parent="."]
-position = Vector2( -119, 190 )
-texture = ExtResource( 1 )
-texture_scale = 2.0
-color = Color( 0.952941, 0.627451, 0.172549, 1 )
-energy = 1.5
-shadow_enabled = true
-shadow_color = Color( 0.117647, 0.0627451, 0.0627451, 0 )
+[node name="Torch3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 179, -151 )
