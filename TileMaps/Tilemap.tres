@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=38 format=2]
+[gd_resource type="TileSet" load_steps=39 format=2]
 
 [ext_resource path="res://Assets/Tileset/WallTop Right Corner.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Tileset/Wall Tile Bottom 2.png" type="Texture" id=2]
@@ -61,6 +61,9 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [sub_resource type="ConvexPolygonShape2D" id=19]
 points = PoolVector2Array( 0, 0, 9.76827, 0, 9.96208, 32, 0, 32 )
+
+[sub_resource type="OccluderPolygon2D" id=34]
+polygon = PoolVector2Array( 0, 0, 0, 6.2627, 32, 5.32806, 32, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 9.03893, 32, 0, 32, 0, 0, 9.09301, 0 )
@@ -509,3 +512,26 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 21/z_index = 0
+22/name = "Floor.png 22"
+22/texture = ExtResource( 12 )
+22/tex_offset = Vector2( 0, 0 )
+22/modulate = Color( 1, 1, 1, 1 )
+22/region = Rect2( 0, 0, 32, 32 )
+22/tile_mode = 1
+22/autotile/bitmask_mode = 0
+22/autotile/bitmask_flags = [  ]
+22/autotile/icon_coordinate = Vector2( 0, 0 )
+22/autotile/tile_size = Vector2( 32, 32 )
+22/autotile/spacing = 0
+22/autotile/occluder_map = [ Vector2( 0, 0 ), SubResource( 34 ) ]
+22/autotile/navpoly_map = [  ]
+22/autotile/priority_map = [  ]
+22/autotile/z_index_map = [  ]
+22/occluder_offset = Vector2( 0, 0 )
+22/navigation_offset = Vector2( 0, 0 )
+22/shape_offset = Vector2( 0, 0 )
+22/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+22/shape_one_way = false
+22/shape_one_way_margin = 0.0
+22/shapes = [  ]
+22/z_index = 0
