@@ -9,6 +9,7 @@ signal new_weapon(guntype, ammo)
 var ammo = 12
 
 func _ready():
+
 	
 	pass # Replace with function body.
 
@@ -17,15 +18,12 @@ func _on_Pickup_area_body_entered(body):
 	if "Player" in body.name:
 		pickupprompt.visible = true
 		canpickup = true
+		
 
 func _on_Pickup_area_body_exited(body):
 	if "Player" in body.name:
 		pickupprompt.visible = false
 		canpickup = false
-	
-
-
-
 
 func _on_Player_pickuprequest():
 	if(canpickup == true):
