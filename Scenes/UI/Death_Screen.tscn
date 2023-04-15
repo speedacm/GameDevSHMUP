@@ -58,8 +58,7 @@ margin_top = 47.0
 margin_right = 267.0
 margin_bottom = 94.0
 custom_fonts/font = SubResource( 3 )
-text = "BAHAHAHAHAHhhh
-GET GOOD LOL!!!"
+text = "You Died"
 align = 1
 
 [connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]

@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://TileMaps/Tilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Test_Range_Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/HiddenTorch.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Torch.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=3]
 
@@ -32,3 +34,15 @@ shape = SubResource( 3 )
 
 [node name="TestRangeEnemy" parent="." instance=ExtResource( 2 )]
 position = Vector2( 147, 124 )
+
+[node name="Torch" parent="." instance=ExtResource( 4 )]
+position = Vector2( -96, -148 )
+
+[node name="Torch2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 157, -148 )
+
+[node name="HiddenTorch" parent="." instance=ExtResource( 3 )]
+position = Vector2( -83, 189 )
+
+[node name="HiddenTorch2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 185, 191 )
