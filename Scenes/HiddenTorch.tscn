@@ -4,5 +4,6 @@
 
 [node name="HiddenTorch" instance=ExtResource( 1 )]
 
-[node name="Sprite" parent="." index="0"]
+[node name="AnimatedSprite" parent="." index="1"]
 visible = false
+frame = 0
