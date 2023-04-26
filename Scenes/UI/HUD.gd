@@ -30,3 +30,14 @@ func _on_Player_playerDied():
 	$"Death Screen".visible = true;
 	pass # Replace with function body.
 
+
+
+func _on_Instructions_starthud():
+	#uncomment to enable FPS counter
+	#$fpsCounter.visible = true 
+	$healthBar.visible = true
+	$hpLabel.visible = true
+	$weaponLabel.visible = true
+	$ammoCounter.visible = true
+	$Timer.visible = true
+	pass # Replace with function body.
