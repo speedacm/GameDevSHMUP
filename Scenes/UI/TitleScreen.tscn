@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/TitleScreen.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/Alagard 2.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/smhuptitle.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="StartGame" type="Button" parent="."]
+margin_left = 101.0
+margin_top = 106.0
+margin_right = 197.0
+margin_bottom = 127.0
+custom_fonts/font = SubResource( 1 )
+text = "Start Game"
+
+[node name="QuitGame" type="Button" parent="."]
+margin_left = 101.0
+margin_top = 139.0
+margin_right = 197.0
+margin_bottom = 160.0
+custom_fonts/font = SubResource( 2 )
+text = "Quit Game"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 144, 112 )
+z_index = -1
+texture = ExtResource( 3 )
+
+[connection signal="pressed" from="StartGame" to="." method="_on_StartGame_pressed"]
+[connection signal="pressed" from="QuitGame" to="." method="_on_QuitGame_pressed"]

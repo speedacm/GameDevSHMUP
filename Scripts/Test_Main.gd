@@ -4,6 +4,8 @@ export var parent_path : NodePath
 var parent 
 
 # Var to make gen easier
+
+""""
 var x = 0
 var R27n = "res://Scenes/Rooms/13x13R.tscn"
 
@@ -45,6 +47,6 @@ func LoadInstance(path, newPos):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
+"""
 
 
