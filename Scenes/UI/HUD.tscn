@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/UI/HUD.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Alagard.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scripts/Label.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Fonts/M5x7.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Scenes/UI/instructions.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/UI/Death_Screen.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
@@ -86,3 +87,9 @@ margin_left = 1.0
 margin_top = 22.0
 margin_right = -31.0
 margin_bottom = -3.0
+
+[node name="Control" parent="." instance=ExtResource( 5 )]
+margin_left = -2.0
+margin_top = -1.0
+margin_right = 1.0
+margin_bottom = 1.0
