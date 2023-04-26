@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Repeat_Shot_Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Slime_Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Torch.tscn" type="PackedScene" id=3]
 [ext_resource path="res://TileMaps/Tilemap.tres" type="TileSet" id=4]
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -36,3 +37,6 @@ position = Vector2( -86, 142 )
 
 [node name="SlimeEnemy" parent="." instance=ExtResource( 2 )]
 position = Vector2( 145, -49 )
+
+[node name="Torch" parent="." instance=ExtResource( 3 )]
+position = Vector2( 34, -142 )
