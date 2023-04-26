@@ -1,10 +1,12 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/UI/HUD.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Alagard.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scripts/Label.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Fonts/M5x7.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Scenes/UI/instructions.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Timer.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Fonts/Alagard 2.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Scenes/UI/Death_Screen.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
@@ -34,10 +36,14 @@ font_data = ExtResource( 2 )
 [sub_resource type="DynamicFont" id=7]
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 7 )
+
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
 
 [node name="fpsCounter" type="Label" parent="."]
+visible = false
 margin_left = 7.0
 margin_top = 10.0
 margin_right = 48.0
@@ -46,6 +52,7 @@ custom_fonts/font = SubResource( 1 )
 script = ExtResource( 3 )
 
 [node name="healthBar" type="ProgressBar" parent="."]
+visible = false
 margin_left = 27.0
 margin_top = 209.0
 margin_right = 129.0
@@ -58,6 +65,7 @@ value = 100.0
 allow_greater = true
 
 [node name="hpLabel" type="Label" parent="."]
+visible = false
 margin_left = 3.0
 margin_top = 208.0
 margin_right = 43.0
@@ -66,6 +74,7 @@ custom_fonts/font = SubResource( 5 )
 text = "HP:"
 
 [node name="weaponLabel" type="Label" parent="."]
+visible = false
 margin_left = 3.0
 margin_top = 191.0
 margin_right = 98.0
@@ -74,6 +83,7 @@ custom_fonts/font = SubResource( 6 )
 text = "Weapon"
 
 [node name="ammoCounter" type="Label" parent="."]
+visible = false
 margin_left = 65.0
 margin_top = 192.0
 margin_right = 76.0
@@ -88,8 +98,25 @@ margin_top = 22.0
 margin_right = -31.0
 margin_bottom = -3.0
 
-[node name="Control" parent="." instance=ExtResource( 5 )]
-margin_left = -2.0
+[node name="Instructions" parent="." instance=ExtResource( 5 )]
+margin_left = 1.0
 margin_top = -1.0
 margin_right = 1.0
 margin_bottom = 1.0
+
+[node name="Timer" type="Label" parent="."]
+visible = false
+margin_left = 247.0
+margin_top = 2.0
+margin_right = 287.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 8 )
+text = "0:00"
+align = 2
+script = ExtResource( 6 )
+
+[node name="Timer" type="Timer" parent="Timer"]
+
+[connection signal="starthud" from="Instructions" to="." method="_on_Instructions_starthud"]
+[connection signal="timer_start" from="Instructions" to="Timer" method="_on_Instructions_timer_start"]
+[connection signal="timeout" from="Timer/Timer" to="Timer" method="_on_Timer_timeout"]

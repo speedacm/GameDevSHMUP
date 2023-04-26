@@ -1,5 +1,6 @@
 extends Control
-
+signal starthud()
+signal timer_start()
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -17,5 +18,7 @@ func _ready():
 
 
 func _on_Button_pressed():
+	emit_signal("starthud")
+	emit_signal("timer_start")
 	queue_free()
 	pass # Replace with function body.
