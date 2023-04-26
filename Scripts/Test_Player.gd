@@ -24,6 +24,7 @@ signal playerDied()
 
 func _ready():
 	#Sets Collision Layers
+
 	setlayers()
 	
 
