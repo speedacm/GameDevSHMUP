@@ -1,19 +1,19 @@
-extends KinematicBody2D
+extends CharacterBody2D
 class_name TestPlayer
-onready var animation_player = $AnimationPlayer
-onready var defaultweapon = get_node("Weapon")
+@onready var animation_player = $AnimationPlayer
+@onready var defaultweapon = get_node("Weapon")
 
 ## Player Variables
-export var speed = 200
+@export var speed = 200
 var velocity = Vector2.ZERO
 var direction
 var detectorID: Node
 
-onready var health = $Health
+@onready var health = $Health
 var flipped = false
 
 ## Weapon Variables
-onready var equippedweapon = $Weapon
+@onready var equippedweapon = $Weapon
 var weaponbehavior
 
 ## UI Variables
@@ -55,7 +55,9 @@ func _unhandled_input(event):
 
 func _physics_process(_delta):
 	get_input()
-	velocity = move_and_slide(velocity)
+	set_velocity(velocity)
+	move_and_slide()
+	velocity = velocity
 	if velocity.x > 0:
 		if not flipped:
 			animation_player.play("walk_right")
@@ -126,7 +128,7 @@ func unequip_weapon(weapon):
 func _on_Flamepick_new_weapon(guntype, ammo):
 	
 	unequip_weapon(equippedweapon)
-	var flamethrower = guntype.instance()
+	var flamethrower = guntype.instantiate()
 	equip_weapon(flamethrower)
 	equippedweapon.ammo = ammo
 	emit_signal("ammohudupdate",equippedweapon.ammo, equippedweapon)
@@ -148,11 +150,11 @@ func _on_Health_healthchangeplayer(new_health):
 func setlayers():
 	
 	## Exists on layer
-	set_collision_layer_bit(layer.PLAYER, true)
+	set_collision_layer_value(layer.PLAYER, true)
 	
 	## Collide with layer
-	set_collision_mask_bit(layer.WALLS, true)
-	set_collision_mask_bit(layer.ENEMY, true)
+	set_collision_mask_value(layer.WALLS, true)
+	set_collision_mask_value(layer.ENEMY, true)
 	
 
 
@@ -162,7 +164,7 @@ func _on_RoomDetector_area_entered(area: Area2D) -> void:
 	detectorID = area
 	
 	var collision_shape = area.get_node("CollisionShape2D")
-	var size = collision_shape.shape.extents * 2 * 2
+	var size = collision_shape.shape.size * 2 * 2
 	var x_offset = 248 + 32
 	var y_offset = 200
 	

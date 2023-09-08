@@ -1,9 +1,9 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 var speed: int
 var velocity: Vector2 = Vector2.ZERO
-onready var health: Node2D = $Health 
-onready var player = get_parent().get_node("../../Player")
+@onready var health: Node2D = $Health 
+@onready var player = get_parent().get_node("../../Player")
 var hit_timer: int
 var hit_count: int
 var damage: int
@@ -61,10 +61,10 @@ func hit_player(hits) -> void:
 func setlayers():
 	
 	## Exists on layer
-	set_collision_layer_bit(layer.ENEMY, true)
-	set_collision_layer_bit(layer.WALLS, false)
-	set_collision_layer_bit(layer.PLAYER, false)
+	set_collision_layer_value(layer.ENEMY, true)
+	set_collision_layer_value(layer.WALLS, false)
+	set_collision_layer_value(layer.PLAYER, false)
 	
 	## Collide with layer
-	set_collision_mask_bit(layer.WALLS, true)
-	set_collision_mask_bit(layer.PLAYER, true)
+	set_collision_mask_value(layer.WALLS, true)
+	set_collision_mask_value(layer.PLAYER, true)

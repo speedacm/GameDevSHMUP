@@ -1,8 +1,8 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
-export var smokeScene : PackedScene
-export var bulletImpact : PackedScene
-export var dmgNumberScene : PackedScene
+@export var smokeScene : PackedScene
+@export var bulletImpact : PackedScene
+@export var dmgNumberScene : PackedScene
 ## UI Variables
 var floating_text = preload("res://Scenes/UI/Floating_Text.tscn")
 
@@ -18,17 +18,17 @@ var parent = ''
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if parent == "mobs":
-		set_collision_layer_bit(31, true)
-		set_collision_mask_bit(0, true)
-		set_collision_mask_bit(1, false)
-		set_collision_mask_bit(2, true)
+		set_collision_layer_value(31, true)
+		set_collision_mask_value(0, true)
+		set_collision_mask_value(1, false)
+		set_collision_mask_value(2, true)
 	elif parent == "player":
-		set_collision_layer_bit(31, true)
-		set_collision_mask_bit(0, true)
-		set_collision_mask_bit(1, true)
+		set_collision_layer_value(31, true)
+		set_collision_mask_value(0, true)
+		set_collision_mask_value(1, true)
 
 
-func set_speed(s):
+func set_velocity(s):
 	speed = s
 
 
@@ -45,7 +45,7 @@ func _process(delta):
 			# Doing Damage
 			collisionResult.collider.health.set_health(collisionResult.collider.health.get_health()-dmg)
 			# Display dmg value as text
-			var dmgnumbers = dmgNumberScene.instance()
+			var dmgnumbers = dmgNumberScene.instantiate()
 			get_parent().add_child(dmgnumbers)
 			dmgnumbers.set_text(dmg as String)
 			dmgnumbers.global_position = dmgnumbers.place(collisionResult.position)
@@ -59,12 +59,12 @@ func _process(delta):
 		
 ### Bullet Effects (Smoke and Impact)
 
-		var smoke = smokeScene.instance() as Particles2D
+		var smoke = smokeScene.instantiate() as GPUParticles2D
 		get_parent().add_child(smoke)
 		smoke.global_position = collisionResult.position
 		smoke.rotation = collisionResult.normal.angle()
 		
-		var impact = bulletImpact.instance() as Node2D
+		var impact = bulletImpact.instantiate() as Node2D
 		get_parent().add_child(impact)
 		impact.global_position = collisionResult.position
 		impact.rotation = collisionResult.normal.angle()

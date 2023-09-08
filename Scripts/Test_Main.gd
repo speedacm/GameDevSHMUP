@@ -1,6 +1,6 @@
 extends Node
-export var path: String
-export var parent_path : NodePath
+@export var path: String
+@export var parent_path : NodePath
 var parent 
 
 # Var to make gen easier
@@ -38,7 +38,7 @@ func _ready():
 func LoadInstance(path, newPos):
 	path = "res://Scenes/Rooms/" + path + ".tscn"
 	var room = load(path)
-	var instance = room.instance()
+	var instance = room.instantiate()
 	instance.set_position(newPos)
 	parent.add_child(instance)
  # Replace with function body.

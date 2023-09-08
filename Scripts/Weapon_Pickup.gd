@@ -1,6 +1,6 @@
 extends Node2D
-export var player : NodePath
-onready var pickupprompt = get_node("PickupPrompt")
+@export var player : NodePath
+@onready var pickupprompt = get_node("PickupPrompt")
 ## UI Variables
 
 

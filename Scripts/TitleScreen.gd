@@ -2,7 +2,7 @@ extends Control
 
 
 func _on_StartGame_pressed():
-	get_tree().change_scene("res://Scenes/Test_Main.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Test_Main.tscn")
 	pass 
 
 

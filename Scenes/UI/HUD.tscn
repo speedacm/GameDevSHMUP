@@ -1,15 +1,15 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/UI/HUD.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Fonts/Alagard.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Fonts/Alagard.ttf" type="FontFile" id=2]
 [ext_resource path="res://Scripts/Label.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Fonts/M5x7.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/Fonts/M5x7.ttf" type="FontFile" id=4]
 [ext_resource path="res://Scenes/UI/Death_Screen.tscn" type="PackedScene" id=8]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="FontFile" id=1]
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="FontFile" id=4]
 font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxFlat" id=2]
@@ -24,65 +24,65 @@ anti_aliasing = false
 bg_color = Color( 0.129412, 0.129412, 0.129412, 0.607843 )
 anti_aliasing = false
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="FontFile" id=5]
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="FontFile" id=6]
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="FontFile" id=7]
 font_data = ExtResource( 2 )
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
 
 [node name="fpsCounter" type="Label" parent="."]
-margin_left = 7.0
-margin_top = 10.0
-margin_right = 48.0
-margin_bottom = 23.0
-custom_fonts/font = SubResource( 1 )
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 48.0
+offset_bottom = 23.0
+theme_override_fonts/font = SubResource( 1 )
 script = ExtResource( 3 )
 
 [node name="healthBar" type="ProgressBar" parent="."]
-margin_left = 27.0
-margin_top = 209.0
-margin_right = 129.0
-margin_bottom = 223.0
-rect_scale = Vector2( 0.747966, 0.848867 )
-custom_fonts/font = SubResource( 4 )
-custom_styles/fg = SubResource( 2 )
-custom_styles/bg = SubResource( 3 )
+offset_left = 27.0
+offset_top = 209.0
+offset_right = 129.0
+offset_bottom = 223.0
+scale = Vector2( 0.747966, 0.848867 )
+theme_override_fonts/font = SubResource( 4 )
+theme_override_styles/fg = SubResource( 2 )
+theme_override_styles/bg = SubResource( 3 )
 value = 100.0
 allow_greater = true
 
 [node name="hpLabel" type="Label" parent="."]
-margin_left = 3.0
-margin_top = 208.0
-margin_right = 43.0
-margin_bottom = 223.0
-custom_fonts/font = SubResource( 5 )
+offset_left = 3.0
+offset_top = 208.0
+offset_right = 43.0
+offset_bottom = 223.0
+theme_override_fonts/font = SubResource( 5 )
 text = "HP:"
 
 [node name="weaponLabel" type="Label" parent="."]
-margin_left = 3.0
-margin_top = 191.0
-margin_right = 98.0
-margin_bottom = 206.0
-custom_fonts/font = SubResource( 6 )
+offset_left = 3.0
+offset_top = 191.0
+offset_right = 98.0
+offset_bottom = 206.0
+theme_override_fonts/font = SubResource( 6 )
 text = "Weapon"
 
 [node name="ammoCounter" type="Label" parent="."]
-margin_left = 65.0
-margin_top = 192.0
-margin_right = 76.0
-margin_bottom = 207.0
-custom_fonts/font = SubResource( 7 )
+offset_left = 65.0
+offset_top = 192.0
+offset_right = 76.0
+offset_bottom = 207.0
+theme_override_fonts/font = SubResource( 7 )
 text = "0"
 
 [node name="Death Screen" parent="." instance=ExtResource( 8 )]
 visible = false
-margin_left = 1.0
-margin_top = 22.0
-margin_right = -31.0
-margin_bottom = -3.0
+offset_left = 1.0
+offset_top = 22.0
+offset_right = -31.0
+offset_bottom = -3.0

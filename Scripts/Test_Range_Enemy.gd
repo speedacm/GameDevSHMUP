@@ -1,11 +1,11 @@
 extends "res://Scripts/Enemy.gd"
-export var bulletScene: PackedScene
+@export var bulletScene: PackedScene
 var shootRange = [0, 400]
 var goodRange = [200, 400]
 var bullet_speed = 300
 var detectorID: Node
 var randdrop = RandomNumberGenerator.new()
-var healthDrop = preload("res://Scenes/Health_Pickup.tscn").instance()
+var healthDrop = preload("res://Scenes/Health_Pickup.tscn").instantiate()
 ## UI Variables
 
 
@@ -20,10 +20,10 @@ func _ready() -> void:
 	hit_count = 0
 
 func shoot():
-	var bullet = bulletScene.instance() as Node2D
+	var bullet = bulletScene.instantiate() as Node2D
 	bullet.set("parent", "mobs")
 	get_parent().add_child(bullet)
-	bullet.set_speed(bullet_speed)
+	bullet.set_velocity(bullet_speed)
 	bullet.global_position = global_position
 	bullet.direction = (player.position - bullet.global_position).normalized()
 	bullet.rotation = bullet.direction.angle()
@@ -34,7 +34,8 @@ func shoot():
 func _physics_process(delta):
 	if detectorID == player.detectorID:
 		move_to_player(goodRange[1], goodRange[0], get_player_pos(detectorID))
-		move_and_slide(velocity)
+		set_velocity(velocity)
+		move_and_slide()
 	if health.health <= 0: # if killed, die
 		healthdrop()
 		queue_free()

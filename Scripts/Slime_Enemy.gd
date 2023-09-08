@@ -9,12 +9,12 @@ func _ready() -> void:
 
 
 func shoot():
-	var bullet_mid = bulletScene.instance() as Node2D
-	var bullet_left = bulletScene.instance() as Node2D
-	var bullet_right = bulletScene.instance() as Node2D
-	bullet_mid.set_speed(200)
-	bullet_left.set_speed(200)
-	bullet_right.set_speed(200)
+	var bullet_mid = bulletScene.instantiate() as Node2D
+	var bullet_left = bulletScene.instantiate() as Node2D
+	var bullet_right = bulletScene.instantiate() as Node2D
+	bullet_mid.set_velocity(200)
+	bullet_left.set_velocity(200)
+	bullet_right.set_velocity(200)
 	bullet_mid.set("parent", "mobs")
 	bullet_left.set("parent", "mobs")
 	bullet_right.set("parent", "mobs")

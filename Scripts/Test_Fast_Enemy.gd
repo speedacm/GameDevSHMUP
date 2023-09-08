@@ -13,11 +13,13 @@ func _ready() -> void:
 func _physics_process(delta):
 	move_to_player(400, 0, get_player_pos(detectorID))
 	if hit_count < hit_timer:
-		move_and_slide(-1*velocity)
+		set_velocity(-1*velocity)
+		move_and_slide()
 	else:
-		move_and_slide(velocity)
+		set_velocity(velocity)
+		move_and_slide()
 	var hits = []
-	for i in get_slide_count():
+	for i in get_slide_collision_count():
 		hits.append(get_slide_collision(i))
 	if hit_count > hit_timer:
 		hit_player(hits)

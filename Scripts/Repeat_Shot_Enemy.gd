@@ -13,7 +13,8 @@ func _ready():
 func _physics_process(delta):
 	if detectorID == player.detectorID:
 		move_to_player(goodRange[1], goodRange[0], get_player_pos(detectorID))
-		move_and_slide(velocity)
+		set_velocity(velocity)
+		move_and_slide()
 	if health.health <= 0:
 		queue_free()
 	var dist = distance(get_player_pos(detectorID))

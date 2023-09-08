@@ -1,5 +1,5 @@
 extends TileMap
-export var parent_node : NodePath
+@export var parent_node : NodePath
 
 # Declare member variables here. Examples:
 # var a = 2

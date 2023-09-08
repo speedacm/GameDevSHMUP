@@ -1,7 +1,7 @@
-extends Position2D
+extends Marker2D
 
-onready var timer = get_node("TextTimer")
-onready var label = get_node("Label")
+@onready var timer = get_node("TextTimer")
+@onready var label = get_node("Label")
 
 var showtime = 0.5
 
@@ -25,7 +25,7 @@ func _on_TextTimer_timeout():
 	queue_free()
 
 func place(positionarg):
-	var result = rand_range(1,1.09) * positionarg
+	var result = randf_range(1,1.09) * positionarg
 	return result
 
 #func random_point_inside_unit_circle():

@@ -1,16 +1,16 @@
 extends Node2D
 
-export var bulletScene : PackedScene
+@export var bulletScene : PackedScene
 
-onready var gunmodel = $GunModel
-onready var muzzle = $GunModel/muzzle
-onready var timer = $Bursttimer
-onready var cooldowntimer = $"Attack Cooldown"
+@onready var gunmodel = $GunModel
+@onready var muzzle = $GunModel/muzzle
+@onready var timer = $Bursttimer
+@onready var cooldowntimer = $"Attack Cooldown"
 
 var type = "Flamethrower"
 
 func _ready():
-	 get_parent().connect("out_of_ammo",self, "_on_out_of_ammo")
+	 get_parent().connect("out_of_ammo", Callable(self, "_on_out_of_ammo"))
 
 ## Weapon Variables
 var rateofburst = 0.15 # time between bullets in burst
@@ -33,7 +33,7 @@ func shoot():
 	if(canfire == true && ammo != 0):
 		
 		## Basic Shoot Function
-		var bullet = bulletScene.instance() as Node2D
+		var bullet = bulletScene.instantiate() as Node2D
 		bullet.set('parent', 'player')
 		get_parent().get_parent().add_child(bullet)
 		emit_signal("weapon_fired",bullet)
@@ -59,7 +59,7 @@ func _on_attackcooldown_timeout():
 		ammo -= shotsfired + 1
 		if(ammo == 0):
 			print("Im out of ammo!!!!")
-			self.connect("out_of_ammo", self.get_parent(),"_on_out_of_ammo")
+			self.connect("out_of_ammo", Callable(self.get_parent(), "_on_out_of_ammo"))
 			emit_signal("out_of_ammo")
 		shotsfired = 0
 		canfire = false
